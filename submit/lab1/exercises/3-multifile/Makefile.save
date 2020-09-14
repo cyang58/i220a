@@ -1,0 +1,31 @@
+PROJECT = quadr
+
+CFLAGS = -g -Wall -std=c11
+LDFLAGS = -lm
+
+$(PROJECT):	quadr.o main.o
+		$(CC) quadr.o main.o $(LDFLAGS) -o $@
+
+SRC_FILE:
+		main.c \
+		main.o \
+		quadr \		Makefile \
+		quadr.c  \
+		quadr.h \
+		quadr.o \
+		README \
+		test.data
+clean:
+		rm -f *.o $(PROJECT) $(PROJECT).tar.gz
+
+depend:
+		$(CC) -MM $(CPPFLAGS) *.c
+
+dist:		$(PROJECT).tar.gz
+
+$(PROJECT).tar.gz:		$(SRC_FILES)
+				tar -cf $(PROJECT).tar $(SRC_FILES)
+				gzip -f $(PROJECT).tar
+
+main.o:		main.c quadr.h
+quadr.o:	quadr.c quadr.h
