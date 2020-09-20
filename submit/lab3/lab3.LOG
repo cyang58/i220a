@@ -55,7 +55,8 @@ total 0
 -rw-r----- 1 cyang58 cyang58 0 Sep 17 12:28 T2.s1
 -rw-r----- 1 cyang58 cyang58 0 Sep 17 12:28 t3
 cyang58@remote00:~/i220a/submit/lab3$ mamn[K[K[K[Kman touch
-[?1049h[22;0;0t[?1h=TOUCH(1)                                           User Commands                                          TOUCH(1)[m
+[?1049h[22;0;0t[?1h=
+TOUCH(1)                                           User Commands                                          TOUCH(1)[m
 [m
 [1mNAME[0m[m
        touch - change file timestamps[m
@@ -116,8 +117,10 @@ cyang58@remote00:~/i220a/submit/lab3$ mamn[K[K[K[Kman touch
 [1mAUTHOR[0m[m
        Written by Paul Rubin, Arnold Robbins, Jim Kingdon, David MacKenzie, and Randy Smith.[m
 [m
-[7m Manual page touch(1) line 1 (press h for help or q to quit)[27m[K[K[?1l>[?1049l[23;0;0tcyang58@remote00:~/i220a/submit/lab3$ man ls
-[?1049h[22;0;0t[?1h=LS(1)                                              User Commands                                             LS(1)[m
+[7m Manual page touch(1) line 1 (press h for help or q to quit)[27m[K
+[K[?1l>[?1049l[23;0;0tcyang58@remote00:~/i220a/submit/lab3$ man ls
+[?1049h[22;0;0t[?1h=
+LS(1)                                              User Commands                                             LS(1)[m
 [m
 [1mNAME[0m[m
        ls - list directory contents[m
@@ -178,7 +181,8 @@ cyang58@remote00:~/i220a/submit/lab3$ mamn[K[K[K[Kman touch
               like [1m-l[0m [1m--time-style[0m=[4mfull-iso[24m[m
 [m
        [1m-g[0m     like [1m-l[0m, but do not list owner[m
-[7m Manual page ls(1) line 1 (press h for help or q to quit)[27m[K[K[?1l>[?1049l[23;0;0tcyang58@remote00:~/i220a/submit/lab3$ ls T*
+[7m Manual page ls(1) line 1 (press h for help or q to quit)[27m[K
+[K[?1l>[?1049l[23;0;0tcyang58@remote00:~/i220a/submit/lab3$ ls T*
 T1.s
 cyang58@remote00:~/i220a/submit/lab3$ ls dir/*.?
 dir/t2.c
@@ -2029,7 +2033,8 @@ t3
 cyang58@remote00:~/i220a/submit/lab3$ wc -l
 0
 cyang58@remote00:~/i220a/submit/lab3$ man wc
-[?1049h[22;0;0t[?1h=WC(1)                                              User Commands                                             WC(1)[m
+[?1049h[22;0;0t[?1h=
+WC(1)                                              User Commands                                             WC(1)[m
 [m
 [1mNAME[0m[m
        wc - print newline, word, and byte counts for each file[m
@@ -2089,7 +2094,8 @@ cyang58@remote00:~/i220a/submit/lab3$ man wc
        or available locally via: info '(coreutils) wc invocation'[m
 [m
 GNU coreutils 8.30                                 February 2019                                             WC(1)[m
-[7m Manual page wc(1) line 1/60 (END) (press h for help or q to quit)[27m[K[K[?1l>[?1049l[23;0;0tcyang58@remote00:~/i220a/submit/lab3$ ls | wc -l
+[7m Manual page wc(1) line 1/60 (END) (press h for help or q to quit)[27m[K
+[K[?1l>[?1049l[23;0;0tcyang58@remote00:~/i220a/submit/lab3$ ls | wc -l
 10
 cyang58@remote00:~/i220a/submit/lab3$ ls [K[K[Kcd ~
 cyang58@remote00:~$ ls
@@ -16550,7 +16556,8 @@ ls: cannot open directory '/etc/xdg/new-xfce4/xfconf/xfce-perchannel-xml': Permi
 ls: cannot open directory '/etc/xdg/new-xfce4/xfwm4': Permission denied
 5199
 cyang58@remote00:~/i220a/submit/lab3$ man tr
-[?1049h[22;0;0t[?1h=TR(1)                                              User Commands                                             TR(1)[m
+[?1049h[22;0;0t[?1h=
+TR(1)                                              User Commands                                             TR(1)[m
 [m
 [1mNAME[0m[m
        tr - translate or delete characters[m
@@ -16611,13 +16618,413 @@ cyang58@remote00:~/i220a/submit/lab3$ man tr
        [:alnum:][m
               all letters and digits[m
 [m
-[7m Manual page tr(1) line 1 (press h for help or q to quit)[27m[K[K[?1l>[?1049l[23;0;0tcyang58@remote00:~/i220a/submit/lab3$ ls
+[7m Manual page tr(1) line 1 (press h for help or q to quit)[27m[K
+[K[?1l>[?1049l[23;0;0tcyang58@remote00:~/i220a/submit/lab3$ ls
 bin-c.log  cat.log  dir  exercises  lab3.LOG  ls.log  t1.c  T1.s  v1.s	v.c  x.c
 cyang58@remote00:~/i220a/submit/lab3$ ;[Kls | grep -v '[K"[a-z]"
 cyang58@remote00:~/i220a/submit/lab3$ ls | grep -v "[a-z]"[C[1@ [1@/[1@e[1@c[1P[1@t[1@c[1@/
 3270
 R
 X11
+cyang58@remote06:~/i220a/submit/lab3$ ls /etc/ | tr [:lower:] [:upper:]
+3270
+A2PS.CFG
+A2PS-SITE.CFG
+ACPI
+ADDUSER.CONF
+ADJTIME
+ALIASES
+ALSA
+ALTERNATIVES
+ANACRONTAB
+APACHE2
+APM
+APPARMOR
+APPARMOR.D
+APT
+APT-VENV.CONF
+AT.DENY
+AT-SPI2
+AUTOCONF2.13
+AVAHI
+BASH.BASHRC
+BASH_COMPLETION
+BASH_COMPLETION.D
+BINDRESVPORT.BLACKLIST
+BINFMT.D
+BLUETOOTH
+BOGOFILTER.CF
+BONOBO-ACTIVATION
+BOOTCHARTD.CONF
+CA-CERTIFICATES
+CA-CERTIFICATES.CONF
+CA-CERTIFICATES.CONF.DPKG-OLD
+CALENDAR
+CHATSCRIPTS
+CHKTEXRC
+CHROMIUM
+CHROMIUM.D
+CIFS-UTILS
+COMMON-LISP
+COMPLETE.TCSH
+CONSOLE
+CONSOLE-SETUP
+COWPOKE.CONF
+CRACKLIB
+CRON.D
+CRON.DAILY
+CRON.HOURLY
+CRON.MONTHLY
+CRONTAB
+CRON.WEEKLY
+CRUFT
+CSH
+CSH.CSHRC
+CSH.LOGIN
+CSH.LOGOUT
+CUPSHELPERS
+CVSDEB.CONF
+DAT.CONF
+DBUS-1
+DEBCONF.CONF
+DEBIAN_VERSION
+DEBSUMS-IGNORE
+DEBTREE
+DEFAULT
+DELUSER.CONF
+DEVSCRIPTS.CONF
+DHCP
+DICTIONARIES-COMMON
+DIRMNGR
+DISCOVER.CONF.D
+DISCOVER-MODPROBE.CONF
+DKMS
+DLEYNA-SERVER-SERVICE.CONF
+DOC-BASE
+DPKG
+DPKG-LIST
+DPUT.CF
+E2SCRUB.CONF
+ECLIPSE.INI
+EMACS
+EMAIL-ADDRESSES
+ENVIRONMENT
+ENVIRONMENT.D
+ETHERTYPES
+EXIM4
+FAIL2BAN
+FDMOUNT.CONF
+FIREBIRD
+FIREFOX-ESR
+FONTS
+FREEIPMI
+FSTAB
+FSTAB.SAVE
+FSTAB.SAVE.1
+FUSE.CONF
+GAI.CONF
+GAMIN
+GCONF
+GDB
+GEOCLUE
+GHOSTSCRIPT
+GIMP
+GIT-BUILDPACKAGE
+GLVND
+GNASHPLUGINRC
+GNASHRC
+GNASHTHUMBNAILRC
+GNOME
+GNOME-VFS-2.0
+GNOME-VFS-MIME-MAGIC
+GNUSTEP
+GO-MMPROXY
+GROFF
+GROOVY
+GROUP
+GROUP-
+GSHADOW
+GSHADOW-
+GSS
+GSSAPI_MECH.CONF
+GSSAPI_MECH.CONF.DPKG-DIST
+GTK-2.0
+GTK-3.0
+HDDTEMP.DB
+HDPARM.CONF
+HIGHLIGHT
+HOST.CONF
+HOSTNAME
+HOSTS
+HOSTS.ALLOW
+HOSTS.CLASS
+HOSTS.DENY
+HOSTS.EXTERNAL
+HOSTS.INTERNAL
+IDMAPD.CONF
+IDMAPD.CONF.UCF-DIST
+IFPLUGD
+IMAGEMAGICK-6
+INIT
+INIT.D
+INITRAMFS-TOOLS
+INPUTRC
+INSSERV
+INSSERV.CONF
+INSSERV.CONF.D
+INSTALLED_PACKAGES
+IPROUTE2
+ISCSI
+ISSUE
+ISSUE.NET
+JAVA
+JAVA-10-ORACLE
+JAVA-11-ORACLE
+JAVA-8-ORACLE
+JED.D
+JYTHON
+KERNEL
+KERNEL-IMG.CONF
+KRB5.CONF
+KRB5.KEYTAB
+LATEX2HTML.CONF
+LATEXMK
+LDAP
+LD.SO.CACHE
+LD.SO.CONF
+LD.SO.CONF.D
+LIBAO.CONF
+LIBAUDIT.CONF
+LIBBLOCKDEV
+LIBCCID_INFO.PLIST
+LIBGDA-5.0
+LIBIBVERBS.D
+LIBNL-3
+LIBNSS-LDAP.CONF
+LIBNSS-LDAP.CONF.CLASS
+LIBNSS-LDAP.CONF.LINUX
+LIBPAPER.D
+LIBREOFFICE
+LIGHTDM
+LIGHTTPD
+LISP-CONFIG.LISP
+LLDPD.D
+LOCALE.ALIAS
+LOCALE.GEN
+LOCALTIME
+LOGCHECK
+LOGIN.DEFS
+LOGIN.WARN
+LOGROTATE.CONF
+LOGROTATE.CONF.DPKG-OLD
+LOGROTATE.D
+LOGROTATE.D.SAVE
+LTRACE.CONF
+LYNX
+MACHINE-ID
+MAGIC
+MAGIC.MIME
+MAILCAP
+MAILCAP.ORDER
+MAILNAME
+MAIL.RC
+MANPATH.CONFIG
+MATPLOTLIBRC
+MATPLOTLIBRC2
+MEDIAPRM
+MERCURIAL
+MIME.TYPES
+MINICOM
+MKE2FS.CONF
+MODPROBE.D
+MODULES
+MODULES-LOAD.D
+MONIT
+MOTD
+MTAB
+MTOOLS.CONF
+MUTTRC
+MUTTRC.D
+MYSQL
+NANORC
+NETCONF
+NETCONFIG
+NETGROUP
+NETSCSID.CONF
+NETWORK
+NETWORKMANAGER
+NETWORKS
+NFTABLES.CONF
+NSCD.CONF
+NSLCD.CONF
+NSLCD.CONF.BUSTER-UPGRADE
+NSLCD.CONF.CLASS
+NSLCD.CONF.LINUX
+NSSWITCH.CONF
+NTP.CONF
+NTP.CONF.DPKG-OLD
+NVCC.PROFILE
+NVIDIA
+NXAGENT
+OCAMLFIND.CONF
+ODBCDATASOURCES
+ODBC.INI
+ODBCINST.INI
+OPENAL
+OPENCL
+OPENMPI
+OPENSC
+OPENVPN
+OPT
+OS-RELEASE
+PACKAGEKIT
+PAM.CONF
+PAM.D
+PAM_LDAP.CONF
+PAM_LDAP.CONF.CLASS
+PAM_LDAP.CONF.LINUX
+PAPERSIZE
+PASSWD
+PASSWD-
+PBUILDER
+PBUILDERRC
+PERL
+PHP
+PIUPARTS
+PM
+POLKIT-1
+POSTGRESQL-COMMON
+PPP
+PRINTCAP
+PROFILE
+PROFILE.D
+PROTOCOLS
+PULSE
+PURPLE
+PYTHON
+PYTHON2.7
+PYTHON3
+PYTHON3.5
+PYTHON3.7
+QEMU-IFDOWN
+QEMU-IFUP
+QUILT.QUILTRC
+QUOTAGRPADMINS
+QUOTATAB
+R
+RACKET
+RARFILES.LST
+RC0.D
+RC1.D
+RC2.D
+RC3.D
+RC4.D
+RC5.D
+RC6.D
+RC.LOCAL
+RCS.D
+READER.CONF.D
+REARJ.CFG
+REPORTBUG.CONF
+REQUEST-KEY.CONF
+REQUEST-KEY.D
+RESOLV.CONF
+RESOLVCONF
+RESOLV.CONF.CLASS
+RESOLV.CONF.EXTERNAL
+RESOLV.CONF.INTERNAL
+RLWRAP
+RMT
+RPC
+RSYSLOG.CONF
+RSYSLOG.D
+RSYSLOG-HAPROXY.CONF
+RSYSLOG-NORMAL.CONF
+RUNIT
+SAMBA
+SANE.D
+SBCLRC
+SCITE
+SCREENRC
+SECURETTY
+SECURITY
+SELINUX
+SENSORS3.CONF
+SENSORS.D
+SERVICES
+SGML
+SHADOW
+SHADOW-
+SHELLS
+SKEL
+SLSH.RC
+SMARTD.CONF
+SMARTMONTOOLS
+SMI.CONF
+SNMP
+SOUND
+SPEECH-DISPATCHER
+SSH
+SSL
+STAFF-GROUP-FOR-USR-LOCAL
+STUNNEL
+SUBGID
+SUBGID-
+SUBUID
+SUBUID-
+SUBVERSION
+SUDOERS
+SUDOERS.D
+SUDOERS.OLD
+SUDOERS.SAVE
+SV
+SYSCTL.CONF
+SYSCTL.D
+SYSFS.CONF
+SYSFS.D
+SYSSTAT
+SYSTEMD
+TERMINFO
+TEX4HT
+TEXMF
+THUNDERBIRD
+TIGERVNC
+TIMEZONE
+TIMIDITY
+TMPFILES.D
+UCF.CONF
+UDEV
+UDISKS2
+UFW
+UPDATEDB.CONF
+UPDATE-MOTD.D
+UPOWER
+USB_MODESWITCH.CONF
+USB_MODESWITCH.D
+VBOX
+VDPAU_WRAPPER.CFG
+VIDEO_FORMAT
+VIM
+VISUALVM
+VMWARE-TOOLS
+VNC.CONF
+VULKAN
+W3M
+WARNQUOTA.CONF
+WGETRC
+WILDMIDI
+WIRESHARK
+WODIM.CONF
+WPA_SUPPLICANT
+X11
+X2GO
+XATTR.CONF
+XDG
+XFCE4
+XML
+XPDF
+XPROFILE
+ZSH
 cyang58@remote00:~/i220a/submit/lab3$ exit
 
 Script done on 2020-09-17 13:23:11-04:00 [COMMAND_EXIT_CODE="0"]
