@@ -1,5 +1,7 @@
 #include "hamming.h"
 
+#include <stdio.h>
+#include <math.h>
 #include <assert.h>
 
 /**
@@ -14,7 +16,7 @@ get_bit(HammingWord word, int bitIndex)
 {
   assert(bitIndex > 0);
   //@TODO
-  return 0;
+  return (word >> (bitIndex-1))%2;
 }
 
 /** Return word with bit at bitIndex in word set to bitValue. */
@@ -24,7 +26,7 @@ set_bit(HammingWord word, int bitIndex, unsigned bitValue)
   assert(bitIndex > 0);
   assert(bitValue == 0 || bitValue == 1);
   //@TODO
-  return 0;
+  return (bitValue) ? word | (1<<(bitIndex-1)) : word & ~(1<<(bitIndex-1));
 }
 
 /** Given a Hamming code with nParityBits, return 2**nParityBits - 1,
@@ -35,7 +37,7 @@ static inline unsigned
 get_n_encoded_bits(unsigned nParityBits)
 {
   //@TODO
-  return 0;
+  return (2 << nParityBits)-1;
 }
 
 /** Return non-zero if bitIndex indexes a bit which will be used for a
@@ -47,9 +49,19 @@ is_parity_position(int bitIndex)
 {
   assert(bitIndex > 0);
   //@TODO
+  for (unsigned power = 1; power > 0; power <<= 1)
+  {
+	  if (power == bitIndex)
+	  {
+		  return 1;
+	  }
+	  if (power > bitIndex)
+	  {
+		  return 0;
+	  }
+  }
   return 0;
 }
-
 /** Return the parity over the data bits in word specified by the
  *  parity bit bitIndex.  The word contains a total of nBits bits.
  *  Equivalently, return parity over all data bits whose bit-index has
@@ -60,7 +72,13 @@ compute_parity(HammingWord word, int bitIndex, unsigned nBits)
 {
   assert(bitIndex > 0);
   //@TODO
-  return 0;
+  int r = 0; 
+  for(unsigned cbits = 1; cbits <= nBits; cbits++){
+    if(!is_parity_position(cbits) && (cbits | bitIndex) == cbits){
+	r ^= get_bit(word, cbits);	
+    }
+  }
+  return r;
 }
 
 /** Encode data using nParityBits Hamming code parity bits.
@@ -71,6 +89,24 @@ HammingWord
 hamming_encode(HammingWord data, unsigned nParityBits)
 {
   //@TODO
+  HammingWord encoded = 0;
+  int counter = 1;
+  for (unsigned i = 1; i <= get_n_encoded_bits(nParityBits); i++)
+  {
+	  if (is_parity_position(i) == 0)
+	  {
+		  encoded = set_bit(encoded, i, get_bit(data, counter));
+		  counter++;
+	  }
+  }
+  for (unsigned i = 1; i <= get_n_encoded_bits(nParityBits); i++)
+  {
+	  if (is_parity_position(i) == 1)
+	  {
+		  encoded = set_bit(encoded, i, compute_parity(encoded, i, get_n_encoded_bits(nParityBits)));
+	  }
+  }
+  return encoded;
   return 0;
 }
 
@@ -84,5 +120,26 @@ hamming_decode(HammingWord encoded, unsigned nParityBits,
                            int *hasError)
 {
   //@TODO
-  return 0;
+  HammingWord errorsyndrome = 0;
+  for(unsigned i = 1; i <= get_n_encoded_bits(nParityBits); i++){
+    if(is_parity_position(i)){
+		int r = compute_parity(encoded, i, get_n_encoded_bits(nParityBits));
+      if(get_bit(encoded, i) != r){
+        errorsyndrome |= i;
+      }
+    }
+  }
+  if(errorsyndrome != 0){
+    set_bit(encoded, errorsyndrome, (get_bit(encoded, errorsyndrome)==1) ? 0 : 1);
+    *hasError = 1;
+  }
+  HammingWord decoded = 0;
+  int pos = 1;
+  for(unsigned i = 1; i <= get_n_encoded_bits(nParityBits); i++){
+    if(!is_parity_position(i)){
+      decoded = set_bit(decoded, pos, get_bit(encoded, i));
+      pos++;
+    }
+  }
+  return decoded;
 }
