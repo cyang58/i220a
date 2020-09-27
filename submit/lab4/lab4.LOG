@@ -1,0 +1,306 @@
+Script started on 2020-09-27 19:10:22-04:00 [TERM="xterm" TTY="/dev/pts/6" COLUMNS="86" LINES="58"]
+cyang58@remote05:~/i220a/submit/lab4$ l[Kclear
+[H[2J[3Jcyang58@remote05:~/i220a/submit/lab4$ ls
+exercises  lab4.LOG
+cyang58@remote05:~/i220a/submit/lab4$ cd exercises/
+cyang58@remote05:~/i220a/submit/lab4/exercises$ ls
+1-pointers     3-bad-types   5-void-pointers  Makefile
+2-in-pointers  4-cast-types  6-in-voids
+cyang58@remote05:~/i220a/submit/lab4/exercises$ make -f ../Makefile
+make: ../Makefile: No such file or directory
+make: *** No rule to make target '../Makefile'.  Stop.
+cyang58@remote05:~/i220a/submit/lab4/exercises$ cd ..
+cyang58@remote05:~/i220a/submit/lab4$ cd ..make -f ../Makefile
+make: ../Makefile: No such file or directory
+make: *** No rule to make target '../Makefile'.  Stop.
+cyang58@remote05:~/i220a/submit/lab4$ ls
+exercises  lab4.LOG
+cyang58@remote05:~/i220a/submit/lab4$ cd 1[K[K[K[Kls[K[K;s
+bash: syntax error near unexpected token `;'
+cyang58@remote05:~/i220a/submit/lab4$ cd `[K[K[K[Kcd
+cyang58@remote05:~$ ls
+100loop		 a.out	  Desktop    hello.c   multitable    Public
+100loop.c	 Arduino  Documents  i220a     multitable.c  Templates
+826		 cs120	  Downloads  lab       Music	     tmp
+826classwork.c	 cs120.c  git-repos  lab0.LOG  Pictures      Videos
+826classwork.c~  cs220	  hello      ls.log    projects
+cyang58@remote05:~$ cd ~[Ko[K~/i220a/submit/lab4
+cyang58@remote05:~/i220a/submit/lab4$ ls
+exercises  lab4.LOG
+cyang58@remote05:~/i220a/submit/lab4$ clear
+[H[2J[3Jcyang58@remote05:~/i220a/submit/lab4$ cd exercises/1-pointers/
+cyang58@remote05:~/i220a/submit/lab4/exercises/1-pointers$ ,[Kmake -f //[K[K//[K[K../Makefile 
+gcc  -g -Wall -Wextra -Wno-unused-parameter -std=c11 -lm  pointers.c   -o pointers
+cyang58@remote05:~/i220a/submit/lab4/exercises/1-pointers$ ./pointers 
+char pointer cp = 0x7ffe6eec273f, pointing at char a
+char pointer cp = 0x7ffe6eec2740, pointing at char b
+char pointer cp = 0x7ffe6eec2741, pointing at char c
+char pointer cp = 0x7ffe6eec2742, pointing at char d
+char pointer cp = 0x7ffe6eec2743, pointing at char e
+int pointer ip = 0x7ffe6eec2720, pointing at int 1
+int pointer ip = 0x7ffe6eec2724, pointing at int 2
+int pointer ip = 0x7ffe6eec2728, pointing at int 3
+int pointer ip = 0x7ffe6eec272c, pointing at int 4
+int pointer ip = 0x7ffe6eec2730, pointing at int 5
+cyang58@remote05:~/i220a/submit/lab4/exercises/1-pointers$ ./pointers 
+char pointer cp = 0x7ffec14a70ef, pointing at char a
+char pointer cp = 0x7ffec14a70f0, pointing at char b
+char pointer cp = 0x7ffec14a70f1, pointing at char c
+char pointer cp = 0x7ffec14a70f2, pointing at char d
+char pointer cp = 0x7ffec14a70f3, pointing at char e
+int pointer ip = 0x7ffec14a70d0, pointing at int 1
+int pointer ip = 0x7ffec14a70d4, pointing at int 2
+int pointer ip = 0x7ffec14a70d8, pointing at int 3
+int pointer ip = 0x7ffec14a70dc, pointing at int 4
+int pointer ip = 0x7ffec14a70e0, pointing at int 5
+cyang58@remote05:~/i220a/submit/lab4/exercises/1-pointers$ cd ../e[K2-in-pointers/
+cyang58@remote05:~/i220a/submit/lab4/exercises/2-in-pointers$ cd ../2-in-pointers/[9P./pointers [9@make -f ../Makefile[C
+gcc  -g -Wall -Wextra -Wno-unused-parameter -std=c11 -lm  in-pointers.c   -o in-pointers
+cyang58@remote05:~/i220a/submit/lab4/exercises/2-in-pointers$ .in[K[K./[K[K/in-pointers 
+Given the base address of an int[] array you need to
+provide the address of a specified element.
+An int occupies 4 bytes.
+
+Please provide addresses in hex without any leading 0x
+You will need 3 correct responses in succession in order
+to complete this exercise.
+base of ints[] is at 0x7fff16736860
+enter pointer to ints[3]: 7ffe6ee272          7ffec14a70dc
+Segmentation fault
+cyang58@remote05:~/i220a/submit/lab4/exercises/2-in-pointers$ ./in-pointers [K[K[K[K[K[K[K[K[K[K[K[K[K[Kcd ../1-pointers/
+cyang58@remote05:~/i220a/submit/lab4/exercises/1-pointers$ ./[K/in[K[Kpointers 
+char pointer cp = 0x7ffe5e3ade9f, pointing at char a
+char pointer cp = 0x7ffe5e3adea0, pointing at char b
+char pointer cp = 0x7ffe5e3adea1, pointing at char c
+char pointer cp = 0x7ffe5e3adea2, pointing at char d
+char pointer cp = 0x7ffe5e3adea3, pointing at char e
+int pointer ip = 0x7ffe5e3ade80, pointing at int 1
+int pointer ip = 0x7ffe5e3ade84, pointing at int 2
+int pointer ip = 0x7ffe5e3ade88, pointing at int 3
+int pointer ip = 0x7ffe5e3ade8c, pointing at int 4
+int pointer ip = 0x7ffe5e3ade90, pointing at int 5
+cyang58@remote05:~/i220a/submit/lab4/exercises/1-pointers$ ./pointers 
+char pointer cp = 0x7ffe278c600f, pointing at char a
+char pointer cp = 0x7ffe278c6010, pointing at char b
+char pointer cp = 0x7ffe278c6011, pointing at char c
+char pointer cp = 0x7ffe278c6012, pointing at char d
+char pointer cp = 0x7ffe278c6013, pointing at char e
+int pointer ip = 0x7ffe278c5ff0, pointing at int 1
+int pointer ip = 0x7ffe278c5ff4, pointing at int 2
+int pointer ip = 0x7ffe278c5ff8, pointing at int 3
+int pointer ip = 0x7ffe278c5ffc, pointing at int 4
+int pointer ip = 0x7ffe278c6000, pointing at int 5
+cyang58@remote05:~/i220a/submit/lab4/exercises/1-pointers$ ./pointers 
+char pointer cp = 0x7ffc11cfcfcf, pointing at char a
+char pointer cp = 0x7ffc11cfcfd0, pointing at char b
+char pointer cp = 0x7ffc11cfcfd1, pointing at char c
+char pointer cp = 0x7ffc11cfcfd2, pointing at char d
+char pointer cp = 0x7ffc11cfcfd3, pointing at char e
+int pointer ip = 0x7ffc11cfcfb0, pointing at int 1
+int pointer ip = 0x7ffc11cfcfb4, pointing at int 2
+int pointer ip = 0x7ffc11cfcfb8, pointing at int 3
+int pointer ip = 0x7ffc11cfcfbc, pointing at int 4
+int pointer ip = 0x7ffc11cfcfc0, pointing at int 5
+cyang58@remote05:~/i220a/submit/lab4/exercises/1-pointers$ ./pointers 
+char pointer cp = 0x7ffe8823a60f, pointing at char a
+char pointer cp = 0x7ffe8823a610, pointing at char b
+char pointer cp = 0x7ffe8823a611, pointing at char c
+char pointer cp = 0x7ffe8823a612, pointing at char d
+char pointer cp = 0x7ffe8823a613, pointing at char e
+int pointer ip = 0x7ffe8823a5f0, pointing at int 1
+int pointer ip = 0x7ffe8823a5f4, pointing at int 2
+int pointer ip = 0x7ffe8823a5f8, pointing at int 3
+int pointer ip = 0x7ffe8823a5fc, pointing at int 4
+int pointer ip = 0x7ffe8823a600, pointing at int 5
+cyang58@remote05:~/i220a/submit/lab4/exercises/1-pointers$ ./pointers 
+char pointer cp = 0x7ffd6b8c02ff, pointing at char a
+char pointer cp = 0x7ffd6b8c0300, pointing at char b
+char pointer cp = 0x7ffd6b8c0301, pointing at char c
+char pointer cp = 0x7ffd6b8c0302, pointing at char d
+char pointer cp = 0x7ffd6b8c0303, pointing at char e
+int pointer ip = 0x7ffd6b8c02e0, pointing at int 1
+int pointer ip = 0x7ffd6b8c02e4, pointing at int 2
+int pointer ip = 0x7ffd6b8c02e8, pointing at int 3
+int pointer ip = 0x7ffd6b8c02ec, pointing at int 4
+int pointer ip = 0x7ffd6b8c02f0, pointing at int 5
+cyang58@remote05:~/i220a/submit/lab4/exercises/1-pointers$ cd ../2-in-pointers/
+cyang58@remote05:~/i220a/submit/lab4/exercises/2-in-pointers$ cd ../2-in-pointers/[K./in-pointers 
+Given the base address of an int[] array you need to
+provide the address of a specified element.
+An int occupies 4 bytes.
+
+Please provide addresses in hex without any leading 0x
+You will need 3 correct responses in succession in order
+to complete this exercise.
+base of ints[] is at 0x7ffcf9191890
+enter pointer to ints[3]: 7ffcf9191898
+not ok
+base of ints[] is at 0x7ffcf9191890
+enter pointer to ints[1]: ^C
+cyang58@remote05:~/i220a/submit/lab4/exercises/2-in-pointers$ ./in-pointers 
+Given the base address of an int[] array you need to
+provide the address of a specified element.
+An int occupies 4 bytes.
+
+Please provide addresses in hex without any leading 0x
+You will need 3 correct responses in succession in order
+to complete this exercise.
+base of ints[] is at 0x7ffc1f226d20
+enter pointer to ints[3]: 7ffc1f226d3e
+not ok
+base of ints[] is at 0x7ffc1f226d20
+enter pointer to ints[1]: 7ffc1f226d6c
+not ok
+base of ints[] is at 0x7ffc1f226d20
+enter pointer to ints[2]: ^C
+cyang58@remote05:~/i220a/submit/lab4/exercises/2-in-pointers$ ./in-pointers 
+Given the base address of an int[] array you need to
+provide the address of a specified element.
+An int occupies 4 bytes.
+
+Please provide addresses in hex without any leading 0x
+You will need 3 correct responses in succession in order
+to complete this exercise.
+base of ints[] is at 0x7ffd0e2d6120
+enter pointer to ints[3]: 7ffd0e2d6120  3e
+not ok
+base of ints[] is at 0x7ffd0e2d6120
+enter pointer to ints[1]: ^C
+cyang58@remote05:~/i220a/submit/lab4/exercises/2-in-pointers$ ./in-pointers 
+Given the base address of an int[] array you need to
+provide the address of a specified element.
+An int occupies 4 bytes.
+
+Please provide addresses in hex without any leading 0x
+You will need 3 correct responses in succession in order
+to complete this exercise.
+base of ints[] is at 0x7ffe5b663f90
+enter pointer to ints[3]: 7ffe5b663f9c
+ok
+base of ints[] is at 0x7ffe5b663f90
+enter pointer to ints[1]: 7ff5b663f96
+Segmentation fault
+cyang58@remote05:~/i220a/submit/lab4/exercises/2-in-pointers$ ./in-pointers 
+Given the base address of an int[] array you need to
+provide the address of a specified element.
+An int occupies 4 bytes.
+
+Please provide addresses in hex without any leading 0x
+You will need 3 correct responses in succession in order
+to complete this exercise.
+base of ints[] is at 0x7ffe95e4f310
+enter pointer to ints[3]: ^C
+cyang58@remote05:~/i220a/submit/lab4/exercises/2-in-pointers$ ^C
+cyang58@remote05:~/i220a/submit/lab4/exercises/2-in-pointers$ script -a lab4.LOG
+Script started, file is lab4.LOG
+cyang58@remote05:~/i220a/submit/lab4/exercises/2-in-pointers$ git pushmerge prj1 -m "merge prj1"[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[4Pcheckout master 
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cmerge prj1 -m "merge prj1"[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cpush[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K./e[Ks[Ku[Kin-pointers 
+Given the base address of an int[] array you need to
+provide the address of a specified element.
+An int occupies 4 bytes.
+
+Please provide addresses in hex without any leading 0x
+You will need 3 correct responses in succession in order
+to complete this exercise.
+base of ints[] is at 0x7ffd2bbc3bc0
+enter pointer to ints[3]: 7ffd2bbc3bcc
+ok
+base of ints[] is at 0x7ffd2bbc3bc0
+enter pointer to ints[1]: 7ffd2bbc3bc4
+ok
+base of ints[] is at 0x7ffd2bbc3bc0
+enter pointer to ints[2]: 7ffd2bbc3bc8
+ok
+# ok = 3; # errors = 0
+cyang58@remote05:~/i220a/submit/lab4/exercises/2-in-pointers$ cd ../2-in-pointers/[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K/3-bad-types/
+cyang58@remote05:~/i220a/submit/lab4/exercises/3-bad-types$ make -f ../Makefile 
+gcc  -g -Wall -Wextra -Wno-unused-parameter -std=c11 -lm  bad-types.c   -o bad-types
+[01m[Kbad-types.c:[m[K In function ‘[01m[Kmain[m[K’:
+[01m[Kbad-types.c:6:14:[m[K [01;35m[Kwarning: [m[Kinitialization of ‘[01m[Kchar *[m[K’ from incompatible pointer type ‘[01m[Kint *[m[K’ [[01;35m[K-Wincompatible-pointer-types[m[K]
+   char *cp = [01;35m[Kints[m[K;  //expect warning
+              [01;35m[K^~~~[m[K
+[01m[Kbad-types.c:7:13:[m[K [01;35m[Kwarning: [m[Kinitialization of ‘[01m[Kint *[m[K’ from incompatible pointer type ‘[01m[Kchar *[m[K’ [[01;35m[K-Wincompatible-pointer-types[m[K]
+   int *ip = [01;35m[Kcs[m[K;     //expect warning
+             [01;35m[K^~[m[K
+cyang58@remote05:~/i220a/submit/lab4/exercises/3-bad-types$ ./bad-types 
+char pointer cp = 0x7ffec3bfadf0, pointing at char '' (0x1)
+char pointer cp = 0x7ffec3bfadf1, pointing at char ' ' (0x0)
+char pointer cp = 0x7ffec3bfadf2, pointing at char ' ' (0x0)
+char pointer cp = 0x7ffec3bfadf3, pointing at char ' ' (0x0)
+char pointer cp = 0x7ffec3bfadf4, pointing at char '' (0x2)
+int pointer ip = 0x7ffec3bfae13, pointing at int 1684234849 (0x64636261)
+int pointer ip = 0x7ffec3bfae17, pointing at int 357 (0x165)
+int pointer ip = 0x7ffec3bfae1b, pointing at int 1280 (0x500)
+int pointer ip = 0x7ffec3bfae1f, pointing at int -1079107840 (0xbfae1f00)
+int pointer ip = 0x7ffec3bfae23, pointing at int 8388291 (0x7ffec3)
+cyang58@remote05:~/i220a/submit/lab4/exercises/3-bad-types$ cd ../4-cast-types/
+cyang58@remote05:~/i220a/submit/lab4/exercises/4-cast-types$ cat[K[Klear
+[H[2J[3Jcyang58@remote05:~/i220a/submit/lab4/exercises/4-cast-types$ cat cast-types.c 
+#include <stdio.h>
+
+int main() {
+  char chars[] = { 'a', 'b', 'c', 'd', 'e' };
+  int ints[] = { 1, 2, 3, 4, 5 };
+  char *cp = (char *)ints;
+  int *ip = (int *)chars;
+  for (unsigned i = 0; i < sizeof(chars)/sizeof(chars[0]); i++) {
+    printf("char pointer cp = %p, pointing at int %d (0x%x)\n",
+           cp, *cp, *cp);
+    cp = (char *)(((int *)cp) + 1);
+  }
+  for (unsigned i = 0; i < sizeof(ints)/sizeof(ints[0]); i++) {
+    printf("int pointer ip = %p, pointing at char '%c' (0x%x)\n", ip, *ip, *ip);
+    ip = (int *)(((char *)ip) + 1);
+  }
+  return 0;
+}
+cyang58@remote05:~/i220a/submit/lab4/exercises/4-cast-types$ make -f ../<[KMakefile 
+gcc  -g -Wall -Wextra -Wno-unused-parameter -std=c11 -lm  cast-types.c   -o cast-types
+cyang58@remote05:~/i220a/submit/lab4/exercises/4-cast-types$ ./cast-types 
+char pointer cp = 0x7ffd57405720, pointing at int 1 (0x1)
+char pointer cp = 0x7ffd57405724, pointing at int 2 (0x2)
+char pointer cp = 0x7ffd57405728, pointing at int 3 (0x3)
+char pointer cp = 0x7ffd5740572c, pointing at int 4 (0x4)
+char pointer cp = 0x7ffd57405730, pointing at int 5 (0x5)
+int pointer ip = 0x7ffd57405743, pointing at char 'a' (0x64636261)
+int pointer ip = 0x7ffd57405744, pointing at char 'b' (0x65646362)
+int pointer ip = 0x7ffd57405745, pointing at char 'c' (0x2656463)
+int pointer ip = 0x7ffd57405746, pointing at char 'd' (0x36564)
+int pointer ip = 0x7ffd57405747, pointing at char 'e' (0x465)
+cyang58@remote05:~/i220a/submit/lab4/exercises/4-cast-types$ cd ../5-void-pointers/
+cyang58@remote05:~/i220a/submit/lab4/exercises/5-void-pointers$ make -f ../Makefile 
+gcc  -g -Wall -Wextra -Wno-unused-parameter -std=c11 -lm  void-pointers.c   -o void-pointers
+cyang58@remote05:~/i220a/submit/lab4/exercises/5-void-pointers$ ./void-pointers 
+void pointer p = 0x7ffcf36d611b, pointing at char a
+void pointer p = 0x7ffcf36d611c, pointing at char b
+void pointer p = 0x7ffcf36d611d, pointing at char c
+void pointer p = 0x7ffcf36d611e, pointing at char d
+void pointer p = 0x7ffcf36d611f, pointing at char e
+void pointer p = 0x7ffcf36d6100, pointing at int 1
+void pointer p = 0x7ffcf36d6104, pointing at int 2
+void pointer p = 0x7ffcf36d6108, pointing at int 3
+void pointer p = 0x7ffcf36d610c, pointing at int 4
+void pointer p = 0x7ffcf36d6110, pointing at int 5
+cyang58@remote05:~/i220a/submit/lab4/exercises/5-void-pointers$ cd ../6-in-voids/
+cyang58@remote05:~/i220a/submit/lab4/exercises/6-in-voids$ cat in-voids.c 
+#include <stdio.h>
+
+typedef struct {
+  const char *exp;
+  void *p;
+} ExpPointer;
+
+int main() {
+
+  char chars[] = { 'a', 'b', 'c', 'd', 'e' };
+  int ints[] = { 1, 2, 3, 4, 5 };
+  ExpPointer questions[] = {
+    { "ints[2]", &ints[2] },
+    { "chars[3]", &chars[3] },
+    { "ints[4]", &ints[4] },
+    { "chars[1]", &chars[1] },
+    { "chars[4]", &chars[4] },
+    { "ints[1]", &ints[1] },
+  };
+  for (unsigned i 
