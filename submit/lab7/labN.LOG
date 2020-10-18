@@ -1,0 +1,1778 @@
+Script started on 2020-10-18 16:38:44-04:00 [TERM="xterm" TTY="/dev/pts/3" COLUMNS="126" LINES="82"]
+cyang58@remote06:~/i220a/submit/lab7$ clear
+[H[2J[3Jcyang58@remote06:~/i220a/submit/lab7$ make
+make: *** No targets specified and no makefile found.  Stop.
+cyang58@remote06:~/i220a/submit/lab7$ ls
+exercises  labN.LOG
+cyang58@remote06:~/i220a/submit/lab7$ cd exercises/
+cyang58@remote06:~/i220a/submit/lab7/exercises$ ls
+hello.c  Makefile  mystery.o
+cyang58@remote06:~/i220a/submit/lab7/exercises$ make
+cc -g -Wall  -std=c11    hello.c   -o hello
+cc -g -Wall  -std=c11 -S hello.c
+cyang58@remote06:~/i220a/submit/lab7/exercises$ size helo
+size: 'helo': No such file
+cyang58@remote06:~/i220a/submit/lab7/exercises$ size helo[Klo
+   text	   data	    bss	    dec	    hex	filename
+   1874	    592	     48	   2514	    9d2	hello
+cyang58@remote06:~/i220a/submit/lab7/exercises$ size -[K-A el[K[K[K hello
+hello  :
+section              size    addr
+.interp                28     680
+.note.ABI-tag          32     708
+.note.gnu.build-id     36     740
+.gnu.hash              48     776
+.dynsym               240     824
+.dynstr               152    1064
+.gnu.version           20    1216
+.gnu.version_r         32    1240
+.rela.dyn             240    1272
+.rela.plt              48    1512
+.init                  23    4096
+.plt                   48    4128
+.plt.got                8    4176
+.text                 513    4192
+.fini                   9    4708
+.rodata                33    8192
+.eh_frame_hdr          68    8228
+.eh_frame             296    8296
+.init_array             8   15848
+.fini_array             8   15856
+.dynamic              480   15864
+.got                   40   16344
+.got.plt               40   16384
+.data                  16   16424
+.bss                   48   16448
+.comment               28       0
+.debug_aranges         48       0
+.debug_info           860       0
+.debug_abbrev         287       0
+.debug_line           308       0
+.debug_str            597       0
+Total                4642
+
+
+cyang58@remote06:~/i220a/submit/lab7/exercises$ objdump -d hello > hello.objdump
+cyang58@remote06:~/i220a/submit/lab7/exercises$ clear
+[H[2J[3Jcyang58@remote06:~/i220a/submit/lab7/exercises$ cat e[Khello.io[K[Kobjdump 
+
+hello:     file format elf64-x86-64
+
+
+Disassembly of section .init:
+
+0000000000001000 <_init>:
+    1000:	48 83 ec 08          	sub    $0x8,%rsp
+    1004:	48 8b 05 dd 2f 00 00 	mov    0x2fdd(%rip),%rax        # 3fe8 <__gmon_start__>
+    100b:	48 85 c0             	test   %rax,%rax
+    100e:	74 02                	je     1012 <_init+0x12>
+    1010:	ff d0                	callq  *%rax
+    1012:	48 83 c4 08          	add    $0x8,%rsp
+    1016:	c3                   	retq   
+
+Disassembly of section .plt:
+
+0000000000001020 <.plt>:
+    1020:	ff 35 e2 2f 00 00    	pushq  0x2fe2(%rip)        # 4008 <_GLOBAL_OFFSET_TABLE_+0x8>
+    1026:	ff 25 e4 2f 00 00    	jmpq   *0x2fe4(%rip)        # 4010 <_GLOBAL_OFFSET_TABLE_+0x10>
+    102c:	0f 1f 40 00          	nopl   0x0(%rax)
+
+0000000000001030 <fprintf@plt>:
+    1030:	ff 25 e2 2f 00 00    	jmpq   *0x2fe2(%rip)        # 4018 <fprintf@GLIBC_2.2.5>
+    1036:	68 00 00 00 00       	pushq  $0x0
+    103b:	e9 e0 ff ff ff       	jmpq   1020 <.plt>
+
+0000000000001040 <exit@plt>:
+    1040:	ff 25 da 2f 00 00    	jmpq   *0x2fda(%rip)        # 4020 <exit@GLIBC_2.2.5>
+    1046:	68 01 00 00 00       	pushq  $0x1
+    104b:	e9 d0 ff ff ff       	jmpq   1020 <.plt>
+
+Disassembly of section .plt.got:
+
+0000000000001050 <__cxa_finalize@plt>:
+    1050:	ff 25 a2 2f 00 00    	jmpq   *0x2fa2(%rip)        # 3ff8 <__cxa_finalize@GLIBC_2.2.5>
+    1056:	66 90                	xchg   %ax,%ax
+
+Disassembly of section .text:
+
+0000000000001060 <_start>:
+    1060:	31 ed                	xor    %ebp,%ebp
+    1062:	49 89 d1             	mov    %rdx,%r9
+    1065:	5e                   	pop    %rsi
+    1066:	48 89 e2             	mov    %rsp,%rdx
+    1069:	48 83 e4 f0          	and    $0xfffffffffffffff0,%rsp
+    106d:	50                   	push   %rax
+    106e:	54                   	push   %rsp
+    106f:	4c 8d 05 ea 01 00 00 	lea    0x1ea(%rip),%r8        # 1260 <__libc_csu_fini>
+    1076:	48 8d 0d 83 01 00 00 	lea    0x183(%rip),%rcx        # 1200 <__libc_csu_init>
+    107d:	48 8d 3d f0 00 00 00 	lea    0xf0(%rip),%rdi        # 1174 <main>
+    1084:	ff 15 56 2f 00 00    	callq  *0x2f56(%rip)        # 3fe0 <__libc_start_main@GLIBC_2.2.5>
+    108a:	f4                   	hlt    
+    108b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+0000000000001090 <deregister_tm_clones>:
+    1090:	48 8d 3d a1 2f 00 00 	lea    0x2fa1(%rip),%rdi        # 4038 <__TMC_END__>
+    1097:	48 8d 05 9a 2f 00 00 	lea    0x2f9a(%rip),%rax        # 4038 <__TMC_END__>
+    109e:	48 39 f8             	cmp    %rdi,%rax
+    10a1:	74 15                	je     10b8 <deregister_tm_clones+0x28>
+    10a3:	48 8b 05 2e 2f 00 00 	mov    0x2f2e(%rip),%rax        # 3fd8 <_ITM_deregisterTMCloneTable>
+    10aa:	48 85 c0             	test   %rax,%rax
+    10ad:	74 09                	je     10b8 <deregister_tm_clones+0x28>
+    10af:	ff e0                	jmpq   *%rax
+    10b1:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+    10b8:	c3                   	retq   
+    10b9:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+
+00000000000010c0 <register_tm_clones>:
+    10c0:	48 8d 3d 71 2f 00 00 	lea    0x2f71(%rip),%rdi        # 4038 <__TMC_END__>
+    10c7:	48 8d 35 6a 2f 00 00 	lea    0x2f6a(%rip),%rsi        # 4038 <__TMC_END__>
+    10ce:	48 29 fe             	sub    %rdi,%rsi
+    10d1:	48 c1 fe 03          	sar    $0x3,%rsi
+    10d5:	48 89 f0             	mov    %rsi,%rax
+    10d8:	48 c1 e8 3f          	shr    $0x3f,%rax
+    10dc:	48 01 c6             	add    %rax,%rsi
+    10df:	48 d1 fe             	sar    %rsi
+    10e2:	74 14                	je     10f8 <register_tm_clones+0x38>
+    10e4:	48 8b 05 05 2f 00 00 	mov    0x2f05(%rip),%rax        # 3ff0 <_ITM_registerTMCloneTable>
+    10eb:	48 85 c0             	test   %rax,%rax
+    10ee:	74 08                	je     10f8 <register_tm_clones+0x38>
+    10f0:	ff e0                	jmpq   *%rax
+    10f2:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+    10f8:	c3                   	retq   
+    10f9:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+
+0000000000001100 <__do_global_dtors_aux>:
+    1100:	80 3d 61 2f 00 00 00 	cmpb   $0x0,0x2f61(%rip)        # 4068 <completed.7325>
+    1107:	75 2f                	jne    1138 <__do_global_dtors_aux+0x38>
+    1109:	55                   	push   %rbp
+    110a:	48 83 3d e6 2e 00 00 	cmpq   $0x0,0x2ee6(%rip)        # 3ff8 <__cxa_finalize@GLIBC_2.2.5>
+    1111:	00 
+    1112:	48 89 e5             	mov    %rsp,%rbp
+    1115:	74 0c                	je     1123 <__do_global_dtors_aux+0x23>
+    1117:	48 8b 3d 12 2f 00 00 	mov    0x2f12(%rip),%rdi        # 4030 <__dso_handle>
+    111e:	e8 2d ff ff ff       	callq  1050 <__cxa_finalize@plt>
+    1123:	e8 68 ff ff ff       	callq  1090 <deregister_tm_clones>
+    1128:	c6 05 39 2f 00 00 01 	movb   $0x1,0x2f39(%rip)        # 4068 <completed.7325>
+    112f:	5d                   	pop    %rbp
+    1130:	c3                   	retq   
+    1131:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+    1138:	c3                   	retq   
+    1139:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+
+0000000000001140 <frame_dummy>:
+    1140:	e9 7b ff ff ff       	jmpq   10c0 <register_tm_clones>
+
+0000000000001145 <hello>:
+    1145:	55                   	push   %rbp
+    1146:	48 89 e5             	mov    %rsp,%rbp
+    1149:	48 83 ec 10          	sub    $0x10,%rsp
+    114d:	48 89 7d f8          	mov    %rdi,-0x8(%rbp)
+    1151:	48 89 75 f0          	mov    %rsi,-0x10(%rbp)
+    1155:	48 8b 55 f0          	mov    -0x10(%rbp),%rdx
+    1159:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+    115d:	48 8d 35 a0 0e 00 00 	lea    0xea0(%rip),%rsi        # 2004 <_IO_stdin_used+0x4>
+    1164:	48 89 c7             	mov    %rax,%rdi
+    1167:	b8 00 00 00 00       	mov    $0x0,%eax
+    116c:	e8 bf fe ff ff       	callq  1030 <fprintf@plt>
+    1171:	90                   	nop
+    1172:	c9                   	leaveq 
+    1173:	c3                   	retq   
+
+0000000000001174 <main>:
+    1174:	55                   	push   %rbp
+    1175:	48 89 e5             	mov    %rsp,%rbp
+    1178:	48 83 ec 20          	sub    $0x20,%rsp
+    117c:	89 7d ec             	mov    %edi,-0x14(%rbp)
+    117f:	48 89 75 e0          	mov    %rsi,-0x20(%rbp)
+    1183:	83 7d ec 01          	cmpl   $0x1,-0x14(%rbp)
+    1187:	75 2c                	jne    11b5 <main+0x41>
+    1189:	48 8b 45 e0          	mov    -0x20(%rbp),%rax
+    118d:	48 8b 10             	mov    (%rax),%rdx
+    1190:	48 8b 05 c9 2e 00 00 	mov    0x2ec9(%rip),%rax        # 4060 <stderr@@GLIBC_2.2.5>
+    1197:	48 8d 35 70 0e 00 00 	lea    0xe70(%rip),%rsi        # 200e <_IO_stdin_used+0xe>
+    119e:	48 89 c7             	mov    %rax,%rdi
+    11a1:	b8 00 00 00 00       	mov    $0x0,%eax
+    11a6:	e8 85 fe ff ff       	callq  1030 <fprintf@plt>
+    11ab:	bf ef be ad de       	mov    $0xdeadbeef,%edi
+    11b0:	e8 8b fe ff ff       	callq  1040 <exit@plt>
+    11b5:	c7 45 fc 01 00 00 00 	movl   $0x1,-0x4(%rbp)
+    11bc:	eb 2d                	jmp    11eb <main+0x77>
+    11be:	8b 45 fc             	mov    -0x4(%rbp),%eax
+    11c1:	48 98                	cltq   
+    11c3:	48 8d 14 c5 00 00 00 	lea    0x0(,%rax,8),%rdx
+    11ca:	00 
+    11cb:	48 8b 45 e0          	mov    -0x20(%rbp),%rax
+    11cf:	48 01 d0             	add    %rdx,%rax
+    11d2:	48 8b 10             	mov    (%rax),%rdx
+    11d5:	48 8b 05 64 2e 00 00 	mov    0x2e64(%rip),%rax        # 4040 <stdout@@GLIBC_2.2.5>
+    11dc:	48 89 d6             	mov    %rdx,%rsi
+    11df:	48 89 c7             	mov    %rax,%rdi
+    11e2:	e8 5e ff ff ff       	callq  1145 <hello>
+    11e7:	83 45 fc 01          	addl   $0x1,-0x4(%rbp)
+    11eb:	8b 45 fc             	mov    -0x4(%rbp),%eax
+    11ee:	3b 45 ec             	cmp    -0x14(%rbp),%eax
+    11f1:	7c cb                	jl     11be <main+0x4a>
+    11f3:	b8 00 00 00 00       	mov    $0x0,%eax
+    11f8:	c9                   	leaveq 
+    11f9:	c3                   	retq   
+    11fa:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+
+0000000000001200 <__libc_csu_init>:
+    1200:	41 57                	push   %r15
+    1202:	49 89 d7             	mov    %rdx,%r15
+    1205:	41 56                	push   %r14
+    1207:	49 89 f6             	mov    %rsi,%r14
+    120a:	41 55                	push   %r13
+    120c:	41 89 fd             	mov    %edi,%r13d
+    120f:	41 54                	push   %r12
+    1211:	4c 8d 25 d0 2b 00 00 	lea    0x2bd0(%rip),%r12        # 3de8 <__frame_dummy_init_array_entry>
+    1218:	55                   	push   %rbp
+    1219:	48 8d 2d d0 2b 00 00 	lea    0x2bd0(%rip),%rbp        # 3df0 <__init_array_end>
+    1220:	53                   	push   %rbx
+    1221:	4c 29 e5             	sub    %r12,%rbp
+    1224:	48 83 ec 08          	sub    $0x8,%rsp
+    1228:	e8 d3 fd ff ff       	callq  1000 <_init>
+    122d:	48 c1 fd 03          	sar    $0x3,%rbp
+    1231:	74 1b                	je     124e <__libc_csu_init+0x4e>
+    1233:	31 db                	xor    %ebx,%ebx
+    1235:	0f 1f 00             	nopl   (%rax)
+    1238:	4c 89 fa             	mov    %r15,%rdx
+    123b:	4c 89 f6             	mov    %r14,%rsi
+    123e:	44 89 ef             	mov    %r13d,%edi
+    1241:	41 ff 14 dc          	callq  *(%r12,%rbx,8)
+    1245:	48 83 c3 01          	add    $0x1,%rbx
+    1249:	48 39 dd             	cmp    %rbx,%rbp
+    124c:	75 ea                	jne    1238 <__libc_csu_init+0x38>
+    124e:	48 83 c4 08          	add    $0x8,%rsp
+    1252:	5b                   	pop    %rbx
+    1253:	5d                   	pop    %rbp
+    1254:	41 5c                	pop    %r12
+    1256:	41 5d                	pop    %r13
+    1258:	41 5e                	pop    %r14
+    125a:	41 5f                	pop    %r15
+    125c:	c3                   	retq   
+    125d:	0f 1f 00             	nopl   (%rax)
+
+0000000000001260 <__libc_csu_fini>:
+    1260:	c3                   	retq   
+
+Disassembly of section .fini:
+
+0000000000001264 <_fini>:
+    1264:	48 83 ec 08          	sub    $0x8,%rsp
+    1268:	48 83 c4 08          	add    $0x8,%rsp
+    126c:	c3                   	retq   
+cyang58@remote06:~/i220a/submit/lab7/exercises$ objdump -d -s -x hello > hello.objdump
+cyang58@remote06:~/i220a/submit/lab7/exercises$ objdump -d -s -x hello > hello.objdump[20Pcat hello.objdump objdump -d -s -x hello > hello.objdump[20Pcat hello.objdump 
+
+hello:     file format elf64-x86-64
+hello
+architecture: i386:x86-64, flags 0x00000150:
+HAS_SYMS, DYNAMIC, D_PAGED
+start address 0x0000000000001060
+
+Program Header:
+    PHDR off    0x0000000000000040 vaddr 0x0000000000000040 paddr 0x0000000000000040 align 2**3
+         filesz 0x0000000000000268 memsz 0x0000000000000268 flags r--
+  INTERP off    0x00000000000002a8 vaddr 0x00000000000002a8 paddr 0x00000000000002a8 align 2**0
+         filesz 0x000000000000001c memsz 0x000000000000001c flags r--
+    LOAD off    0x0000000000000000 vaddr 0x0000000000000000 paddr 0x0000000000000000 align 2**12
+         filesz 0x0000000000000618 memsz 0x0000000000000618 flags r--
+    LOAD off    0x0000000000001000 vaddr 0x0000000000001000 paddr 0x0000000000001000 align 2**12
+         filesz 0x000000000000026d memsz 0x000000000000026d flags r-x
+    LOAD off    0x0000000000002000 vaddr 0x0000000000002000 paddr 0x0000000000002000 align 2**12
+         filesz 0x0000000000000190 memsz 0x0000000000000190 flags r--
+    LOAD off    0x0000000000002de8 vaddr 0x0000000000003de8 paddr 0x0000000000003de8 align 2**12
+         filesz 0x0000000000000250 memsz 0x0000000000000288 flags rw-
+ DYNAMIC off    0x0000000000002df8 vaddr 0x0000000000003df8 paddr 0x0000000000003df8 align 2**3
+         filesz 0x00000000000001e0 memsz 0x00000000000001e0 flags rw-
+    NOTE off    0x00000000000002c4 vaddr 0x00000000000002c4 paddr 0x00000000000002c4 align 2**2
+         filesz 0x0000000000000044 memsz 0x0000000000000044 flags r--
+EH_FRAME off    0x0000000000002024 vaddr 0x0000000000002024 paddr 0x0000000000002024 align 2**2
+         filesz 0x0000000000000044 memsz 0x0000000000000044 flags r--
+   STACK off    0x0000000000000000 vaddr 0x0000000000000000 paddr 0x0000000000000000 align 2**4
+         filesz 0x0000000000000000 memsz 0x0000000000000000 flags rw-
+   RELRO off    0x0000000000002de8 vaddr 0x0000000000003de8 paddr 0x0000000000003de8 align 2**0
+         filesz 0x0000000000000218 memsz 0x0000000000000218 flags r--
+
+Dynamic Section:
+  NEEDED               libc.so.6
+  INIT                 0x0000000000001000
+  FINI                 0x0000000000001264
+  INIT_ARRAY           0x0000000000003de8
+  INIT_ARRAYSZ         0x0000000000000008
+  FINI_ARRAY           0x0000000000003df0
+  FINI_ARRAYSZ         0x0000000000000008
+  GNU_HASH             0x0000000000000308
+  STRTAB               0x0000000000000428
+  SYMTAB               0x0000000000000338
+  STRSZ                0x0000000000000098
+  SYMENT               0x0000000000000018
+  DEBUG                0x0000000000000000
+  PLTGOT               0x0000000000004000
+  PLTRELSZ             0x0000000000000030
+  PLTREL               0x0000000000000007
+  JMPREL               0x00000000000005e8
+  RELA                 0x00000000000004f8
+  RELASZ               0x00000000000000f0
+  RELAENT              0x0000000000000018
+  FLAGS_1              0x0000000008000000
+  VERNEED              0x00000000000004d8
+  VERNEEDNUM           0x0000000000000001
+  VERSYM               0x00000000000004c0
+  RELACOUNT            0x0000000000000003
+
+Version References:
+  required from libc.so.6:
+    0x09691a75 0x00 02 GLIBC_2.2.5
+
+Sections:
+Idx Name          Size      VMA               LMA               File off  Algn
+  0 .interp       0000001c  00000000000002a8  00000000000002a8  000002a8  2**0
+                  CONTENTS, ALLOC, LOAD, READONLY, DATA
+  1 .note.ABI-tag 00000020  00000000000002c4  00000000000002c4  000002c4  2**2
+                  CONTENTS, ALLOC, LOAD, READONLY, DATA
+  2 .note.gnu.build-id 00000024  00000000000002e4  00000000000002e4  000002e4  2**2
+                  CONTENTS, ALLOC, LOAD, READONLY, DATA
+  3 .gnu.hash     00000030  0000000000000308  0000000000000308  00000308  2**3
+                  CONTENTS, ALLOC, LOAD, READONLY, DATA
+  4 .dynsym       000000f0  0000000000000338  0000000000000338  00000338  2**3
+                  CONTENTS, ALLOC, LOAD, READONLY, DATA
+  5 .dynstr       00000098  0000000000000428  0000000000000428  00000428  2**0
+                  CONTENTS, ALLOC, LOAD, READONLY, DATA
+  6 .gnu.version  00000014  00000000000004c0  00000000000004c0  000004c0  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, DATA
+  7 .gnu.version_r 00000020  00000000000004d8  00000000000004d8  000004d8  2**3
+                  CONTENTS, ALLOC, LOAD, READONLY, DATA
+  8 .rela.dyn     000000f0  00000000000004f8  00000000000004f8  000004f8  2**3
+                  CONTENTS, ALLOC, LOAD, READONLY, DATA
+  9 .rela.plt     00000030  00000000000005e8  00000000000005e8  000005e8  2**3
+                  CONTENTS, ALLOC, LOAD, READONLY, DATA
+ 10 .init         00000017  0000000000001000  0000000000001000  00001000  2**2
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 11 .plt          00000030  0000000000001020  0000000000001020  00001020  2**4
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 12 .plt.got      00000008  0000000000001050  0000000000001050  00001050  2**3
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 13 .text         00000201  0000000000001060  0000000000001060  00001060  2**4
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 14 .fini         00000009  0000000000001264  0000000000001264  00001264  2**2
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 15 .rodata       00000021  0000000000002000  0000000000002000  00002000  2**2
+                  CONTENTS, ALLOC, LOAD, READONLY, DATA
+ 16 .eh_frame_hdr 00000044  0000000000002024  0000000000002024  00002024  2**2
+                  CONTENTS, ALLOC, LOAD, READONLY, DATA
+ 17 .eh_frame     00000128  0000000000002068  0000000000002068  00002068  2**3
+                  CONTENTS, ALLOC, LOAD, READONLY, DATA
+ 18 .init_array   00000008  0000000000003de8  0000000000003de8  00002de8  2**3
+                  CONTENTS, ALLOC, LOAD, DATA
+ 19 .fini_array   00000008  0000000000003df0  0000000000003df0  00002df0  2**3
+                  CONTENTS, ALLOC, LOAD, DATA
+ 20 .dynamic      000001e0  0000000000003df8  0000000000003df8  00002df8  2**3
+                  CONTENTS, ALLOC, LOAD, DATA
+ 21 .got          00000028  0000000000003fd8  0000000000003fd8  00002fd8  2**3
+                  CONTENTS, ALLOC, LOAD, DATA
+ 22 .got.plt      00000028  0000000000004000  0000000000004000  00003000  2**3
+                  CONTENTS, ALLOC, LOAD, DATA
+ 23 .data         00000010  0000000000004028  0000000000004028  00003028  2**3
+                  CONTENTS, ALLOC, LOAD, DATA
+ 24 .bss          00000030  0000000000004040  0000000000004040  00003038  2**5
+                  ALLOC
+ 25 .comment      0000001c  0000000000000000  0000000000000000  00003038  2**0
+                  CONTENTS, READONLY
+ 26 .debug_aranges 00000030  0000000000000000  0000000000000000  00003054  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 27 .debug_info   0000035c  0000000000000000  0000000000000000  00003084  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 28 .debug_abbrev 0000011f  0000000000000000  0000000000000000  000033e0  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 29 .debug_line   00000134  0000000000000000  0000000000000000  000034ff  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 30 .debug_str    00000255  0000000000000000  0000000000000000  00003633  2**0
+                  CONTENTS, READONLY, DEBUGGING
+SYMBOL TABLE:
+00000000000002a8 l    d  .interp	0000000000000000              .interp
+00000000000002c4 l    d  .note.ABI-tag	0000000000000000              .note.ABI-tag
+00000000000002e4 l    d  .note.gnu.build-id	0000000000000000              .note.gnu.build-id
+0000000000000308 l    d  .gnu.hash	0000000000000000              .gnu.hash
+0000000000000338 l    d  .dynsym	0000000000000000              .dynsym
+0000000000000428 l    d  .dynstr	0000000000000000              .dynstr
+00000000000004c0 l    d  .gnu.version	0000000000000000              .gnu.version
+00000000000004d8 l    d  .gnu.version_r	0000000000000000              .gnu.version_r
+00000000000004f8 l    d  .rela.dyn	0000000000000000              .rela.dyn
+00000000000005e8 l    d  .rela.plt	0000000000000000              .rela.plt
+0000000000001000 l    d  .init	0000000000000000              .init
+0000000000001020 l    d  .plt	0000000000000000              .plt
+0000000000001050 l    d  .plt.got	0000000000000000              .plt.got
+0000000000001060 l    d  .text	0000000000000000              .text
+0000000000001264 l    d  .fini	0000000000000000              .fini
+0000000000002000 l    d  .rodata	0000000000000000              .rodata
+0000000000002024 l    d  .eh_frame_hdr	0000000000000000              .eh_frame_hdr
+0000000000002068 l    d  .eh_frame	0000000000000000              .eh_frame
+0000000000003de8 l    d  .init_array	0000000000000000              .init_array
+0000000000003df0 l    d  .fini_array	0000000000000000              .fini_array
+0000000000003df8 l    d  .dynamic	0000000000000000              .dynamic
+0000000000003fd8 l    d  .got	0000000000000000              .got
+0000000000004000 l    d  .got.plt	0000000000000000              .got.plt
+0000000000004028 l    d  .data	0000000000000000              .data
+0000000000004040 l    d  .bss	0000000000000000              .bss
+0000000000000000 l    d  .comment	0000000000000000              .comment
+0000000000000000 l    d  .debug_aranges	0000000000000000              .debug_aranges
+0000000000000000 l    d  .debug_info	0000000000000000              .debug_info
+0000000000000000 l    d  .debug_abbrev	0000000000000000              .debug_abbrev
+0000000000000000 l    d  .debug_line	0000000000000000              .debug_line
+0000000000000000 l    d  .debug_str	0000000000000000              .debug_str
+0000000000000000 l    df *ABS*	0000000000000000              crtstuff.c
+0000000000001090 l     F .text	0000000000000000              deregister_tm_clones
+00000000000010c0 l     F .text	0000000000000000              register_tm_clones
+0000000000001100 l     F .text	0000000000000000              __do_global_dtors_aux
+0000000000004068 l     O .bss	0000000000000001              completed.7325
+0000000000003df0 l     O .fini_array	0000000000000000              __do_global_dtors_aux_fini_array_entry
+0000000000001140 l     F .text	0000000000000000              frame_dummy
+0000000000003de8 l     O .init_array	0000000000000000              __frame_dummy_init_array_entry
+0000000000000000 l    df *ABS*	0000000000000000              hello.c
+0000000000001145 l     F .text	000000000000002f              hello
+0000000000000000 l    df *ABS*	0000000000000000              crtstuff.c
+000000000000218c l     O .eh_frame	0000000000000000              __FRAME_END__
+0000000000000000 l    df *ABS*	0000000000000000              
+0000000000003df0 l       .init_array	0000000000000000              __init_array_end
+0000000000003df8 l     O .dynamic	0000000000000000              _DYNAMIC
+0000000000003de8 l       .init_array	0000000000000000              __init_array_start
+0000000000002024 l       .eh_frame_hdr	0000000000000000              __GNU_EH_FRAME_HDR
+0000000000004000 l     O .got.plt	0000000000000000              _GLOBAL_OFFSET_TABLE_
+0000000000001000 l     F .init	0000000000000000              _init
+0000000000001260 g     F .text	0000000000000001              __libc_csu_fini
+0000000000000000  w      *UND*	0000000000000000              _ITM_deregisterTMCloneTable
+0000000000004040 g     O .bss	0000000000000008              stdout@@GLIBC_2.2.5
+0000000000004028  w      .data	0000000000000000              data_start
+0000000000004038 g       .data	0000000000000000              _edata
+0000000000001264 g     F .fini	0000000000000000              .hidden _fini
+0000000000000000       F *UND*	0000000000000000              __libc_start_main@@GLIBC_2.2.5
+0000000000004028 g       .data	0000000000000000              __data_start
+0000000000000000       F *UND*	0000000000000000              fprintf@@GLIBC_2.2.5
+0000000000000000  w      *UND*	0000000000000000              __gmon_start__
+0000000000004030 g     O .data	0000000000000000              .hidden __dso_handle
+0000000000002000 g     O .rodata	0000000000000004              _IO_stdin_used
+0000000000001200 g     F .text	000000000000005d              __libc_csu_init
+0000000000004070 g       .bss	0000000000000000              _end
+0000000000001060 g     F .text	000000000000002b              _start
+0000000000004038 g       .bss	0000000000000000              __bss_start
+0000000000001174 g     F .text	0000000000000086              main
+0000000000000000       F *UND*	0000000000000000              exit@@GLIBC_2.2.5
+0000000000004038 g     O .data	0000000000000000              .hidden __TMC_END__
+0000000000000000  w      *UND*	0000000000000000              _ITM_registerTMCloneTable
+0000000000000000  w    F *UND*	0000000000000000              __cxa_finalize@@GLIBC_2.2.5
+0000000000004060 g     O .bss	0000000000000008              stderr@@GLIBC_2.2.5
+
+
+Contents of section .interp:
+ 02a8 2f6c6962 36342f6c 642d6c69 6e75782d  /lib64/ld-linux-
+ 02b8 7838362d 36342e73 6f2e3200           x86-64.so.2.    
+Contents of section .note.ABI-tag:
+ 02c4 04000000 10000000 01000000 474e5500  ............GNU.
+ 02d4 00000000 03000000 02000000 00000000  ................
+Contents of section .note.gnu.build-id:
+ 02e4 04000000 14000000 03000000 474e5500  ............GNU.
+ 02f4 35863bb1 6733a6f6 c2d2bd0f 67bc4d72  5.;.g3......g.Mr
+ 0304 bcea41ac                             ..A.            
+Contents of section .gnu.hash:
+ 0308 03000000 07000000 01000000 06000000  ................
+ 0318 00018100 00011002 07000000 09000000  ................
+ 0328 00000000 281d8c1c d165ce6d 39f28b1c  ....(....e.m9...
+Contents of section .dynsym:
+ 0338 00000000 00000000 00000000 00000000  ................
+ 0348 00000000 00000000 53000000 20000000  ........S... ...
+ 0358 00000000 00000000 00000000 00000000  ................
+ 0368 35000000 12000000 00000000 00000000  5...............
+ 0378 00000000 00000000 1e000000 12000000  ................
+ 0388 00000000 00000000 00000000 00000000  ................
+ 0398 6f000000 20000000 00000000 00000000  o... ...........
+ 03a8 00000000 00000000 0b000000 12000000  ................
+ 03b8 00000000 00000000 00000000 00000000  ................
+ 03c8 7e000000 20000000 00000000 00000000  ~... ...........
+ 03d8 00000000 00000000 10000000 11001900  ................
+ 03e8 40400000 00000000 08000000 00000000  @@..............
+ 03f8 26000000 22000000 00000000 00000000  &..."...........
+ 0408 00000000 00000000 17000000 11001900  ................
+ 0418 60400000 00000000 08000000 00000000  `@..............
+Contents of section .dynstr:
+ 0428 006c6962 632e736f 2e360065 78697400  .libc.so.6.exit.
+ 0438 7374646f 75740073 74646572 72006670  stdout.stderr.fp
+ 0448 72696e74 66005f5f 6378615f 66696e61  rintf.__cxa_fina
+ 0458 6c697a65 005f5f6c 6962635f 73746172  lize.__libc_star
+ 0468 745f6d61 696e0047 4c494243 5f322e32  t_main.GLIBC_2.2
+ 0478 2e35005f 49544d5f 64657265 67697374  .5._ITM_deregist
+ 0488 6572544d 436c6f6e 65546162 6c65005f  erTMCloneTable._
+ 0498 5f676d6f 6e5f7374 6172745f 5f005f49  _gmon_start__._I
+ 04a8 544d5f72 65676973 74657254 4d436c6f  TM_registerTMClo
+ 04b8 6e655461 626c6500                    neTable.        
+Contents of section .gnu.version:
+ 04c0 00000000 02000200 00000200 00000200  ................
+ 04d0 02000200                             ....            
+Contents of section .gnu.version_r:
+ 04d8 01000100 01000000 10000000 00000000  ................
+ 04e8 751a6909 00000200 47000000 00000000  u.i.....G.......
+Contents of section .rela.dyn:
+ 04f8 e83d0000 00000000 08000000 00000000  .=..............
+ 0508 40110000 00000000 f03d0000 00000000  @........=......
+ 0518 08000000 00000000 00110000 00000000  ................
+ 0528 30400000 00000000 08000000 00000000  0@..............
+ 0538 30400000 00000000 d83f0000 00000000  0@.......?......
+ 0548 06000000 01000000 00000000 00000000  ................
+ 0558 e03f0000 00000000 06000000 02000000  .?..............
+ 0568 00000000 00000000 e83f0000 00000000  .........?......
+ 0578 06000000 04000000 00000000 00000000  ................
+ 0588 f03f0000 00000000 06000000 06000000  .?..............
+ 0598 00000000 00000000 f83f0000 00000000  .........?......
+ 05a8 06000000 08000000 00000000 00000000  ................
+ 05b8 40400000 00000000 05000000 07000000  @@..............
+ 05c8 00000000 00000000 60400000 00000000  ........`@......
+ 05d8 05000000 09000000 00000000 00000000  ................
+Contents of section .rela.plt:
+ 05e8 18400000 00000000 07000000 03000000  .@..............
+ 05f8 00000000 00000000 20400000 00000000  ........ @......
+ 0608 07000000 05000000 00000000 00000000  ................
+Contents of section .init:
+ 1000 4883ec08 488b05dd 2f000048 85c07402  H...H.../..H..t.
+ 1010 ffd04883 c408c3                      ..H....         
+Contents of section .plt:
+ 1020 ff35e22f 0000ff25 e42f0000 0f1f4000  .5./...%./....@.
+ 1030 ff25e22f 00006800 000000e9 e0ffffff  .%./..h.........
+ 1040 ff25da2f 00006801 000000e9 d0ffffff  .%./..h.........
+Contents of section .plt.got:
+ 1050 ff25a22f 00006690                    .%./..f.        
+Contents of section .text:
+ 1060 31ed4989 d15e4889 e24883e4 f050544c  1.I..^H..H...PTL
+ 1070 8d05ea01 0000488d 0d830100 00488d3d  ......H......H.=
+ 1080 f0000000 ff15562f 0000f40f 1f440000  ......V/.....D..
+ 1090 488d3da1 2f000048 8d059a2f 00004839  H.=./..H.../..H9
+ 10a0 f8741548 8b052e2f 00004885 c07409ff  .t.H.../..H..t..
+ 10b0 e00f1f80 00000000 c30f1f80 00000000  ................
+ 10c0 488d3d71 2f000048 8d356a2f 00004829  H.=q/..H.5j/..H)
+ 10d0 fe48c1fe 034889f0 48c1e83f 4801c648  .H...H..H..?H..H
+ 10e0 d1fe7414 488b0505 2f000048 85c07408  ..t.H.../..H..t.
+ 10f0 ffe0660f 1f440000 c30f1f80 00000000  ..f..D..........
+ 1100 803d612f 00000075 2f554883 3de62e00  .=a/...u/UH.=...
+ 1110 00004889 e5740c48 8b3d122f 0000e82d  ..H..t.H.=./...-
+ 1120 ffffffe8 68ffffff c605392f 0000015d  ....h.....9/...]
+ 1130 c30f1f80 00000000 c30f1f80 00000000  ................
+ 1140 e97bffff ff554889 e54883ec 1048897d  .{...UH..H...H.}
+ 1150 f8488975 f0488b55 f0488b45 f8488d35  .H.u.H.U.H.E.H.5
+ 1160 a00e0000 4889c7b8 00000000 e8bffeff  ....H...........
+ 1170 ff90c9c3 554889e5 4883ec20 897dec48  ....UH..H.. .}.H
+ 1180 8975e083 7dec0175 2c488b45 e0488b10  .u..}..u,H.E.H..
+ 1190 488b05c9 2e000048 8d35700e 00004889  H......H.5p...H.
+ 11a0 c7b80000 0000e885 feffffbf efbeadde  ................
+ 11b0 e88bfeff ffc745fc 01000000 eb2d8b45  ......E......-.E
+ 11c0 fc489848 8d14c500 00000048 8b45e048  .H.H.......H.E.H
+ 11d0 01d0488b 10488b05 642e0000 4889d648  ..H..H..d...H..H
+ 11e0 89c7e85e ffffff83 45fc018b 45fc3b45  ...^....E...E.;E
+ 11f0 ec7ccbb8 00000000 c9c3660f 1f440000  .|........f..D..
+ 1200 41574989 d7415649 89f64155 4189fd41  AWI..AVI..AUA..A
+ 1210 544c8d25 d02b0000 55488d2d d02b0000  TL.%.+..UH.-.+..
+ 1220 534c29e5 4883ec08 e8d3fdff ff48c1fd  SL).H........H..
+ 1230 03741b31 db0f1f00 4c89fa4c 89f64489  .t.1....L..L..D.
+ 1240 ef41ff14 dc4883c3 014839dd 75ea4883  .A...H...H9.u.H.
+ 1250 c4085b5d 415c415d 415e415f c30f1f00  ..[]A\A]A^A_....
+ 1260 c3                                   .               
+Contents of section .fini:
+ 1264 4883ec08 4883c408 c3                 H...H....       
+Contents of section .rodata:
+ 2000 01000200 68656c6c 6f202573 0a007573  ....hello %s..us
+ 2010 6167653a 20257320 4e414d45 2e2e2e0a  age: %s NAME....
+ 2020 00                                   .               
+Contents of section .eh_frame_hdr:
+ 2024 011b033b 40000000 07000000 fcefffff  ...;@...........
+ 2034 8c000000 2cf0ffff b4000000 3cf0ffff  ....,.......<...
+ 2044 5c000000 21f1ffff cc000000 50f1ffff  \...!.......P...
+ 2054 ec000000 dcf1ffff 0c010000 3cf2ffff  ............<...
+ 2064 54010000                             T...            
+Contents of section .eh_frame:
+ 2068 14000000 00000000 017a5200 01781001  .........zR..x..
+ 2078 1b0c0708 90010710 14000000 1c000000  ................
+ 2088 d8efffff 2b000000 00000000 00000000  ....+...........
+ 2098 14000000 00000000 017a5200 01781001  .........zR..x..
+ 20a8 1b0c0708 90010000 24000000 1c000000  ........$.......
+ 20b8 68efffff 30000000 000e1046 0e184a0f  h...0......F..J.
+ 20c8 0b770880 003f1a3b 2a332422 00000000  .w...?.;*3$"....
+ 20d8 14000000 44000000 70efffff 08000000  ....D...p.......
+ 20e8 00000000 00000000 1c000000 5c000000  ............\...
+ 20f8 4df0ffff 2f000000 00410e10 8602430d  M.../....A....C.
+ 2108 066a0c07 08000000 1c000000 7c000000  .j..........|...
+ 2118 5cf0ffff 86000000 00410e10 8602430d  \........A....C.
+ 2128 0602810c 07080000 44000000 9c000000  ........D.......
+ 2138 c8f0ffff 5d000000 00420e10 8f02450e  ....]....B....E.
+ 2148 188e0345 0e208d04 450e288c 05480e30  ...E. ..E.(..H.0
+ 2158 8606480e 38830747 0e406a0e 38410e30  ..H.8..G.@j.8A.0
+ 2168 410e2842 0e20420e 18420e10 420e0800  A.(B. B..B..B...
+ 2178 10000000 e4000000 e0f0ffff 01000000  ................
+ 2188 00000000 00000000                    ........        
+Contents of section .init_array:
+ 3de8 40110000 00000000                    @.......        
+Contents of section .fini_array:
+ 3df0 00110000 00000000                    ........        
+Contents of section .dynamic:
+ 3df8 01000000 00000000 01000000 00000000  ................
+ 3e08 0c000000 00000000 00100000 00000000  ................
+ 3e18 0d000000 00000000 64120000 00000000  ........d.......
+ 3e28 19000000 00000000 e83d0000 00000000  .........=......
+ 3e38 1b000000 00000000 08000000 00000000  ................
+ 3e48 1a000000 00000000 f03d0000 00000000  .........=......
+ 3e58 1c000000 00000000 08000000 00000000  ................
+ 3e68 f5feff6f 00000000 08030000 00000000  ...o............
+ 3e78 05000000 00000000 28040000 00000000  ........(.......
+ 3e88 06000000 00000000 38030000 00000000  ........8.......
+ 3e98 0a000000 00000000 98000000 00000000  ................
+ 3ea8 0b000000 00000000 18000000 00000000  ................
+ 3eb8 15000000 00000000 00000000 00000000  ................
+ 3ec8 03000000 00000000 00400000 00000000  .........@......
+ 3ed8 02000000 00000000 30000000 00000000  ........0.......
+ 3ee8 14000000 00000000 07000000 00000000  ................
+ 3ef8 17000000 00000000 e8050000 00000000  ................
+ 3f08 07000000 00000000 f8040000 00000000  ................
+ 3f18 08000000 00000000 f0000000 00000000  ................
+ 3f28 09000000 00000000 18000000 00000000  ................
+ 3f38 fbffff6f 00000000 00000008 00000000  ...o............
+ 3f48 feffff6f 00000000 d8040000 00000000  ...o............
+ 3f58 ffffff6f 00000000 01000000 00000000  ...o............
+ 3f68 f0ffff6f 00000000 c0040000 00000000  ...o............
+ 3f78 f9ffff6f 00000000 03000000 00000000  ...o............
+ 3f88 00000000 00000000 00000000 00000000  ................
+ 3f98 00000000 00000000 00000000 00000000  ................
+ 3fa8 00000000 00000000 00000000 00000000  ................
+ 3fb8 00000000 00000000 00000000 00000000  ................
+ 3fc8 00000000 00000000 00000000 00000000  ................
+Contents of section .got:
+ 3fd8 00000000 00000000 00000000 00000000  ................
+ 3fe8 00000000 00000000 00000000 00000000  ................
+ 3ff8 00000000 00000000                    ........        
+Contents of section .got.plt:
+ 4000 f83d0000 00000000 00000000 00000000  .=..............
+ 4010 00000000 00000000 36100000 00000000  ........6.......
+ 4020 46100000 00000000                    F.......        
+Contents of section .data:
+ 4028 00000000 00000000 30400000 00000000  ........0@......
+Contents of section .comment:
+ 0000 4743433a 20284465 6269616e 20382e33  GCC: (Debian 8.3
+ 0010 2e302d36 2920382e 332e3000           .0-6) 8.3.0.    
+Contents of section .debug_aranges:
+ 0000 2c000000 02000000 00000800 00000000  ,...............
+ 0010 45110000 00000000 b5000000 00000000  E...............
+ 0020 00000000 00000000 00000000 00000000  ................
+Contents of section .debug_info:
+ 0000 58030000 04000000 00000801 e0000000  X...............
+ 0010 0c3b0200 00ad0000 00451100 00000000  .;.......E......
+ 0020 00b50000 00000000 00000000 00022f00  ............../.
+ 0030 000002d8 17390000 00030807 9d010000  .....9..........
+ 0040 030407a2 01000004 08030108 17010000  ................
+ 0050 03020764 01000003 01061901 00000302  ...d............
+ 0060 05250000 00050405 696e7400 0308058d  .%......int.....
+ 0070 00000002 c7010000 0396196c 00000002  ...........l....
+ 0080 bd010000 03971b6c 00000006 08910000  .......l........
+ 0090 00030106 20010000 07910000 0008d700  .... ...........
+ 00a0 0000d804 31082402 00000944 00000004  ....1.$....D....
+ 00b0 33076500 00000009 57010000 0436098b  3.e.....W....6..
+ 00c0 00000008 09610000 00043709 8b000000  .....a....7.....
+ 00d0 10090802 00000438 098b0000 0018093f  .......8.......?
+ 00e0 01000004 39098b00 00002009 36000000  ....9..... .6...
+ 00f0 043a098b 00000028 09af0100 00043b09  .:.....(......;.
+ 0100 8b000000 30094b00 0000043c 098b0000  ....0.K....<....
+ 0110 00380900 00000004 3d098b00 00004009  .8......=.....@.
+ 0120 25020000 0440098b 00000048 09e40100  %....@.....H....
+ 0130 00044109 8b000000 50091800 00000442  ..A.....P......B
+ 0140 098b0000 00580958 00000004 44163d02  .....X.X....D.=.
+ 0150 00006009 cf010000 04461443 02000068  ..`......F.C...h
+ 0160 09330200 00044807 65000000 7009fa01  .3....H.e...p...
+ 0170 00000449 07650000 0074090c 00000004  ...I.e...t......
+ 0180 4a0b7300 00007809 9c000000 044d1250  J.s...x......M.P
+ 0190 00000080 09160200 00044e0f 57000000  ..........N.W...
+ 01a0 82093501 0000044f 08490200 00830996  ..5....O.I......
+ 01b0 00000004 510f5902 00008809 10000000  ....Q.Y.........
+ 01c0 04590d7f 00000090 09940100 00045b17  .Y............[.
+ 01d0 64020000 9809d901 0000045c 196f0200  d..........\.o..
+ 01e0 00a0097c 01000004 5d144302 0000a809  ...|....].C.....
+ 01f0 6e000000 045e0947 000000b0 098a0100  n....^.G........
+ 0200 00045f0a 2d000000 b8090202 00000460  .._.-..........`
+ 0210 07650000 00c0094e 01000004 62087502  .e.....N....b.u.
+ 0220 0000c400 02db0000 00050719 9d000000  ................
+ 0230 0a4a0200 00042b0e 0b2a0100 00060838  .J....+..*.....8
+ 0240 02000006 089d0000 000c9100 00005902  ..............Y.
+ 0250 00000d39 00000000 00060830 0200000b  ...9.......0....
+ 0260 91010000 06085f02 00000bd6 01000006  ......_.........
+ 0270 086a0200 000c9100 00008502 00000d39  .j.............9
+ 0280 00000013 000ef401 00000689 0e910200  ................
+ 0290 00060824 0200000e 43020000 068a0e91  ...$....C.......
+ 02a0 0200000e 81000000 068b0e91 02000003  ................
+ 02b0 08058800 00000f77 01000001 0e016500  .......w......e.
+ 02c0 00007411 00000000 00008600 00000000  ..t.............
+ 02d0 0000019c 16030000 10250100 00010e0a  .........%......
+ 02e0 65000000 02915c10 a8000000 010e1c16  e.....\.........
+ 02f0 03000002 915011b5 11000000 0000003e  .....P.........>
+ 0300 00000000 00000012 69000114 0c650000  ........i....e..
+ 0310 0002916c 00000608 1c030000 06089800  ...l............
+ 0320 0000137b 00000001 06014511 00000000  ...{......E.....
+ 0330 00002f00 00000000 0000019c 146f7574  ../..........out
+ 0340 0001060d 91020000 02916814 77686f00  ..........h.who.
+ 0350 01061e1c 03000002 91600000           .........`..    
+Contents of section .debug_abbrev:
+ 0000 01110125 0e130b03 0e1b0e11 01120710  ...%............
+ 0010 17000002 1600030e 3a0b3b0b 390b4913  ........:.;.9.I.
+ 0020 00000324 000b0b3e 0b030e00 00040f00  ...$...>........
+ 0030 0b0b0000 0524000b 0b3e0b03 08000006  .....$...>......
+ 0040 0f000b0b 49130000 07260049 13000008  ....I....&.I....
+ 0050 1301030e 0b0b3a0b 3b0b390b 01130000  ......:.;.9.....
+ 0060 090d0003 0e3a0b3b 0b390b49 13380b00  .....:.;.9.I.8..
+ 0070 000a1600 030e3a0b 3b0b390b 00000b13  ......:.;.9.....
+ 0080 00030e3c 1900000c 01014913 01130000  ...<......I.....
+ 0090 0d210049 132f0b00 000e3400 030e3a0b  .!.I./....4...:.
+ 00a0 3b0b390b 49133f19 3c190000 0f2e013f  ;.9.I.?.<......?
+ 00b0 19030e3a 0b3b0b39 0b271949 13110112  ...:.;.9.'.I....
+ 00c0 07401896 42190113 00001005 00030e3a  .@..B..........:
+ 00d0 0b3b0b39 0b491302 18000011 0b011101  .;.9.I..........
+ 00e0 12070000 12340003 083a0b3b 0b390b49  .....4...:.;.9.I
+ 00f0 13021800 00132e01 030e3a0b 3b0b390b  ..........:.;.9.
+ 0100 27191101 12074018 96421900 00140500  '.....@..B......
+ 0110 03083a0b 3b0b390b 49130218 000000    ..:.;.9.I...... 
+Contents of section .debug_line:
+ 0000 30010000 0200dc00 00000101 fb0e0d00  0...............
+ 0010 01010101 00000001 0000012f 7573722f  .........../usr/
+ 0020 6c69622f 6763632f 7838365f 36342d6c  lib/gcc/x86_64-l
+ 0030 696e7578 2d676e75 2f382f69 6e636c75  inux-gnu/8/inclu
+ 0040 6465002f 7573722f 696e636c 7564652f  de./usr/include/
+ 0050 7838365f 36342d6c 696e7578 2d676e75  x86_64-linux-gnu
+ 0060 2f626974 73002f75 73722f69 6e636c75  /bits./usr/inclu
+ 0070 64652f78 38365f36 342d6c69 6e75782d  de/x86_64-linux-
+ 0080 676e752f 62697473 2f747970 6573002f  gnu/bits/types./
+ 0090 7573722f 696e636c 75646500 0068656c  usr/include..hel
+ 00a0 6c6f2e63 00000000 73746464 65662e68  lo.c....stddef.h
+ 00b0 00010000 74797065 732e6800 02000073  ....types.h....s
+ 00c0 74727563 745f4649 4c452e68 00030000  truct_FILE.h....
+ 00d0 46494c45 2e680003 00007374 64696f2e  FILE.h....stdio.
+ 00e0 68000400 00000501 00090245 11000000  h..........E....
+ 00f0 00000018 0503f305 0108ad42 0506e505  ...........B....
+ 0100 05670222 13050ca0 05037405 17000204  .g."......t.....
+ 0110 032f0505 00020403 083c051e 00020403  ./.......<......
+ 0120 08490503 00020401 4a050a85 05015902  .I......J.....Y.
+ 0130 02000101                             ....            
+Contents of section .debug_str:
+ 0000 5f494f5f 6275665f 656e6400 5f6f6c64  _IO_buf_end._old
+ 0010 5f6f6666 73657400 5f494f5f 73617665  _offset._IO_save
+ 0020 5f656e64 0073686f 72742069 6e740073  _end.short int.s
+ 0030 697a655f 74005f49 4f5f7772 6974655f  ize_t._IO_write_
+ 0040 70747200 5f666c61 6773005f 494f5f62  ptr._flags._IO_b
+ 0050 75665f62 61736500 5f6d6172 6b657273  uf_base._markers
+ 0060 005f494f 5f726561 645f656e 64005f66  ._IO_read_end._f
+ 0070 72656572 65735f62 75660068 656c6c6f  reeres_buf.hello
+ 0080 00737464 65727200 6c6f6e67 206c6f6e  .stderr.long lon
+ 0090 6720696e 74005f6c 6f636b00 5f637572  g int._lock._cur
+ 00a0 5f636f6c 756d6e00 61726776 002f686f  _column.argv./ho
+ 00b0 6d652f63 79616e67 35382f69 32323061  me/cyang58/i220a
+ 00c0 2f737562 6d69742f 6c616237 2f657865  /submit/lab7/exe
+ 00d0 72636973 6573005f 494f5f46 494c4500  rcises._IO_FILE.
+ 00e0 474e5520 43313120 382e332e 30202d6d  GNU C11 8.3.0 -m
+ 00f0 74756e65 3d67656e 65726963 202d6d61  tune=generic -ma
+ 0100 7263683d 7838362d 3634202d 67202d73  rch=x86-64 -g -s
+ 0110 74643d63 31310075 6e736967 6e656420  td=c11.unsigned 
+ 0120 63686172 00617267 63005f49 4f5f6d61  char.argc._IO_ma
+ 0130 726b6572 005f7368 6f727462 7566005f  rker._shortbuf._
+ 0140 494f5f77 72697465 5f626173 65005f75  IO_write_base._u
+ 0150 6e757365 6432005f 494f5f72 6561645f  nused2._IO_read_
+ 0160 70747200 73686f72 7420756e 7369676e  ptr.short unsign
+ 0170 65642069 6e74006d 61696e00 5f667265  ed int.main._fre
+ 0180 65726573 5f6c6973 74005f5f 70616435  eres_list.__pad5
+ 0190 005f494f 5f636f64 65637674 006c6f6e  ._IO_codecvt.lon
+ 01a0 6720756e 7369676e 65642069 6e74005f  g unsigned int._
+ 01b0 494f5f77 72697465 5f656e64 005f5f6f  IO_write_end.__o
+ 01c0 66663634 5f74005f 5f6f6666 5f74005f  ff64_t.__off_t._
+ 01d0 63686169 6e005f49 4f5f7769 64655f64  chain._IO_wide_d
+ 01e0 61746100 5f494f5f 6261636b 75705f62  ata._IO_backup_b
+ 01f0 61736500 73746469 6e005f66 6c616773  ase.stdin._flags
+ 0200 32005f6d 6f646500 5f494f5f 72656164  2._mode._IO_read
+ 0210 5f626173 65005f76 7461626c 655f6f66  _base._vtable_of
+ 0220 66736574 005f494f 5f736176 655f6261  fset._IO_save_ba
+ 0230 7365005f 66696c65 6e6f0068 656c6c6f  se._fileno.hello
+ 0240 2e630073 74646f75 74005f49 4f5f6c6f  .c.stdout._IO_lo
+ 0250 636b5f74 00                          ck_t.           
+
+Disassembly of section .init:
+
+0000000000001000 <_init>:
+    1000:	48 83 ec 08          	sub    $0x8,%rsp
+    1004:	48 8b 05 dd 2f 00 00 	mov    0x2fdd(%rip),%rax        # 3fe8 <__gmon_start__>
+    100b:	48 85 c0             	test   %rax,%rax
+    100e:	74 02                	je     1012 <_init+0x12>
+    1010:	ff d0                	callq  *%rax
+    1012:	48 83 c4 08          	add    $0x8,%rsp
+    1016:	c3                   	retq   
+
+Disassembly of section .plt:
+
+0000000000001020 <.plt>:
+    1020:	ff 35 e2 2f 00 00    	pushq  0x2fe2(%rip)        # 4008 <_GLOBAL_OFFSET_TABLE_+0x8>
+    1026:	ff 25 e4 2f 00 00    	jmpq   *0x2fe4(%rip)        # 4010 <_GLOBAL_OFFSET_TABLE_+0x10>
+    102c:	0f 1f 40 00          	nopl   0x0(%rax)
+
+0000000000001030 <fprintf@plt>:
+    1030:	ff 25 e2 2f 00 00    	jmpq   *0x2fe2(%rip)        # 4018 <fprintf@GLIBC_2.2.5>
+    1036:	68 00 00 00 00       	pushq  $0x0
+    103b:	e9 e0 ff ff ff       	jmpq   1020 <.plt>
+
+0000000000001040 <exit@plt>:
+    1040:	ff 25 da 2f 00 00    	jmpq   *0x2fda(%rip)        # 4020 <exit@GLIBC_2.2.5>
+    1046:	68 01 00 00 00       	pushq  $0x1
+    104b:	e9 d0 ff ff ff       	jmpq   1020 <.plt>
+
+Disassembly of section .plt.got:
+
+0000000000001050 <__cxa_finalize@plt>:
+    1050:	ff 25 a2 2f 00 00    	jmpq   *0x2fa2(%rip)        # 3ff8 <__cxa_finalize@GLIBC_2.2.5>
+    1056:	66 90                	xchg   %ax,%ax
+
+Disassembly of section .text:
+
+0000000000001060 <_start>:
+    1060:	31 ed                	xor    %ebp,%ebp
+    1062:	49 89 d1             	mov    %rdx,%r9
+    1065:	5e                   	pop    %rsi
+    1066:	48 89 e2             	mov    %rsp,%rdx
+    1069:	48 83 e4 f0          	and    $0xfffffffffffffff0,%rsp
+    106d:	50                   	push   %rax
+    106e:	54                   	push   %rsp
+    106f:	4c 8d 05 ea 01 00 00 	lea    0x1ea(%rip),%r8        # 1260 <__libc_csu_fini>
+    1076:	48 8d 0d 83 01 00 00 	lea    0x183(%rip),%rcx        # 1200 <__libc_csu_init>
+    107d:	48 8d 3d f0 00 00 00 	lea    0xf0(%rip),%rdi        # 1174 <main>
+    1084:	ff 15 56 2f 00 00    	callq  *0x2f56(%rip)        # 3fe0 <__libc_start_main@GLIBC_2.2.5>
+    108a:	f4                   	hlt    
+    108b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+0000000000001090 <deregister_tm_clones>:
+    1090:	48 8d 3d a1 2f 00 00 	lea    0x2fa1(%rip),%rdi        # 4038 <__TMC_END__>
+    1097:	48 8d 05 9a 2f 00 00 	lea    0x2f9a(%rip),%rax        # 4038 <__TMC_END__>
+    109e:	48 39 f8             	cmp    %rdi,%rax
+    10a1:	74 15                	je     10b8 <deregister_tm_clones+0x28>
+    10a3:	48 8b 05 2e 2f 00 00 	mov    0x2f2e(%rip),%rax        # 3fd8 <_ITM_deregisterTMCloneTable>
+    10aa:	48 85 c0             	test   %rax,%rax
+    10ad:	74 09                	je     10b8 <deregister_tm_clones+0x28>
+    10af:	ff e0                	jmpq   *%rax
+    10b1:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+    10b8:	c3                   	retq   
+    10b9:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+
+00000000000010c0 <register_tm_clones>:
+    10c0:	48 8d 3d 71 2f 00 00 	lea    0x2f71(%rip),%rdi        # 4038 <__TMC_END__>
+    10c7:	48 8d 35 6a 2f 00 00 	lea    0x2f6a(%rip),%rsi        # 4038 <__TMC_END__>
+    10ce:	48 29 fe             	sub    %rdi,%rsi
+    10d1:	48 c1 fe 03          	sar    $0x3,%rsi
+    10d5:	48 89 f0             	mov    %rsi,%rax
+    10d8:	48 c1 e8 3f          	shr    $0x3f,%rax
+    10dc:	48 01 c6             	add    %rax,%rsi
+    10df:	48 d1 fe             	sar    %rsi
+    10e2:	74 14                	je     10f8 <register_tm_clones+0x38>
+    10e4:	48 8b 05 05 2f 00 00 	mov    0x2f05(%rip),%rax        # 3ff0 <_ITM_registerTMCloneTable>
+    10eb:	48 85 c0             	test   %rax,%rax
+    10ee:	74 08                	je     10f8 <register_tm_clones+0x38>
+    10f0:	ff e0                	jmpq   *%rax
+    10f2:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+    10f8:	c3                   	retq   
+    10f9:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+
+0000000000001100 <__do_global_dtors_aux>:
+    1100:	80 3d 61 2f 00 00 00 	cmpb   $0x0,0x2f61(%rip)        # 4068 <completed.7325>
+    1107:	75 2f                	jne    1138 <__do_global_dtors_aux+0x38>
+    1109:	55                   	push   %rbp
+    110a:	48 83 3d e6 2e 00 00 	cmpq   $0x0,0x2ee6(%rip)        # 3ff8 <__cxa_finalize@GLIBC_2.2.5>
+    1111:	00 
+    1112:	48 89 e5             	mov    %rsp,%rbp
+    1115:	74 0c                	je     1123 <__do_global_dtors_aux+0x23>
+    1117:	48 8b 3d 12 2f 00 00 	mov    0x2f12(%rip),%rdi        # 4030 <__dso_handle>
+    111e:	e8 2d ff ff ff       	callq  1050 <__cxa_finalize@plt>
+    1123:	e8 68 ff ff ff       	callq  1090 <deregister_tm_clones>
+    1128:	c6 05 39 2f 00 00 01 	movb   $0x1,0x2f39(%rip)        # 4068 <completed.7325>
+    112f:	5d                   	pop    %rbp
+    1130:	c3                   	retq   
+    1131:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+    1138:	c3                   	retq   
+    1139:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+
+0000000000001140 <frame_dummy>:
+    1140:	e9 7b ff ff ff       	jmpq   10c0 <register_tm_clones>
+
+0000000000001145 <hello>:
+    1145:	55                   	push   %rbp
+    1146:	48 89 e5             	mov    %rsp,%rbp
+    1149:	48 83 ec 10          	sub    $0x10,%rsp
+    114d:	48 89 7d f8          	mov    %rdi,-0x8(%rbp)
+    1151:	48 89 75 f0          	mov    %rsi,-0x10(%rbp)
+    1155:	48 8b 55 f0          	mov    -0x10(%rbp),%rdx
+    1159:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+    115d:	48 8d 35 a0 0e 00 00 	lea    0xea0(%rip),%rsi        # 2004 <_IO_stdin_used+0x4>
+    1164:	48 89 c7             	mov    %rax,%rdi
+    1167:	b8 00 00 00 00       	mov    $0x0,%eax
+    116c:	e8 bf fe ff ff       	callq  1030 <fprintf@plt>
+    1171:	90                   	nop
+    1172:	c9                   	leaveq 
+    1173:	c3                   	retq   
+
+0000000000001174 <main>:
+    1174:	55                   	push   %rbp
+    1175:	48 89 e5             	mov    %rsp,%rbp
+    1178:	48 83 ec 20          	sub    $0x20,%rsp
+    117c:	89 7d ec             	mov    %edi,-0x14(%rbp)
+    117f:	48 89 75 e0          	mov    %rsi,-0x20(%rbp)
+    1183:	83 7d ec 01          	cmpl   $0x1,-0x14(%rbp)
+    1187:	75 2c                	jne    11b5 <main+0x41>
+    1189:	48 8b 45 e0          	mov    -0x20(%rbp),%rax
+    118d:	48 8b 10             	mov    (%rax),%rdx
+    1190:	48 8b 05 c9 2e 00 00 	mov    0x2ec9(%rip),%rax        # 4060 <stderr@@GLIBC_2.2.5>
+    1197:	48 8d 35 70 0e 00 00 	lea    0xe70(%rip),%rsi        # 200e <_IO_stdin_used+0xe>
+    119e:	48 89 c7             	mov    %rax,%rdi
+    11a1:	b8 00 00 00 00       	mov    $0x0,%eax
+    11a6:	e8 85 fe ff ff       	callq  1030 <fprintf@plt>
+    11ab:	bf ef be ad de       	mov    $0xdeadbeef,%edi
+    11b0:	e8 8b fe ff ff       	callq  1040 <exit@plt>
+    11b5:	c7 45 fc 01 00 00 00 	movl   $0x1,-0x4(%rbp)
+    11bc:	eb 2d                	jmp    11eb <main+0x77>
+    11be:	8b 45 fc             	mov    -0x4(%rbp),%eax
+    11c1:	48 98                	cltq   
+    11c3:	48 8d 14 c5 00 00 00 	lea    0x0(,%rax,8),%rdx
+    11ca:	00 
+    11cb:	48 8b 45 e0          	mov    -0x20(%rbp),%rax
+    11cf:	48 01 d0             	add    %rdx,%rax
+    11d2:	48 8b 10             	mov    (%rax),%rdx
+    11d5:	48 8b 05 64 2e 00 00 	mov    0x2e64(%rip),%rax        # 4040 <stdout@@GLIBC_2.2.5>
+    11dc:	48 89 d6             	mov    %rdx,%rsi
+    11df:	48 89 c7             	mov    %rax,%rdi
+    11e2:	e8 5e ff ff ff       	callq  1145 <hello>
+    11e7:	83 45 fc 01          	addl   $0x1,-0x4(%rbp)
+    11eb:	8b 45 fc             	mov    -0x4(%rbp),%eax
+    11ee:	3b 45 ec             	cmp    -0x14(%rbp),%eax
+    11f1:	7c cb                	jl     11be <main+0x4a>
+    11f3:	b8 00 00 00 00       	mov    $0x0,%eax
+    11f8:	c9                   	leaveq 
+    11f9:	c3                   	retq   
+    11fa:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+
+0000000000001200 <__libc_csu_init>:
+    1200:	41 57                	push   %r15
+    1202:	49 89 d7             	mov    %rdx,%r15
+    1205:	41 56                	push   %r14
+    1207:	49 89 f6             	mov    %rsi,%r14
+    120a:	41 55                	push   %r13
+    120c:	41 89 fd             	mov    %edi,%r13d
+    120f:	41 54                	push   %r12
+    1211:	4c 8d 25 d0 2b 00 00 	lea    0x2bd0(%rip),%r12        # 3de8 <__frame_dummy_init_array_entry>
+    1218:	55                   	push   %rbp
+    1219:	48 8d 2d d0 2b 00 00 	lea    0x2bd0(%rip),%rbp        # 3df0 <__init_array_end>
+    1220:	53                   	push   %rbx
+    1221:	4c 29 e5             	sub    %r12,%rbp
+    1224:	48 83 ec 08          	sub    $0x8,%rsp
+    1228:	e8 d3 fd ff ff       	callq  1000 <_init>
+    122d:	48 c1 fd 03          	sar    $0x3,%rbp
+    1231:	74 1b                	je     124e <__libc_csu_init+0x4e>
+    1233:	31 db                	xor    %ebx,%ebx
+    1235:	0f 1f 00             	nopl   (%rax)
+    1238:	4c 89 fa             	mov    %r15,%rdx
+    123b:	4c 89 f6             	mov    %r14,%rsi
+    123e:	44 89 ef             	mov    %r13d,%edi
+    1241:	41 ff 14 dc          	callq  *(%r12,%rbx,8)
+    1245:	48 83 c3 01          	add    $0x1,%rbx
+    1249:	48 39 dd             	cmp    %rbx,%rbp
+    124c:	75 ea                	jne    1238 <__libc_csu_init+0x38>
+    124e:	48 83 c4 08          	add    $0x8,%rsp
+    1252:	5b                   	pop    %rbx
+    1253:	5d                   	pop    %rbp
+    1254:	41 5c                	pop    %r12
+    1256:	41 5d                	pop    %r13
+    1258:	41 5e                	pop    %r14
+    125a:	41 5f                	pop    %r15
+    125c:	c3                   	retq   
+    125d:	0f 1f 00             	nopl   (%rax)
+
+0000000000001260 <__libc_csu_fini>:
+    1260:	c3                   	retq   
+
+Disassembly of section .fini:
+
+0000000000001264 <_fini>:
+    1264:	48 83 ec 08          	sub    $0x8,%rsp
+    1268:	48 83 c4 08          	add    $0x8,%rsp
+    126c:	c3                   	retq   
+cyang58@remote06:~/i220a/submit/lab7/exercises$ objdump -d hello | grep  -A40 main.:
+0000000000001174 <main>:
+    1174:	55                   	push   %rbp
+    1175:	48 89 e5             	mov    %rsp,%rbp
+    1178:	48 83 ec 20          	sub    $0x20,%rsp
+    117c:	89 7d ec             	mov    %edi,-0x14(%rbp)
+    117f:	48 89 75 e0          	mov    %rsi,-0x20(%rbp)
+    1183:	83 7d ec 01          	cmpl   $0x1,-0x14(%rbp)
+    1187:	75 2c                	jne    11b5 <main+0x41>
+    1189:	48 8b 45 e0          	mov    -0x20(%rbp),%rax
+    118d:	48 8b 10             	mov    (%rax),%rdx
+    1190:	48 8b 05 c9 2e 00 00 	mov    0x2ec9(%rip),%rax        # 4060 <stderr@@GLIBC_2.2.5>
+    1197:	48 8d 35 70 0e 00 00 	lea    0xe70(%rip),%rsi        # 200e <_IO_stdin_used+0xe>
+    119e:	48 89 c7             	mov    %rax,%rdi
+    11a1:	b8 00 00 00 00       	mov    $0x0,%eax
+    11a6:	e8 85 fe ff ff       	callq  1030 <fprintf@plt>
+    11ab:	bf ef be ad de       	mov    $0xdeadbeef,%edi
+    11b0:	e8 8b fe ff ff       	callq  1040 <exit@plt>
+    11b5:	c7 45 fc 01 00 00 00 	movl   $0x1,-0x4(%rbp)
+    11bc:	eb 2d                	jmp    11eb <main+0x77>
+    11be:	8b 45 fc             	mov    -0x4(%rbp),%eax
+    11c1:	48 98                	cltq   
+    11c3:	48 8d 14 c5 00 00 00 	lea    0x0(,%rax,8),%rdx
+    11ca:	00 
+    11cb:	48 8b 45 e0          	mov    -0x20(%rbp),%rax
+    11cf:	48 01 d0             	add    %rdx,%rax
+    11d2:	48 8b 10             	mov    (%rax),%rdx
+    11d5:	48 8b 05 64 2e 00 00 	mov    0x2e64(%rip),%rax        # 4040 <stdout@@GLIBC_2.2.5>
+    11dc:	48 89 d6             	mov    %rdx,%rsi
+    11df:	48 89 c7             	mov    %rax,%rdi
+    11e2:	e8 5e ff ff ff       	callq  1145 <hello>
+    11e7:	83 45 fc 01          	addl   $0x1,-0x4(%rbp)
+    11eb:	8b 45 fc             	mov    -0x4(%rbp),%eax
+    11ee:	3b 45 ec             	cmp    -0x14(%rbp),%eax
+    11f1:	7c cb                	jl     11be <main+0x4a>
+    11f3:	b8 00 00 00 00       	mov    $0x0,%eax
+    11f8:	c9                   	leaveq 
+    11f9:	c3                   	retq   
+    11fa:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+
+0000000000001200 <__libc_csu_init>:
+    1200:	41 57                	push   %r15
+cyang58@remote06:~/i220a/submit/lab7/exercises$ ls -l hello
+-rwxr-x--- 1 cyang58 cyang58 19376 Oct 18 16:39 hello
+cyang58@remote06:~/i220a/submit/lab7/exercises$ strip hello
+cyang58@remote06:~/i220a/submit/lab7/exercises$ ls -l hello
+-rwxr-x--- 1 cyang58 cyang58 14416 Oct 18 16:40 hello
+cyang58@remote06:~/i220a/submit/lab7/exercises$ clean
+bash: clean: command not found
+cyang58@remote06:~/i220a/submit/lab7/exercises$ klean
+bash: klean: command not found
+cyang58@remote06:~/i220a/submit/lab7/exercises$ cle[K[K[Kclear
+[H[2J[3Jcyang58@remote06:~/i220a/submit/lab7/exercises$ ls
+hello  hello.c	hello.objdump  hello.s	Makefile  mystery.o
+cyang58@remote06:~/i220a/submit/lab7/exercises$ cat mystery.o 
+ELF          >                    p          @     @   UHâÂâ}¸ãE¸%ˇˇ …√   %  .?:;'I@   :;I
+  $ >   c                                            _                       _   v _   ël      9        ˚       mystery.c      	        uÉ                 w               w               v               w                        g   -   mystery     ,                                            mystery unsigned int mystery.c GNU C 4.5.2 /home/umrigar/public_html/lab4/files/ex3  GCC: (Ubuntu/Linaro 4.5.2-8ubuntu4) 4.5.2            zR xê                ACÜL    .symtab .strtab .shstrtab .text .data .bss .debug_abbrev .rela.debug_info .rela.debug_line .debug_loc .rela.debug_pubnames .rela.debug_aranges .debug_str .comment .note.GNU-stack .rela.eh_frame                                                                                           @                                     !                     T                                      '                     T                                      ,                      T       G                              ?                      õ       g                              :                      à
+                                 P                            =                              K                      ®                                 \                      ?      `                              l                      ü                                    g                      ¿                
+                 Å                      Ω      0                              |                      ÿ      0                           ê      0               Ì      T                             õ      0               A      +                             §                      l                                     π                     p      8                              ¥                                                                             ®      √                                                          Ä                          	                      p
+                                                                Òˇ                                                                                                                                                         	                      
+                                                                                                                                                    mystery.c mystery             
+                     
+                    
+                    
+      +                            !                    )       
+              /       
+              :                     B                    J       
+              b       
+             -                            
+                     
+                                                         cyang58@remote06:~/i220a/submit/lab7/exercises$ xterm-256colorxterm-256colorxterm-256colorxterm-256color^C
+cyang58@remote06:~/i220a/submit/lab7/exercises$ clear
+[H[2J[3Jcyang58@remote06:~/i220a/submit/lab7/exercises$ clearat mystery.o lear[K[K[K[K[K[Kmakke[K[Ke clean
+rm -f hello hello.s *.objdump *~
+cyang58@remote06:~/i220a/submit/lab7/exercises$ ls
+hello.c  Makefile  mystery.o
+cyang58@remote06:~/i220a/submit/lab7/exercises$ objdump -d mystery.o > mystery.objdump
+cyang58@remote06:~/i220a/submit/lab7/exercises$ ls
+hello.c  Makefile  mystery.o  mystery.objdump
+cyang58@remote06:~/i220a/submit/lab7/exercises$ vim mystery.objdump
+[?1000h[?2004h[?1049h[22;0;0t[?1h=[?2004h[1;82r[?12h[?12l[22;2t[22;1t[27m[23m[29m[m[H[2J[?25l[82;1H"mystery.objdump" 14L, 411C[2;1H‚ñΩ[6n[2;1H  [1;1H[>c]10;?]11;?[2;1Hmystery.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <mystery>:
+   0:   55[22Cpush   %rbp
+   1:   48 89 e5[16Cmov    %rsp,%rbp
+   4:   89 7d fc[16Cmov    %edi,-0x4(%rbp)
+   7:   8b 45 fc[16Cmov    -0x4(%rbp),%eax
+   a:   25 ff ff 7f 00[10Cand    $0x7fffff,%eax
+   f:   c9[22Cleaveq
+  10:   c3[22Cretq
+[1m[34m~                                                                                                                             [16;1H~                                                                                                                             [17;1H~                                                                                                                             [18;1H~                                                                                                                             [19;1H~                                                                                                                             [20;1H~                                                                                                                             [21;1H~                                                                                                                             [22;1H~                                                                                                                             [23;1H~                                                                                                                             [24;1H~                                                                                                                             [25;1H~                                                                                                                             [26;1H~                                                                                                                             [27;1H~                                                                                                                             [28;1H~                                                                                                                             [29;1H~                                                                                                                             [30;1H~                                                                                                                             [31;1H~                                                                                                                             [32;1H~                                                                                                                             [33;1H~                                                                                                                             [34;1H~                                                                                                                             [35;1H~                                                                                                                             [36;1H~                                                                                                                             [37;1H~                                                                                                                             [38;1H~                                                                                                                             [39;1H~                                                                                                                             [40;1H~                                                                                                                             [41;1H~                                                                                                                             [42;1H~                                                                                                                             [43;1H~                                                                                                                             [44;1H~                                                                                                                             [45;1H~                                                                                                                             [46;1H~                                                                                                                             [47;1H~                                                                                                                             [48;1H~                                                                                                                             [49;1H~                                                                                                                             [50;1H~                                                                                                                             [51;1H~                                                                                                                             [52;1H~                                                                                                                             [53;1H~                                                                                                                             [54;1H~                                                                                                                             [55;1H~                                                                                                                             [56;1H~                                                                                                                             [57;1H~                                                                                                                             [58;1H~                                                                                                                             [59;1H~                                                                                                                             [60;1H~                                                                                                                             [61;1H~                                                                                                                             [62;1H~                                                                                                                             [63;1H~                                                                                                                             [64;1H~                                                                                                                             [65;1H~                                                                                                                             [66;1H~                                                                                                                             [67;1H~                                                                                                                             [68;1H~                                                                                                                             [69;1H~                                                                                                                             [70;1H~                                                                                                                             [71;1H~                                                                                                                             [72;1H~                                                                                                                             [73;1H~                                                                                                                             [74;1H~                                                                                                                             [75;1H~                                                                                                                             [76;1H~                                                                                                                             [77;1H~                                                                                                                             [78;1H~                                                                                                                             [79;1H~                                                                                                                             [80;1H~                                                                                                                             [81;1H~                                                                                                                             [m[82;109H1,0-1[9CAll[1;1H[?25h[?1000l[?1002h[?25l[82;109H2,1  [2;1H[?25h[?25l[82;109H3,0-1[3;1H[?25h[?25l[82;99H~@k[3;1H[82;99H   [4;1H[82;109H4[4;1H[?25h[?25l[82;109H5,1  [5;1H[?25h[?25l[82;109H6,0-1[6;1H[?25h[?25l[82;99H~@k[6;1H[82;99H   [7;1H[82;109H7,1  [7;1H[?25h[?25l[82;109H6,0-1[6;1H[?25h[?25l[82;109H5,1  [5;1H[?25h[?25l[82;99H~@k[5;1H[82;99H   [4;1H[82;109H4,0-1[4;1H[?25h[?25l[82;109H3[3;1H[?25h[?25l[82;109H2,1  [2;1H[?25h[?25l[82;99H~@k[2;1H[82;99H   [1;1H[82;109H1,0-1[1;1H[?25h[?25l[82;109H2,1  [2;1H[?25h[?25l[82;109H3,0-1[3;1H[?25h[?25l[82;99H~@k[3;1H[82;99H   [4;1H[82;109H4[4;1H[?25h[?25l[82;109H5,1  [5;1H[?25h[?25l[82;109H6,0-1[6;1H[?25h[?25l[82;99H~@k[6;1H[82;99H   [7;1H[82;109H7,1  [7;1H[?25h[?25l[82;109H8[8;1H[?25h[?25l[82;109H9[9;1H[?25h[?25l[82;99H~@k[9;1H[82;99H   [10;1H[82;109H10,1[10;1H[?25h[?25l[82;110H1[11;1H[?25h[?25l[82;110H2[12;1H[?25h[?25l[82;99H~@k[12;1H[82;99H   [13;1H[82;110H3[13;1H[?25h[?25l[82;1HType  :qa!  and press <Enter> to abandon all changes and exit Vim[82;109H[K[82;109H13,1[10CAll[13;1H[?25h[?25l[82;99H:[13;1H[82;1H[K[82;1H:[?2004h[?25hq[?25l[?25ha[?25l[?25h![?25l[?25h[?25l[?1002l[?2004l[23;2t[23;1t[22;2t[22;1t[23;2t[23;1t[82;1H[K[82;1H[?2004l[?1l>[?25h[?1049l[23;0;0tcyang58@remote06:~/i220a/submit/lab7/exercises$ nano mystery.objdump 
+[?1049h[22;0;0t[1;82r(B[m[4l[?7h[39;49m[?1h=[?1h=[?1h=[?25l[39;49m(B[m[H[2J[80;56H(B[0;7m[ Reading File ](B[m[80;55H(B[0;7m[ Read 14 lines ](B[m[H(B[0;7m  GNU nano 3.2                                           mystery.objdump                                                      [1;125H(B[m[81d(B[0;7m^G(B[m Get Help    (B[0;7m^O(B[m Write Out   (B[0;7m^W(B[m Where Is    (B[0;7m^K(B[m Cut Text    (B[0;7m^J(B[m Justify     (B[0;7m^C(B[m Cur Pos     (B[0;7mM-U(B[m Undo[106G(B[0;7mM-A(B[m Mark Text[82d(B[0;7m^X(B[m Exit[82;16H(B[0;7m^R(B[m Read File   (B[0;7m^\(B[m Replace     (B[0;7m^U(B[m Uncut Text  (B[0;7m^T(B[m To Spell    (B[0;7m^_(B[m Go To Line  (B[0;7mM-E(B[m Redo[106G(B[0;7mM-6(B[m Copy Text[80d[4d[39;49m(B[mmystery.o:     file format elf64-x86-64[7dDisassembly of section .text:[9d0000000000000000 <mystery>:[10;4H0:   55[41m[22X[10;33H[49m(B[mpush   %rbp[11;4H1:   48 89 e5[41m[16X[11;33H[49m(B[mmov    %rsp,%rbp[12;4H4:   89 7d fc[41m[16X[12;33H[49m(B[mmov    %edi,-0x4(%rbp)[13;4H7:   8b 45 fc[41m[16X[13;33H[49m(B[mmov    -0x4(%rbp),%eax[14;4Ha:   25 ff ff 7f 00[41m          [49m(B[mand    $0x7fffff,%eax[15;4Hf:   c9[41m[22X[15;33H[49m(B[mleaveq[16;3H10:   c3[41m[22X[16;33H[49m(B[mretq[3d[?12l[?25h[?25l[80;38H(B[0;7m[ line 1/15 (6%), col 1/1 (100%), char 0/411 (0%) ](B[m[3d[?12l[?25h[?25l[80d[J[82;126H[?12l[?25h[82;1H[?1049l[23;0;0t[?1l>cyang58@remote06:~/i220a/submit/lab7/exercises$ cat mystery.o
+ELF          >                    p          @     @   UHâÂâ}¸ãE¸%ˇˇ …√   %  .?:;'I@   :;I
+  $ >   c                                            _                       _   v _   ël      9        ˚       mystery.c      	        uÉ                 w               w               v               w                        g   -   mystery     ,                                            mystery unsigned int mystery.c GNU C 4.5.2 /home/umrigar/public_html/lab4/files/ex3  GCC: (Ubuntu/Linaro 4.5.2-8ubuntu4) 4.5.2            zR xê                ACÜL    .symtab .strtab .shstrtab .text .data .bss .debug_abbrev .rela.debug_info .rela.debug_line .debug_loc .rela.debug_pubnames .rela.debug_aranges .debug_str .comment .note.GNU-stack .rela.eh_frame                                                                                           @                                     !                     T                                      '                     T                                      ,                      T       G                              ?                      õ       g                              :                      à
+                                 P                            =                              K                      ®                                 \                      ?      `                              l                      ü                                    g                      ¿                
+                 Å                      Ω      0                              |                      ÿ      0                           ê      0               Ì      T                             õ      0               A      +                             §                      l                                     π                     p      8                              ¥                                                                             ®      √                                                          Ä                          	                      p
+                                                                Òˇ                                                                                                                                                         	                      
+                                                                                                                                                    mystery.c mystery             
+                     
+                    
+                    
+      +                            !                    )       
+              /       
+              :                     B                    J       
+              b       
+             -                            
+                     
+                                                         cyang58@remote06:~/i220a/submit/lab7/exercises$ xterm-256colorxterm-256colorxterm-256colorxterm-256color^C
+cyang58@remote06:~/i220a/submit/lab7/exercises$ cat mystery.ov[Kbjdump 
+
+mystery.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <mystery>:
+   0:	55                   	push   %rbp
+   1:	48 89 e5             	mov    %rsp,%rbp
+   4:	89 7d fc             	mov    %edi,-0x4(%rbp)
+   7:	8b 45 fc             	mov    -0x4(%rbp),%eax
+   a:	25 ff ff 7f 00       	and    $0x7fffff,%eax
+   f:	c9                   	leaveq 
+  10:	c3                   	retq   
+cyang58@remote06:~/i220a/submit/lab7/exercises$ xlea[K[K[K[Kckea[K[K[Klear
+[H[2J[3Jcyang58@remote06:~/i220a/submit/lab7/exercises$ ma[K[Kmake
+cc -g -Wall  -std=c11    hello.c   -o hello
+cc -g -Wall  -std=c11 -S hello.c
+cyang58@remote06:~/i220a/submit/lab7/exercises$ gbd maIN
+bash: gbd: command not found
+cyang58@remote06:~/i220a/submit/lab7/exercises$ gbd m[Khellol[K
+bash: gbd: command not found
+cyang58@remote06:~/i220a/submit/lab7/exercises$ gb[Kdb hello
+GNU gdb (Debian 8.2.1-2+b3) 8.2.1
+Copyright (C) 2018 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+Type "show copying" and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+    <http://www.gnu.org/software/gdb/documentation/>.
+
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from hello...done.
+(gdb) b main
+Breakpoint 1 at 0x1183: file hello.c, line 16.
+(gdb) r
+Starting program: /import/linux/home1/cyang58/projects/i220a/submit/lab7/exercises/hello 
+
+Breakpoint 1, main (argc=1, argv=0x7fffffffe848) at hello.c:16
+16	  if (argc == 1) {
+(gdb) disas /m
+Dump of assembler code for function main:
+15	{
+   0x0000555555555174 <+0>:	push   %rbp
+   0x0000555555555175 <+1>:	mov    %rsp,%rbp
+   0x0000555555555178 <+4>:	sub    $0x20,%rsp
+   0x000055555555517c <+8>:	mov    %edi,-0x14(%rbp)
+   0x000055555555517f <+11>:	mov    %rsi,-0x20(%rbp)
+
+16	  if (argc == 1) {
+=> 0x0000555555555183 <+15>:	cmpl   $0x1,-0x14(%rbp)
+   0x0000555555555187 <+19>:	jne    0x5555555551b5 <main+65>
+
+17	    fprintf(stderr, "usage: %s NAME...\n", argv[0]);
+   0x0000555555555189 <+21>:	mov    -0x20(%rbp),%rax
+   0x000055555555518d <+25>:	mov    (%rax),%rdx
+   0x0000555555555190 <+28>:	mov    0x2ec9(%rip),%rax        # 0x555555558060 <stderr@@GLIBC_2.2.5>
+   0x0000555555555197 <+35>:	lea    0xe70(%rip),%rsi        # 0x55555555600e
+   0x000055555555519e <+42>:	mov    %rax,%rdi
+   0x00005555555551a1 <+45>:	mov    $0x0,%eax
+   0x00005555555551a6 <+50>:	callq  0x555555555030 <fprintf@plt>
+
+18	    exit(0xdeadbeef);
+   0x00005555555551ab <+55>:	mov    $0xdeadbeef,%edi
+   0x00005555555551b0 <+60>:	callq  0x555555555040 <exit@plt>
+
+19	  }
+20	  for (int i = 1; i < argc; i++) {
+   0x00005555555551b5 <+65>:	movl   $0x1,-0x4(%rbp)
+   0x00005555555551bc <+72>:	jmp    0x5555555551eb <main+119>
+   0x00005555555551e7 <+115>:	addl   $0x1,-0x4(%rbp)
+   0x00005555555551eb <+119>:	mov    -0x4(%rbp),%eax
+   0x00005555555551ee <+122>:	cmp    -0x14(%rbp),%eax
+   0x00005555555551f1 <+125>:	jl     0x5555555551be <main+74>
+
+21	    hello(stdout, argv[i]);
+   0x00005555555551be <+74>:	mov    -0x4(%rbp),%eax
+   0x00005555555551c1 <+77>:	cltq   
+   0x00005555555551c3 <+79>:	lea    0x0(,%rax,8),%rdx
+   0x00005555555551cb <+87>:	mov    -0x20(%rbp),%rax
+   0x00005555555551cf <+91>:	add    %rdx,%rax
+   0x00005555555551d2 <+94>:	mov    (%rax),%rdx
+   0x00005555555551d5 <+97>:	mov    0x2e64(%rip),%rax        # 0x555555558040 <stdout@@GLIBC_2.2.5>
+   0x00005555555551dc <+104>:	mov    %rdx,%rsi
+   0x00005555555551df <+107>:	mov    %rax,%rdi
+   0x00005555555551e2 <+110>:	callq  0x555555555145 <hello>
+
+22	  }
+23	  return 0;
+   0x00005555555551f3 <+127>:	mov    $0x0,%eax
+
+24	}
+   0x00005555555551f8 <+132>:	leaveq 
+   0x00005555555551f9 <+133>:	retq   
+
+End of assembler dump.
+(gdb) i reg
+rax            0x555555555174      93824992235892
+rbx            0x0                 0
+rcx            0x7ffff7f8d718      140737353668376
+rdx            0x7fffffffe858      140737488349272
+rsi            0x7fffffffe848      140737488349256
+rdi            0x1                 1
+rbp            0x7fffffffe760      0x7fffffffe760
+rsp            0x7fffffffe740      0x7fffffffe740
+r8             0x7ffff7f8ed80      140737353674112
+r9             0x7ffff7f8ed80      140737353674112
+r10            0x3                 3
+r11            0x0                 0
+r12            0x555555555060      93824992235616
+r13            0x7fffffffe840      140737488349248
+r14            0x0                 0
+r15            0x0                 0
+rip            0x555555555183      0x555555555183 <main+15>
+eflags         0x202               [ IF ]
+cs             0x33                51
+ss             0x2b                43
+ds             0x0                 0
+es             0x0                 0
+fs             0x0                 0
+gs             0x0                 0
+(gdb) p argc
+$1 = 1
+(gdb) p *($rbp - 20)
+Attempt to dereference a generic pointer.
+(gdb) p argv\[K
+$2 = (const char **) 0x7fffffffe848
+(gdb) p *(const char*)($rbp - 14)
+$3 = -1 '\377'
+(gdb) p *(const char ***)($rbp - 32)
+$4 = (const char **) 0x7fffffffe848
+(gdb) ([Kp (*(const char ***)($rbp - 0x20))[0]
+$5 = 0x7fffffffeab4 "/import/linux/home1/cyang58/projects/i220a/submit/lab7/exercises/hello"
+(gdb) display /i *$pc\[K
+1: x/i *$pc
+=> 0x555555555183 <main+15>:	cmpl   $0x1,-0x14(%rbp)
+(gdb) eflags\[K\
+display /i *$pc[K[K[K[K[K[K[K[K[K[K[K[K[K[K[KQuit
+(gdb) display /i *$pc[C[C[C[C[C[Cp (*(const char ***)($rbp - 0x20))[0][C[C[C[C[C[C[C[C[7P*(const char ***)($rbp - 32)[C[C[C[C[C[C[C[C(*(const char ***)($rbp - 0x20))[0][C[C[C[C[C[C[22Pdisplay /i *$pc[C[C[C[C[C[C[Kdisplay /i *$pc[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Keflags
+Undefined command: "eflagseflags".  Try "help".
+(gdb) eflagseflags
+Undefined command: "eflagseflags".  Try "help".
+(gdb) eflagseflags[K[K[K[K[K[K
+Undefined command: "eflags".  Try "help".
+(gdb) p $eflags
+$6 = [ IF ]
+(gdb) nexti
+0x0000555555555187	16	  if (argc == 1) {
+1: x/i *$pc
+=> 0x555555555187 <main+19>:	jne    0x5555555551b5 <main+65>
+(gdb) ni
+17	    fprintf(stderr, "usage: %s NAME...\n", argv[0]);
+1: x/i *$pc
+=> 0x555555555189 <main+21>:	mov    -0x20(%rbp),%rax
+(gdb) ni
+0x000055555555518d	17	    fprintf(stderr, "usage: %s NAME...\n", argv[0]);
+1: x/i *$pc
+=> 0x55555555518d <main+25>:	mov    (%rax),%rdx
+(gdb) ni
+0x0000555555555190	17	    fprintf(stderr, "usage: %s NAME...\n", argv[0]);
+1: x/i *$pc
+=> 0x555555555190 <main+28>:	mov    0x2ec9(%rip),%rax        # 0x555555558060 <stderr@@GLIBC_2.2.5>
+(gdb) ni
+0x0000555555555197	17	    fprintf(stderr, "usage: %s NAME...\n", argv[0]);
+1: x/i *$pc
+=> 0x555555555197 <main+35>:	lea    0xe70(%rip),%rsi        # 0x55555555600e
+(gdb) ni
+0x000055555555519e	17	    fprintf(stderr, "usage: %s NAME...\n", argv[0]);
+1: x/i *$pc
+=> 0x55555555519e <main+42>:	mov    %rax,%rdi
+(gdb) ni
+0x00005555555551a1	17	    fprintf(stderr, "usage: %s NAME...\n", argv[0]);
+1: x/i *$pc
+=> 0x5555555551a1 <main+45>:	mov    $0x0,%eax
+(gdb) ni
+0x00005555555551a6	17	    fprintf(stderr, "usage: %s NAME...\n", argv[0]);
+1: x/i *$pc
+=> 0x5555555551a6 <main+50>:	callq  0x555555555030 <fprintf@plt>
+(gdb) ni
+usage: /import/linux/home1/cyang58/projects/i220a/submit/lab7/exercises/hello NAME...
+18	    exit(0xdeadbeef);
+1: x/i *$pc
+=> 0x5555555551ab <main+55>:	mov    $0xdeadbeef,%edi
+(gdb) ni
+0x00005555555551b0	18	    exit(0xdeadbeef);
+1: x/i *$pc
+=> 0x5555555551b0 <main+60>:	callq  0x555555555040 <exit@plt>
+(gdb) ni
+[Inferior 1 (process 2658586) exited with code 0357]
+(gdb) ni
+The program is not being run.
+(gdb) n[Kp (const char *)($rsi)
+No registers.
+(gdb) p @ef[K[K$ec[Kflags
+A syntax error in expression, near `$eflags'.
+(gdb) p @$eflags[1P$eflags
+No registers.
+(gdb) display /i %[K*p[K$pv[Kc
+2: x/i *$pc
+<error: No registers.>
+(gdb) i reg
+The program has no registers now.
+(gdb) b main
+Note: breakpoint 1 also set at pc 0x555555555183.
+Breakpoint 2 at 0x555555555183: file hello.c, line 16.
+(gdb) r
+Starting program: /import/linux/home1/cyang58/projects/i220a/submit/lab7/exercises/hello 
+
+Breakpoint 1, main (argc=1, argv=0x7fffffffe848) at hello.c:16
+16	  if (argc == 1) {
+1: x/i *$pc
+=> 0x555555555183 <main+15>:	cmpl   $0x1,-0x14(%rbp)
+2: x/i *$pc
+=> 0x555555555183 <main+15>:	cmpl   $0x1,-0x14(%rbp)
+(gdb) disas /m
+Dump of assembler code for function main:
+15	{
+   0x0000555555555174 <+0>:	push   %rbp
+   0x0000555555555175 <+1>:	mov    %rsp,%rbp
+   0x0000555555555178 <+4>:	sub    $0x20,%rsp
+   0x000055555555517c <+8>:	mov    %edi,-0x14(%rbp)
+   0x000055555555517f <+11>:	mov    %rsi,-0x20(%rbp)
+
+16	  if (argc == 1) {
+=> 0x0000555555555183 <+15>:	cmpl   $0x1,-0x14(%rbp)
+   0x0000555555555187 <+19>:	jne    0x5555555551b5 <main+65>
+
+17	    fprintf(stderr, "usage: %s NAME...\n", argv[0]);
+   0x0000555555555189 <+21>:	mov    -0x20(%rbp),%rax
+   0x000055555555518d <+25>:	mov    (%rax),%rdx
+   0x0000555555555190 <+28>:	mov    0x2ec9(%rip),%rax        # 0x555555558060 <stderr@@GLIBC_2.2.5>
+   0x0000555555555197 <+35>:	lea    0xe70(%rip),%rsi        # 0x55555555600e
+   0x000055555555519e <+42>:	mov    %rax,%rdi
+   0x00005555555551a1 <+45>:	mov    $0x0,%eax
+   0x00005555555551a6 <+50>:	callq  0x555555555030 <fprintf@plt>
+
+18	    exit(0xdeadbeef);
+   0x00005555555551ab <+55>:	mov    $0xdeadbeef,%edi
+   0x00005555555551b0 <+60>:	callq  0x555555555040 <exit@plt>
+
+19	  }
+20	  for (int i = 1; i < argc; i++) {
+   0x00005555555551b5 <+65>:	movl   $0x1,-0x4(%rbp)
+   0x00005555555551bc <+72>:	jmp    0x5555555551eb <main+119>
+   0x00005555555551e7 <+115>:	addl   $0x1,-0x4(%rbp)
+   0x00005555555551eb <+119>:	mov    -0x4(%rbp),%eax
+   0x00005555555551ee <+122>:	cmp    -0x14(%rbp),%eax
+   0x00005555555551f1 <+125>:	jl     0x5555555551be <main+74>
+
+21	    hello(stdout, argv[i]);
+   0x00005555555551be <+74>:	mov    -0x4(%rbp),%eax
+   0x00005555555551c1 <+77>:	cltq   
+   0x00005555555551c3 <+79>:	lea    0x0(,%rax,8),%rdx
+   0x00005555555551cb <+87>:	mov    -0x20(%rbp),%rax
+   0x00005555555551cf <+91>:	add    %rdx,%rax
+   0x00005555555551d2 <+94>:	mov    (%rax),%rdx
+   0x00005555555551d5 <+97>:	mov    0x2e64(%rip),%rax        # 0x555555558040 <stdout@@GLIBC_2.2.5>
+   0x00005555555551dc <+104>:	mov    %rdx,%rsi
+   0x00005555555551df <+107>:	mov    %rax,%rdi
+   0x00005555555551e2 <+110>:	callq  0x555555555145 <hello>
+
+22	  }
+23	  return 0;
+   0x00005555555551f3 <+127>:	mov    $0x0,%eax
+
+24	}
+   0x00005555555551f8 <+132>:	leaveq 
+   0x00005555555551f9 <+133>:	retq   
+
+End of assembler dump.
+(gdb) i reg
+rax            0x555555555174      93824992235892
+rbx            0x0                 0
+rcx            0x7ffff7f8d718      140737353668376
+rdx            0x7fffffffe858      140737488349272
+rsi            0x7fffffffe848      140737488349256
+rdi            0x1                 1
+rbp            0x7fffffffe760      0x7fffffffe760
+rsp            0x7fffffffe740      0x7fffffffe740
+r8             0x7ffff7f8ed80      140737353674112
+r9             0x7ffff7f8ed80      140737353674112
+r10            0x3                 3
+r11            0x0                 0
+r12            0x555555555060      93824992235616
+r13            0x7fffffffe840      140737488349248
+r14            0x0                 0
+r15            0x0                 0
+rip            0x555555555183      0x555555555183 <main+15>
+eflags         0x202               [ IF ]
+cs             0x33                51
+ss             0x2b                43
+ds             0x0                 0
+es             0x0                 0
+fs             0x0                 0
+gs             0x0                 0
+(gdb) p (const char *)($rsi)
+$7 = 0x7fffffffe848 "\264\352\377\377\377\177"
+(gdb)  p (const char *)($rdx)
+$8 = 0x7fffffffe858 "\373\352\377\377\377\177"
+(gdb) mne[K[K[Knexti
+0x0000555555555187	16	  if (argc == 1) {
+1: x/i *$pc
+=> 0x555555555187 <main+19>:	jne    0x5555555551b5 <main+65>
+2: x/i *$pc
+=> 0x555555555187 <main+19>:	jne    0x5555555551b5 <main+65>
+(gdb) nexti
+17	    fprintf(stderr, "usage: %s NAME...\n", argv[0]);
+1: x/i *$pc
+=> 0x555555555189 <main+21>:	mov    -0x20(%rbp),%rax
+2: x/i *$pc
+=> 0x555555555189 <main+21>:	mov    -0x20(%rbp),%rax
+(gdb) nexti
+0x000055555555518d	17	    fprintf(stderr, "usage: %s NAME...\n", argv[0]);
+1: x/i *$pc
+=> 0x55555555518d <main+25>:	mov    (%rax),%rdx
+2: x/i *$pc
+=> 0x55555555518d <main+25>:	mov    (%rax),%rdx
+(gdb) nexti
+0x0000555555555190	17	    fprintf(stderr, "usage: %s NAME...\n", argv[0]);
+1: x/i *$pc
+=> 0x555555555190 <main+28>:	mov    0x2ec9(%rip),%rax        # 0x555555558060 <stderr@@GLIBC_2.2.5>
+2: x/i *$pc
+=> 0x555555555190 <main+28>:	mov    0x2ec9(%rip),%rax        # 0x555555558060 <stderr@@GLIBC_2.2.5>
+(gdb) nexti
+0x0000555555555197	17	    fprintf(stderr, "usage: %s NAME...\n", argv[0]);
+1: x/i *$pc
+=> 0x555555555197 <main+35>:	lea    0xe70(%rip),%rsi        # 0x55555555600e
+2: x/i *$pc
+=> 0x555555555197 <main+35>:	lea    0xe70(%rip),%rsi        # 0x55555555600e
+(gdb) nexti
+0x000055555555519e	17	    fprintf(stderr, "usage: %s NAME...\n", argv[0]);
+1: x/i *$pc
+=> 0x55555555519e <main+42>:	mov    %rax,%rdi
+2: x/i *$pc
+=> 0x55555555519e <main+42>:	mov    %rax,%rdi
+(gdb) nexti
+0x00005555555551a1	17	    fprintf(stderr, "usage: %s NAME...\n", argv[0]);
+1: x/i *$pc
+=> 0x5555555551a1 <main+45>:	mov    $0x0,%eax
+2: x/i *$pc
+=> 0x5555555551a1 <main+45>:	mov    $0x0,%eax
+(gdb) nexti
+0x00005555555551a6	17	    fprintf(stderr, "usage: %s NAME...\n", argv[0]);
+1: x/i *$pc
+=> 0x5555555551a6 <main+50>:	callq  0x555555555030 <fprintf@plt>
+2: x/i *$pc
+=> 0x5555555551a6 <main+50>:	callq  0x555555555030 <fprintf@plt>
+(gdb) nexti p (const char *)($rdx)[C[C[C[C[C[C[1Pp (const char *)($rsi)[C[C[C[C[C[C p (const char *)($rdx)[C[C[C[C[C[C[1Pp (const char *)($rsi)
+$9 = 0x55555555600e "usage: %s NAME...\n"
+(gdb) p (const char *)($rsi)[C[C[C[C[C[Cnexti[K p (const char *)($rdx)[C[C[C[C[C[C[1Pp (const char *)($rsi)[C[C[C[C[C[C p (const char *)($rdx)
+$10 = 0x7fffffffeab4 "/import/linux/home1/cyang58/projects/i220a/submit/lab7/exercises/hello"
+(gdb) nexti
+usage: /import/linux/home1/cyang58/projects/i220a/submit/lab7/exercises/hello NAME...
+18	    exit(0xdeadbeef);
+1: x/i *$pc
+=> 0x5555555551ab <main+55>:	mov    $0xdeadbeef,%edi
+2: x/i *$pc
+=> 0x5555555551ab <main+55>:	mov    $0xdeadbeef,%edi
+(gdb) ni
+0x00005555555551b0	18	    exit(0xdeadbeef);
+1: x/i *$pc
+=> 0x5555555551b0 <main+60>:	callq  0x555555555040 <exit@plt>
+2: x/i *$pc
+=> 0x5555555551b0 <main+60>:	callq  0x555555555040 <exit@plt>
+(gdb) ni
+[Inferior 1 (process 2663239) exited with code 0357]
+(gdb) q
+cyang58@remote06:~/i220a/submit/lab7/exercises$ g[Kclear
+[H[2J[3Jcyang58@remote06:~/i220a/submit/lab7/exercises$ gbd ell[K[K[Khello
+bash: gbd: command not found
+cyang58@remote06:~/i220a/submit/lab7/exercises$ gdv=b[K[K[Kb hello
+GNU gdb (Debian 8.2.1-2+b3) 8.2.1
+Copyright (C) 2018 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+Type "show copying" and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+    <http://www.gnu.org/software/gdb/documentation/>.
+
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from hello...done.
+(gdb) b hello()
+Function "hello()" not defined.
+Make breakpoint pending on future shared library load? (y or [n]) n[KQuit
+(gdb) b hello()[K[K
+Breakpoint 1 at 0x1155: file hello.c, line 8.
+(gdb) r joe
+Starting program: /import/linux/home1/cyang58/projects/i220a/submit/lab7/exercises/hello joe
+
+Breakpoint 1, hello (out=0x7ffff7f8e760 <_IO_2_1_stdout_>, who=0x7fffffffeaf7 "joe") at hello.c:8
+8	  fprintf(out, "hello %s\n", who);
+(gdb) p (const char*)($rsi)
+$1 = 0x7fffffffeaf7 "joe"
+(gdb) q
+A debugging session is active.
+
+	Inferior 1 [process 2664269] will be killed.
+
+Quit anyway? (y or n) y
+cyang58@remote06:~/i220a/submit/lab7/exercises$ q[Kgbd hello
+bash: gbd: command not found
+cyang58@remote06:~/i220a/submit/lab7/exercises$ gbd hello[K[K[K[K[K[K[K[Kbd hello
+bash: gbd: command not found
+cyang58@remote06:~/i220a/submit/lab7/exercises$ g[Kgbd hello
+bash: gbd: command not found
+cyang58@remote06:~/i220a/submit/lab7/exercises$ gdb
+GNU gdb (Debian 8.2.1-2+b3) 8.2.1
+Copyright (C) 2018 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+Type "show copying" and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+    <http://www.gnu.org/software/gdb/documentation/>.
+
+For help, type "help".
+Type "apropos word" to search for commands related to "word".
+(gdb) start joe
+No symbol table loaded.  Use the "file" command.
+(gdb) q
+cyang58@remote06:~/i220a/submit/lab7/exercises$ gdbn [K[K[K[K[K;ls
+bash: syntax error near unexpected token `;'
+cyang58@remote06:~/i220a/submit/lab7/exercises$ make
+make: Nothing to be done for 'all'.
+cyang58@remote06:~/i220a/submit/lab7/exercises$ gbnd[K[Kd[Kd[K[Kbd [K[K[Kb[Kdb hello
+GNU gdb (Debian 8.2.1-2+b3) 8.2.1
+Copyright (C) 2018 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+Type "show copying" and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+    <http://www.gnu.org/software/gdb/documentation/>.
+
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from hello...done.
+(gdb) stare[Kt h[Kjoe
+Temporary breakpoint 1 at 0x1183: file hello.c, line 16.
+Starting program: /import/linux/home1/cyang58/projects/i220a/submit/lab7/exercises/hello joe
+
+Temporary breakpoint 1, main (argc=2, argv=0x7fffffffe848) at hello.c:16
+16	  if (argc == 1) {
+(gdb) gisass /m
+Undefined command: "gisass".  Try "help".
+(gdb) g[Kdiasas/[Ks /m
+Undefined command: "diasass".  Try "help".
+(gdb) s[Kdisass /m
+Dump of assembler code for function main:
+15	{
+   0x0000555555555174 <+0>:	push   %rbp
+   0x0000555555555175 <+1>:	mov    %rsp,%rbp
+   0x0000555555555178 <+4>:	sub    $0x20,%rsp
+   0x000055555555517c <+8>:	mov    %edi,-0x14(%rbp)
+   0x000055555555517f <+11>:	mov    %rsi,-0x20(%rbp)
+
+16	  if (argc == 1) {
+=> 0x0000555555555183 <+15>:	cmpl   $0x1,-0x14(%rbp)
+   0x0000555555555187 <+19>:	jne    0x5555555551b5 <main+65>
+
+17	    fprintf(stderr, "usage: %s NAME...\n", argv[0]);
+   0x0000555555555189 <+21>:	mov    -0x20(%rbp),%rax
+   0x000055555555518d <+25>:	mov    (%rax),%rdx
+   0x0000555555555190 <+28>:	mov    0x2ec9(%rip),%rax        # 0x555555558060 <stderr@@GLIBC_2.2.5>
+   0x0000555555555197 <+35>:	lea    0xe70(%rip),%rsi        # 0x55555555600e
+   0x000055555555519e <+42>:	mov    %rax,%rdi
+   0x00005555555551a1 <+45>:	mov    $0x0,%eax
+   0x00005555555551a6 <+50>:	callq  0x555555555030 <fprintf@plt>
+
+18	    exit(0xdeadbeef);
+   0x00005555555551ab <+55>:	mov    $0xdeadbeef,%edi
+   0x00005555555551b0 <+60>:	callq  0x555555555040 <exit@plt>
+
+19	  }
+20	  for (int i = 1; i < argc; i++) {
+   0x00005555555551b5 <+65>:	movl   $0x1,-0x4(%rbp)
+   0x00005555555551bc <+72>:	jmp    0x5555555551eb <main+119>
+   0x00005555555551e7 <+115>:	addl   $0x1,-0x4(%rbp)
+   0x00005555555551eb <+119>:	mov    -0x4(%rbp),%eax
+   0x00005555555551ee <+122>:	cmp    -0x14(%rbp),%eax
+   0x00005555555551f1 <+125>:	jl     0x5555555551be <main+74>
+
+21	    hello(stdout, argv[i]);
+   0x00005555555551be <+74>:	mov    -0x4(%rbp),%eax
+   0x00005555555551c1 <+77>:	cltq   
+   0x00005555555551c3 <+79>:	lea    0x0(,%rax,8),%rdx
+   0x00005555555551cb <+87>:	mov    -0x20(%rbp),%rax
+   0x00005555555551cf <+91>:	add    %rdx,%rax
+   0x00005555555551d2 <+94>:	mov    (%rax),%rdx
+   0x00005555555551d5 <+97>:	mov    0x2e64(%rip),%rax        # 0x555555558040 <stdout@@GLIBC_2.2.5>
+   0x00005555555551dc <+104>:	mov    %rdx,%rsi
+   0x00005555555551df <+107>:	mov    %rax,%rdi
+   0x00005555555551e2 <+110>:	callq  0x555555555145 <hello>
+
+22	  }
+23	  return 0;
+   0x00005555555551f3 <+127>:	mov    $0x0,%eax
+
+24	}
+   0x00005555555551f8 <+132>:	leaveq 
+   0x00005555555551f9 <+133>:	retq   
+
+End of assembler dump.
+(gdb) b 0x00005555555551f1
+Function "0x00005555555551f1" not defined.
+Make breakpoint pending on future shared library load? (y or [n]) n
+(gdb) b *0x00005555555551f1
+Breakpoint 2 at 0x5555555551f1: file hello.c, line 20.
+(gdb) c
+Continuing.
+
+Breakpoint 2, 0x00005555555551f1 in main (argc=2, argv=0x7fffffffe848) at hello.c:20
+20	  for (int i = 1; i < argc; i++) {
+(gdb) c
+Continuing.
+hello joe
+
+Breakpoint 2, 0x00005555555551f1 in main (argc=2, argv=0x7fffffffe848) at hello.c:20
+20	  for (int i = 1; i < argc; i++) {
+(gdb) c
+Continuing.
+[Inferior 1 (process 2664858) exited normally]
+(gdb) q
+cyang58@remote06:~/i220a/submit/lab7/exercises$ gdb hello
+GNU gdb (Debian 8.2.1-2+b3) 8.2.1
+Copyright (C) 2018 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+Type "show copying" and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+    <http://www.gnu.org/software/gdb/documentation/>.
+
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from hello...done.
+(gdb) start joe
+Temporary breakpoint 1 at 0x1183: file hello.c, line 16.
+Starting program: /import/linux/home1/cyang58/projects/i220a/submit/lab7/exercises/hello joe
+
+Temporary breakpoint 1, main (argc=2, argv=0x7fffffffe848) at hello.c:16
+16	  if (argc == 1) {
+(gdb) c
+Continuing.
+hello joe
+[Inferior 1 (process 2666222) exited normally]
+(gdb) q
+cyang58@remote06:~/i220a/submit/lab7/exercises$ gdb hello
+GNU gdb (Debian 8.2.1-2+b3) 8.2.1
+Copyright (C) 2018 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+Type "show copying" and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+    <http://www.gnu.org/software/gdb/documentation/>.
+
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from hello...done.
+(gdb) start joe
+Temporary breakpoint 1 at 0x1183: file hello.c, line 16.
+Starting program: /import/linux/home1/cyang58/projects/i220a/submit/lab7/exercises/hello joe
+
+Temporary breakpoint 1, main (argc=2, argv=0x7fffffffe848) at hello.c:16
+16	  if (argc == 1) {
+(gdb) c
+Continuing.
+hello joe
+[Inferior 1 (process 2666426) exited normally]
+(gdb) p i
+No symbol "i" in current context.
+(gdb) q
+cyang58@remote06:~/i220a/submit/lab7/exercises$ gdb hello
+GNU gdb (Debian 8.2.1-2+b3) 8.2.1
+Copyright (C) 2018 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+Type "show copying" and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+    <http://www.gnu.org/software/gdb/documentation/>.
+
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from hello...done.
+(gdb) start joe
+Temporary breakpoint 1 at 0x1183: file hello.c, line 16.
+Starting program: /import/linux/home1/cyang58/projects/i220a/submit/lab7/exercises/hello joe
+
+Temporary breakpoint 1, main (argc=2, argv=0x7fffffffe848) at hello.c:16
+16	  if (argc == 1) {
+(gdb) b *0x00005555555551ee
+Breakpoint 2 at 0x5555555551ee: file hello.c, line 20.
+(gdb) c
+Continuing.
+
+Breakpoint 2, 0x00005555555551ee in main (argc=2, argv=0x7fffffffe848) at hello.c:20
+20	  for (int i = 1; i < argc; i++) {
+(gdb) p i
+$1 = 1
+(gdb) c
+Continuing.
+hello joe
+
+Breakpoint 2, 0x00005555555551ee in main (argc=2, argv=0x7fffffffe848) at hello.c:20
+20	  for (int i = 1; i < argc; i++) {
+(gdb) p i
+$2 = 2
+(gdb)  p (int *)($eax)
+$3 = (int *) 0x2
+(gdb) set $eax = $eax-1\
+Quit
+(gdb)  p (int *)($eax)[K)
+A syntax error in expression, near `p (int *)($eax)'.
+(gdb) set $eax = $eax-1 p (int *)($eax)[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Kp (int *)($eax)
+$4 = (int *) 0x2
+(gdb) set $eax = $eax-1
+(gdb) p (int *)($eax)
+$5 = (int *) 0x1
+(gdb) c
+Continuing.
+hello (null)
+
+Breakpoint 2, 0x00005555555551ee in main (argc=2, argv=0x7fffffffe848) at hello.c:20
+20	  for (int i = 1; i < argc; i++) {
+(gdb) q
+A debugging session is active.
+
+	Inferior 1 [process 2666849] will be killed.
+
+Quit anyway? (y or n) y
+cyang58@remote06:~/i220a/submit/lab7/exercises$ exit
+
+Script done on 2020-10-18 17:44:57-04:00 [COMMAND_EXIT_CODE="0"]
