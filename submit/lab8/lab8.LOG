@@ -1,0 +1,886 @@
+Script started on 2020-10-25 16:26:13-04:00 [TERM="xterm-256color" TTY="/dev/pts/7" COLUMNS="76" LINES="42"]
+cyang58@remote02:~/i220a/submit/lab8$ clear
+[H[2J[3Jcyang58@remote02:~/i220a/submit/lab8$ ls
+exercises  lab8.LOG
+cyang58@remote02:~/i220a/submit/lab8$ cd exercises/1-quote-files/
+cyang58@remote02:~/i220a/submit/lab8/exercises/1-quote-files$ ls
+'**'  '1$2'  "'12"  '1"2'  'a$b'  '\\ab'  'a"b'  "a'b"	 -l
+cyang58@remote02:~/i220a/submit/lab8/exercises/1-quote-files$ echo \\
+\
+cyang58@remote02:~/i220a/submit/lab8/exercises/1-quote-files$ echo \"[K'
+'
+cyang58@remote02:~/i220a/submit/lab8/exercises/1-quote-files$ echp [K[Ko \*
+*
+cyang58@remote02:~/i220a/submit/lab8/exercises/1-quote-files$ echo \$HOME|[K\ " \\
+> 
+> ^C
+cyang58@remote02:~/i220a/submit/lab8/exercises/1-quote-files$ echo \[K'\'
+\
+cyang58@remote02:~/i220a/submit/lab8/exercises/1-quote-files$ echo '\'[K\'
+\\
+cyang58@remote02:~/i220a/submit/lab8/exercises/1-quote-files$ echo '\\'[K[K[K*$~\[K'
+*$~
+cyang58@remote02:~/i220a/submit/lab8/exercises/1-quote-files$ echo '\''
+> 
+> '
+\
+
+
+cyang58@remote02:~/i220a/submit/lab8/exercises/1-quote-files$ echo "\"\\"
+"\
+cyang58@remote02:~/i220a/submit/lab8/exercises/1-quote-files$ echo \[K"#[K$s[KHM[KOME"
+/home/cyang58
+cyang58@remote02:~/i220a/submit/lab8/exercises/1-quote-files$ dir
+**  1$2  '12  1"2  a$b	\\\\ab	a"b  a'b  -l
+cyang58@remote02:~/i220a/submit/lab8/exercises/1-quote-files$ echo \
+> abc \
+> 123
+abc 123
+cyang58@remote02:~/i220a/submit/lab8/exercises/1-quote-files$ clear
+[H[2J[3Jcyang58@remote02:~/i220a/submit/lab8/exercises/1-quote-files$ ls "$"*
+ls: cannot access '$*': No such file or directory
+cyang58@remote02:~/i220a/submit/lab8/exercises/1-quote-files$ ls "$[K[K'$'*
+ls: cannot access '$*': No such file or directory
+cyang58@remote02:~/i220a/submit/lab8/exercises/1-quote-files$ ;[Kls
+'**'  '1$2'  "'12"  '1"2'  'a$b'  '\\ab'  'a"b'  "a'b"	 -l
+cyang58@remote02:~/i220a/submit/lab8/exercises/1-quote-files$ ls T*
+ls: cannot access 'T*': No such file or directory
+cyang58@remote02:~/i220a/submit/lab8/exercises/1-quote-files$ ls
+'**'  '1$2'  "'12"  '1"2'  'a$b'  '\\ab'  'a"b'  "a'b"	 -l
+cyang58@remote02:~/i220a/submit/lab8/exercises/1-quote-files$ ls *
+-rw-r----- 1 cyang58 cyang58 0 Oct 25 16:21 '**'
+-rw-r----- 1 cyang58 cyang58 0 Oct 25 16:21 '1$2'
+-rw-r----- 1 cyang58 cyang58 0 Oct 25 16:21 "'12"
+-rw-r----- 1 cyang58 cyang58 0 Oct 25 16:21 '1"2'
+-rw-r----- 1 cyang58 cyang58 0 Oct 25 16:21 'a$b'
+-rw-r----- 1 cyang58 cyang58 0 Oct 25 16:21 '\\ab'
+-rw-r----- 1 cyang58 cyang58 0 Oct 25 16:21 'a"b'
+-rw-r----- 1 cyang58 cyang58 0 Oct 25 16:21 "a'b"
+cyang58@remote02:~/i220a/submit/lab8/exercises/1-quote-files$ [Kcyang58@remote02:~/i220a/submit/lab8/exercises/1-quote-files$ [Kcyang58@remote02:~/i220a/submit/lab8/exercises/1-quote-files$ echo
+
+cyang58@remote02:~/i220a/submit/lab8/exercises/1-quote-files$ eho[K[Kcho ?
+?
+cyang58@remote02:~/i220a/submit/lab8/exercises/1-quote-files$ ls *'$"[K'[K[K[K"$"*[K[K[K[K[K*'?"[K'*
+ls: cannot access '*?*': No such file or directory
+cyang58@remote02:~/i220a/submit/lab8/exercises/1-quote-files$ ls *'?'*[C[C[C[C[C[C[C[C[K[K[K[K[K[K -[K[]a]-]z]
+ls: cannot access '[a-z]': No such file or directory
+cyang58@remote02:~/i220a/submit/lab8/exercises/1-quote-files$ cd ..
+cyang58@remote02:~/i220a/submit/lab8/exercises$ ls
+1-quote-files
+cyang58@remote02:~/i220a/submit/lab8/exercises$ ls[K[Kls 1-quote-files/*[[K"$'[K"*
+'1-quote-files/1$2'  '1-quote-files/a$b'
+cyang58@remote02:~/i220a/submit/lab8/exercises$ ls 1-quote-files/*"$"*[C[1P"$"*?"$"*
+'1-quote-files/1$2'  '1-quote-files/a$b'
+cyang58@remote02:~/i220a/submit/lab8/exercises$ ls 1-quote-files/?"$"*[C[C[C[C?*[C
+'1-quote-files/1$2'  '1-quote-files/a$b'
+cyang58@remote02:~/i220a/submit/lab8/exercises$ ls 1-quote-files/?"$"?*[K[K.
+ls: cannot access '1-quote-files/?$.': No such file or directory
+cyang58@remote02:~/i220a/submit/lab8/exercises$ ls 1-quote-files/?"$".[K[K[K[K[K$*
+'**'  '1$2'  "'12"  '1"2'  'a$b'  '\\ab'  'a"b'  "a'b"	 -l
+cyang58@remote02:~/i220a/submit/lab8/exercises$ ls 1-quote-files/$*[C[C[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Kclear
+[H[2J[3Jcyang58@remote02:~/i220a/submit/lab8/exercises$ cd [K[K[Kls 11[K-quote-files/*'[K"?"*
+ls: cannot access '1-quote-files/*?*': No such file or directory
+cyang58@remote02:~/i220a/submit/lab8/exercises$ ls 1-quote-files/*"?"*[1P?"*'?"*[Kls 1-quote-files/*'?"*[C[1P*'*
+ls: cannot access '1-quote-files/*?*': No such file or directory
+cyang58@remote02:~/i220a/submit/lab8/exercises$ ls 1-quote-files/*'?'*"?"*clear[Kls 1-quote-files/$*?"$".?*[1P**"$"*[Kcd ..ls [a-z][3Pcd ..[3Pls 1-quote-files/*"$"*
+'1-quote-files/1$2'  '1-quote-files/a$b'
+cyang58@remote02:~/i220a/submit/lab8/exercises$ ls 1-quote-files/*"$"*[K[K[K[K[K"'"*
+"1-quote-files/'12"
+cyang58@remote02:~/i220a/submit/lab8/exercises$ ls 1-quote-files/"'"*[K?
+ls: cannot access '1-quote-files/'\''?': No such file or directory
+cyang58@remote02:~/i220a/submit/lab8/exercises$ ls 1-quote-files/"'"?[K[K[K[K'''*
+> c^C
+cyang58@remote02:~/i220a/submit/lab8/exercises$ ls 1-quote-files/'''*[K[K[K[K*"[K"'"*
+"1-quote-files/'12"  "1-quote-files/a'b"
+cyang58@remote02:~/i220a/submit/lab8/exercises$ ls 1-quote-files/*"'"**"*
+ls: cannot access '1-quote-files/*'\''**': No such file or directory
+cyang58@remote02:~/i220a/submit/lab8/exercises$ ls 1-quote-files/*"'*"*[K[K[K[K'*[K[K[K[K**"'"*
+"1-quote-files/'12"  "1-quote-files/a'b"
+cyang58@remote02:~/i220a/submit/lab8/exercises$ [Kcyang58@remote02:~/i220a/submit/lab8/exercises$ [Kcyang58@remote02:~/i220a/submit/lab8/exercises$ [Kcyang58@remote02:~/i220a/submit/lab8/exercises$ [Kcyang58@remote02:~/i220a/submit/lab8/exercises$ env
+SHELL=/bin/bash
+DERBY_HOME=/usr/lib/jvm/java-8-oracle/db
+JAVA_HOME=/usr/lib/jvm/java-8-oracle
+KRB5CCNAME=FILE:/tmp/krb5cc_14755_wrdFMiMs09
+PWD=/home/cyang58/i220a/submit/lab8/exercises
+LOGNAME=cyang58
+XDG_SESSION_TYPE=tty
+J2REDIR=/usr/lib/jvm/java-8-oracle/jre
+VIRTUALENVWRAPPER_SCRIPT=/usr/share/virtualenvwrapper/virtualenvwrapper.sh
+HOME=/home/cyang58
+LANG=en_US.UTF-8
+_VIRTUALENVWRAPPER_API= mkvirtualenv rmvirtualenv lsvirtualenv showvirtualenv workon add2virtualenv cdsitepackages cdvirtualenv lssitepackages toggleglobalsitepackages cpvirtualenv setvirtualenvproject mkproject cdproject mktmpenv
+SSH_CONNECTION=198.255.146.237 51266 128.226.114.202 22
+XDG_SESSION_CLASS=user
+TERM=xterm-256color
+J2SDKDIR=/usr/lib/jvm/java-8-oracle
+USER=cyang58
+SHLVL=2
+XDG_SESSION_ID=780399
+LD_LIBRARY_PATH=.:/home/cyang58/cs220/lib
+XDG_RUNTIME_DIR=/run/user/14755
+SSH_CLIENT=198.255.146.237 51266 22
+PATH=/home/cyang58/cs220/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/usr/lib/jvm/java-8-oracle/bin:/usr/lib/jvm/java-8-oracle/db/bin:/usr/lib/jvm/java-8-oracle/jre/bin
+DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/14755/bus
+MAIL=/var/mail/cyang58
+SSH_TTY=/dev/pts/7
+OLDPWD=/home/cyang58/i220a/submit/lab8/exercises/1-quote-files
+_=/usr/bin/env
+cyang58@remote02:~/i220a/submit/lab8/exercises$ cd l[K1-quote-files/
+cyang58@remote02:~/i220a/submit/lab8/exercises/1-quote-files$ ls *$*
+-rw-r----- 1 cyang58 cyang58 0 Oct 25 16:21 '**'
+-rw-r----- 1 cyang58 cyang58 0 Oct 25 16:21 '1$2'
+-rw-r----- 1 cyang58 cyang58 0 Oct 25 16:21 "'12"
+-rw-r----- 1 cyang58 cyang58 0 Oct 25 16:21 '1"2'
+-rw-r----- 1 cyang58 cyang58 0 Oct 25 16:21 'a$b'
+-rw-r----- 1 cyang58 cyang58 0 Oct 25 16:21 '\\ab'
+-rw-r----- 1 cyang58 cyang58 0 Oct 25 16:21 'a"b'
+-rw-r----- 1 cyang58 cyang58 0 Oct 25 16:21 "a'b"
+cyang58@remote02:~/i220a/submit/lab8/exercises/1-quote-files$ ls \*[K*$*
+ls: cannot access '*': No such file or directory
+cyang58@remote02:~/i220a/submit/lab8/exercises/1-quote-files$ cd[K[Kls
+'**'  '1$2'  "'12"  '1"2'  'a$b'  '\\ab'  'a"b'  "a'b"	 -l
+cyang58@remote02:~/i220a/submit/lab8/exercises/1-quote-files$ ls-[K -l
+total 0
+-rw-r----- 1 cyang58 cyang58 0 Oct 25 16:21 '**'
+-rw-r----- 1 cyang58 cyang58 0 Oct 25 16:21 '1$2'
+-rw-r----- 1 cyang58 cyang58 0 Oct 25 16:21 "'12"
+-rw-r----- 1 cyang58 cyang58 0 Oct 25 16:21 '1"2'
+-rw-r----- 1 cyang58 cyang58 0 Oct 25 16:21 'a$b'
+-rw-r----- 1 cyang58 cyang58 0 Oct 25 16:21 '\\ab'
+-rw-r----- 1 cyang58 cyang58 0 Oct 25 16:21 'a"b'
+-rw-r----- 1 cyang58 cyang58 0 Oct 25 16:21 "a'b"
+-rw-r----- 1 cyang58 cyang58 0 Oct 25 16:21  -l
+cyang58@remote02:~/i220a/submit/lab8/exercises/1-quote-files$ [Kcyang58@remote02:~/i220a/submit/lab8/exercises/1-quote-files$ [Kcyang58@remote02:~/i220a/submit/lab8/exercises/1-quote-files$ ls[K[Kcd ..
+cyang58@remote02:~/i220a/submit/lab8/exercises$ ls 1-quote-files/?"'"?
+"1-quote-files/a'b"
+cyang58@remote02:~/i220a/submit/lab8/exercises$ ls 1-quote-files/?"'"?[C[1P"'"?*"'"?[C[C[C[C*?[C[K
+"1-quote-files/'12"  "1-quote-files/a'b"
+cyang58@remote02:~/i220a/submit/lab8/exercises$ ls 1-quote-files/*"'"*[K?
+"1-quote-files/a'b"
+cyang58@remote02:~/i220a/submit/lab8/exercises$ ls 1-quote-files/*"'"?[K*[K[K[K[K'''*
+> cc^C
+cyang58@remote02:~/i220a/submit/lab8/exercises$ ls 1-quote-files/*'''*[K[K[K[K"?"[K[K[K[']*
+> 
+> ^C
+cyang58@remote02:~/i220a/submit/lab8/exercises$ ls 1-quote-files/*[']*
+^C
+cyang58@remote02:~/i220a/submit/lab8/exercises$ ls 1-quote-files/*[']*
+^C
+cyang58@remote02:~/i220a/submit/lab8/exercises$ ;s [K[K[Kls 1-quote-files/*][K['1[K[K"''[K"]*
+"1-quote-files/'12"  "1-quote-files/a'b"
+cyang58@remote02:~/i220a/submit/lab8/exercises$ l[Kc[Kls 1[K1-quote-files/
+'**'  '1$2'  "'12"  '1"2'  'a$b'  '\\ab'  'a"b'  "a'b"	 -l
+cyang58@remote02:~/i220a/submit/lab8/exercises$ ls 1-quote-files/[C 1-quote-files/d 1-quote-files/* 1-quote-files/[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C*['[K"'"]*
+ls: cannot access 'd*': No such file or directory
+"1-quote-files/'12"  "1-quote-files/a'b"
+cyang58@remote02:~/i220a/submit/lab8/exercises$ ls d*
+ls: cannot access 'd*': No such file or directory
+cyang58@remote02:~/i220a/submit/lab8/exercises$ ls d*[C 1-quote-files/*["'"]*[C[1P 1-quote-files/*["'"]*[1P 1-quote-files/*["'"]*- 1-quote-files/*["'"]*d 1-quote-files/*["'"]*[C 1-quote-files/*["'"]* [A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1P1-quote-files/*["'"]*
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+"1-quote-files/'12"  "1-quote-files/a'b"
+cyang58@remote02:~/i220a/submit/lab8/exercises$ ls | gre[[Kp "'"
+cyang58@remote02:~/i220a/submit/lab8/exercises$ ls | grep "'"[C[1@ [1@-[1@d
+cyang58@remote02:~/i220a/submit/lab8/exercises$ ls 1-quote-files/
+'**'  '1$2'  "'12"  '1"2'  'a$b'  '\\ab'  'a"b'  "a'b"	 -l
+cyang58@remote02:~/i220a/submit/lab8/exercises$ ls
+1-quote-files
+cyang58@remote02:~/i220a/submit/lab8/exercises$ gr[K[Kls
+1-quote-files
+cyang58@remote02:~/i220a/submit/lab8/exercises$ d[Kcd 1-quote-files/
+cyang58@remote02:~/i220a/submit/lab8/exercises/1-quote-files$ ls[K[Kls | grep ^d[K[K[K[K[K[K[Kgrep *[K"d[K'"
+'12
+a'b
+cyang58@remote02:~/i220a/submit/lab8/exercises/1-quote-files$ ls
+'**'  '1$2'  "'12"  '1"2'  'a$b'  '\\ab'  'a"b'  "a'b"	 -l
+cyang58@remote02:~/i220a/submit/lab8/exercises/1-quote-files$ ls[Kls | grep "'"[K[K[K'''
+> \
+> \
+> ^C
+cyang58@remote02:~/i220a/submit/lab8/exercises/1-quote-files$ [Kcyang58@remote02:~/i220a/submit/lab8/exercises/1-quote-files$ [Kcyang58@remote02:~/i220a/submit/lab8/exercises/1-quote-files$ ls | grep [x-[K[K'"[K[K[K['[K[K*"'" ([K*
+cyang58@remote02:~/i220a/submit/lab8/exercises/1-quote-files$ [Kcyang58@remote02:~/i220a/submit/lab8/exercises/1-quote-files$ [Kcyang58@remote02:~/i220a/submit/lab8/exercises/1-quote-files$ ls "[K| grep "\"* [A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K*
+> cd ..
+> l[Kc[Kls c[K[K 1[K[K[K[Kls
+> ^C
+cyang58@remote02:~/i220a/submit/lab8/exercises/1-quote-files$ ls[K[Kcd ..
+cyang58@remote02:~/i220a/submit/lab8/exercises$ ls
+1-quote-files
+cyang58@remote02:~/i220a/submit/lab8/exercises$ cd[K[Kclear
+[H[2J[3Jcyang58@remote02:~/i220a/submit/lab8/exercises$ cd[K[Kls 1-quote-files/?[K*[K".[K\\"*
+'1-quote-files/\\ab'
+cyang58@remote02:~/i220a/submit/lab8/exercises$ ls 1-quote-files/"\\"*[1P"*[C[C[C[K?[K*
+> \
+> ^C
+cyang58@remote02:~/i220a/submit/lab8/exercises$ ls 1-quote-files/"\"*
+\[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C\"*
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1P"*
+\[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C\"*
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K?
+ls: cannot access '1-quote-files/\?': No such file or directory
+cyang58@remote02:~/i220a/submit/lab8/exercises$ ls 1-quote-files/"\\"?[K*
+'1-quote-files/\\ab'
+cyang58@remote02:~/i220a/submit/lab8/exercises$ ls 1-quote-files/??
+'1-quote-files/**'   1-quote-files/-l
+cyang58@remote02:~/i220a/submit/lab8/exercises$ ls 1-quote-files/
+'**'  '1$2'  "'12"  '1"2'  'a$b'  '\\ab'  'a"b'  "a'b"	 -l
+cyang58@remote02:~/i220a/submit/lab8/exercises$ ls[K[Kls | grep ??
+cyang58@remote02:~/i220a/submit/lab8/exercises$ ls | grep ??[??[C[C[K[K[K**
+1-quote-files
+cyang58@remote02:~/i220a/submit/lab8/exercises$ ls | grep **[K[K[K[K[K[K[K[K[K[K[K[Kls l[K[K[K[Kcd 1-quote-files/
+cyang58@remote02:~/i220a/submit/lab8/exercises/1-quote-files$ ls
+'**'  '1$2'  "'12"  '1"2'  'a$b'  '\\ab'  'a"b'  "a'b"	 -l
+cyang58@remote02:~/i220a/submit/lab8/exercises/1-quote-files$ ls [K[K[Kclear
+[H[2J[3Jcyang58@remote02:~/i220a/submit/lab8/exercises/1-quote-files$ ls | grep ??
+(standard input)
+cyang58@remote02:~/i220a/submit/lab8/exercises/1-quote-files$ ls | grep ??[K[K[??] [A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K]
+cyang58@remote02:~/i220a/submit/lab8/exercises/1-quote-files$ l[K;s[K[K;[Kls
+'**'  '1$2'  "'12"  '1"2'  'a$b'  '\\ab'  'a"b'  "a'b"	 -l
+cyang58@remote02:~/i220a/submit/lab8/exercises/1-quote-files$ ls ??
+-rw-r----- 1 cyang58 cyang58 0 Oct 25 16:21 '**'
+cyang58@remote02:~/i220a/submit/lab8/exercises/1-quote-files$ ls ??[K[K**
+-rw-r----- 1 cyang58 cyang58 0 Oct 25 16:21 '**'
+-rw-r----- 1 cyang58 cyang58 0 Oct 25 16:21 '1$2'
+-rw-r----- 1 cyang58 cyang58 0 Oct 25 16:21 "'12"
+-rw-r----- 1 cyang58 cyang58 0 Oct 25 16:21 '1"2'
+-rw-r----- 1 cyang58 cyang58 0 Oct 25 16:21 'a$b'
+-rw-r----- 1 cyang58 cyang58 0 Oct 25 16:21 '\\ab'
+-rw-r----- 1 cyang58 cyang58 0 Oct 25 16:21 'a"b'
+-rw-r----- 1 cyang58 cyang58 0 Oct 25 16:21 "a'b"
+cyang58@remote02:~/i220a/submit/lab8/exercises/1-quote-files$ ls **[K[K??[K | grep [??] [A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[2P??
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[7Pclear[3Pls[K[Kc d[K[K[Kd [K[Kcd ..
+cyang58@remote02:~/i220a/submit/lab8/exercises$ clear
+[H[2J[3Jcyang58@remote02:~/i220a/submit/lab8/exercises$ ls 1-quote-files/??
+'1-quote-files/**'   1-quote-files/-l
+cyang58@remote02:~/i220a/submit/lab8/exercises$ cd `[K1`[K[K[K[K[Kenv
+SHELL=/bin/bash
+DERBY_HOME=/usr/lib/jvm/java-8-oracle/db
+JAVA_HOME=/usr/lib/jvm/java-8-oracle
+KRB5CCNAME=FILE:/tmp/krb5cc_14755_wrdFMiMs09
+PWD=/home/cyang58/i220a/submit/lab8/exercises
+LOGNAME=cyang58
+XDG_SESSION_TYPE=tty
+J2REDIR=/usr/lib/jvm/java-8-oracle/jre
+VIRTUALENVWRAPPER_SCRIPT=/usr/share/virtualenvwrapper/virtualenvwrapper.sh
+HOME=/home/cyang58
+LANG=en_US.UTF-8
+_VIRTUALENVWRAPPER_API= mkvirtualenv rmvirtualenv lsvirtualenv showvirtualenv workon add2virtualenv cdsitepackages cdvirtualenv lssitepackages toggleglobalsitepackages cpvirtualenv setvirtualenvproject mkproject cdproject mktmpenv
+SSH_CONNECTION=198.255.146.237 51266 128.226.114.202 22
+XDG_SESSION_CLASS=user
+TERM=xterm-256color
+J2SDKDIR=/usr/lib/jvm/java-8-oracle
+USER=cyang58
+SHLVL=2
+XDG_SESSION_ID=780399
+LD_LIBRARY_PATH=.:/home/cyang58/cs220/lib
+XDG_RUNTIME_DIR=/run/user/14755
+SSH_CLIENT=198.255.146.237 51266 22
+PATH=/home/cyang58/cs220/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/usr/lib/jvm/java-8-oracle/bin:/usr/lib/jvm/java-8-oracle/db/bin:/usr/lib/jvm/java-8-oracle/jre/bin
+DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/14755/bus
+MAIL=/var/mail/cyang58
+SSH_TTY=/dev/pts/7
+OLDPWD=/home/cyang58/i220a/submit/lab8/exercises/1-quote-files
+_=/usr/bin/env
+cyang58@remote02:~/i220a/submit/lab8/exercises$ evho[K[K[Kcho $HOME
+/home/cyang58
+cyang58@remote02:~/i220a/submit/lab8/exercises$ echo $p[KPATH
+/home/cyang58/cs220/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/usr/lib/jvm/java-8-oracle/bin:/usr/lib/jvm/java-8-oracle/db/bin:/usr/lib/jvm/java-8-oracle/jre/bin
+cyang58@remote02:~/i220a/submit/lab8/exercises$ echo #[K$1xx[K[K[Kxxx
+
+cyang58@remote02:~/i220a/submit/lab8/exercises$ xxx=123
+cyang58@remote02:~/i220a/submit/lab8/exercises$ echo $xxx
+123
+cyang58@remote02:~/i220a/submit/lab8/exercises$ env | grep xxx
+cyang58@remote02:~/i220a/submit/lab8/exercises$ export xxx
+cyang58@remote02:~/i220a/submit/lab8/exercises$ env } g[K[K[K| gre[ [K[Kp xx
+xxx=123
+cyang58@remote02:~/i220a/submit/lab8/exercises$ export xx=456
+cyang58@remote02:~/i220a/submit/lab8/exercises$ env | grep xx
+xxx=123
+xx=456
+cyang58@remote02:~/i220a/submit/lab8/exercises$ exit
+
+Script done on 2020-10-25 17:11:14-04:00 [COMMAND_EXIT_CODE="0"]
+Script started on 2020-10-25 17:27:56-04:00 [TERM="xterm" TTY="/dev/pts/6" COLUMNS="126" LINES="82"]
+cyang58@remote03:~/i220a/submit/lab8$ $p
+cyang58@remote03:~/i220a/submit/lab8$ p=$JPO[K[K[KHOME
+cyang58@remote03:~/i220a/submit/lab8$ $p
+bash: /home/cyang58: Is a directory
+cyang58@remote03:~/i220a/submit/lab8$ p=$PATH
+cyang58@remote03:~/i220a/submit/lab8$ p=$PATH$p[Kp=$HOME$p[K[K[Kecjp[K[Kj[Kho $p
+/home/cyang58/cs220/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/usr/lib/jvm/java-8-oracle/bin:/usr/lib/jvm/java-8-oracle/db/bin:/usr/lib/jvm/java-8-oracle/jre/bin
+cyang58@remote03:~/i220a/submit/lab8$ echo $path[K[K[K[KPATH
+/home/cyang58/cs220/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/usr/lib/jvm/java-8-oracle/bin:/usr/lib/jvm/java-8-oracle/db/bin:/usr/lib/jvm/java-8-oracle/jre/bin
+cyang58@remote03:~/i220a/submit/lab8$ path-[K=
+cyang58@remote03:~/i220a/submit/lab8$ PATHJ[K+[K=
+cyang58@remote03:~/i220a/submit/lab8$ PATH=path=echo $PATH
+
+cyang58@remote03:~/i220a/submit/lab8$ ls
+bash: ls: No such file or directory
+cyang58@remote03:~/i220a/submit/lab8$ PATHJ=[K[K=$p
+cyang58@remote03:~/i220a/submit/lab8$ ls
+exercises  lab8.LOG
+cyang58@remote03:~/i220a/submit/lab8$ ls ; wc *
+exercises  lab8.LOG
+wc: exercises: Is a directory
+      0       0       0 exercises
+    301    1138   19507 lab8.LOG
+    301    1138   19507 total
+cyang58@remote03:~/i220a/submit/lab8$ cyang58@remote03:~/i220a/submit/lab8$
+bash: cyang58@remote03:~/i220a/submit/lab8$: No such file or directory
+cyang58@remote03:~/i220a/submit/lab8$ find -L ~/cs220 -name '*.c' 
+/home/cyang58/cs220/exercises/questions/src/x86/fns-asm.c
+/home/cyang58/cs220/labs/lab1/exercises/1-hello/hello.c
+/home/cyang58/cs220/labs/lab1/exercises/3-multifile/main.c
+/home/cyang58/cs220/labs/lab1/exercises/3-multifile/quadr.c
+/home/cyang58/cs220/labs/lab1/exercises/4-from-scratch/key-value.c
+/home/cyang58/cs220/labs/lab1/exercises/4-from-scratch/main.c
+/home/cyang58/cs220/labs/lab1/exercises/4-from-scratch/process-file.c
+/home/cyang58/cs220/labs/lab1/exercises/5-auto-dependencies/main.c
+/home/cyang58/cs220/labs/lab1/exercises/5-auto-dependencies/quadr.c
+/home/cyang58/cs220/labs/lab2/exercises/1-hello-args/hello.c
+/home/cyang58/cs220/labs/lab2/exercises/2-hello-upcase-args/hello.c
+/home/cyang58/cs220/labs/4-pointers/exercises/1-pointers/pointers.c
+/home/cyang58/cs220/labs/4-pointers/exercises/2-in-pointers/in-pointers.c
+/home/cyang58/cs220/labs/4-pointers/exercises/3-bad-types/bad-types.c
+/home/cyang58/cs220/labs/4-pointers/exercises/4-cast-types/cast-types.c
+/home/cyang58/cs220/labs/4-pointers/exercises/5-void-pointers/void-pointers.c
+/home/cyang58/cs220/labs/4-pointers/exercises/6-in-voids/in-voids.c
+/home/cyang58/cs220/labs/lab4/exercises/1-pointers/pointers.c
+/home/cyang58/cs220/labs/lab4/exercises/2-in-pointers/in-pointers.c
+/home/cyang58/cs220/labs/lab4/exercises/3-bad-types/bad-types.c
+/home/cyang58/cs220/labs/lab4/exercises/4-cast-types/cast-types.c
+/home/cyang58/cs220/labs/lab4/exercises/5-void-pointers/void-pointers.c
+/home/cyang58/cs220/labs/lab4/exercises/6-in-voids/in-voids.c
+/home/cyang58/cs220/labs/5-arith/exercises/1-uints/uints.c
+/home/cyang58/cs220/labs/5-arith/exercises/2-ints/ints.c
+/home/cyang58/cs220/labs/5-arith/exercises/3-identify/identify.c
+/home/cyang58/cs220/labs/5-arith/exercises/4-negeq/negeq.c
+/home/cyang58/cs220/labs/5-arith/exercises/6-inexact/0.1.c
+/home/cyang58/cs220/labs/5-arith/exercises/7-nan/nan.c
+/home/cyang58/cs220/labs/5-arith/exercises/8-ulp/ulp.c
+/home/cyang58/cs220/labs/5-arith/exercises/9-loop/loop.c
+/home/cyang58/cs220/labs/lab5/exercises/1-uints/uints.c
+/home/cyang58/cs220/labs/lab5/exercises/2-ints/ints.c
+/home/cyang58/cs220/labs/lab5/exercises/3-identify/identify.c
+/home/cyang58/cs220/labs/lab5/exercises/4-negeq/negeq.c
+/home/cyang58/cs220/labs/lab5/exercises/6-inexact/0.1.c
+/home/cyang58/cs220/labs/lab5/exercises/7-nan/nan.c
+/home/cyang58/cs220/labs/lab5/exercises/8-ulp/ulp.c
+/home/cyang58/cs220/labs/lab5/exercises/9-loop/loop.c
+/home/cyang58/cs220/labs/6-linking/exercises/1-log10/log10.c
+/home/cyang58/cs220/labs/6-linking/exercises/2-multiple-symbols/def1.c
+/home/cyang58/cs220/labs/6-linking/exercises/2-multiple-symbols/def2.c
+/home/cyang58/cs220/labs/6-linking/exercises/2-multiple-symbols/main.c
+/home/cyang58/cs220/labs/6-linking/exercises/3-multiple-defs/f.c
+/home/cyang58/cs220/labs/6-linking/exercises/3-multiple-defs/main.c
+/home/cyang58/cs220/labs/6-linking/exercises/4-static-dynamic/log10.c
+/home/cyang58/cs220/labs/6-linking/exercises/5-libvec/addvec.c
+/home/cyang58/cs220/labs/6-linking/exercises/5-libvec/multvec.c
+/home/cyang58/cs220/labs/6-linking/exercises/5-libvec/testvec.c
+/home/cyang58/cs220/labs/6-linking/exercises/7-libgeom/circ.c
+/home/cyang58/cs220/labs/6-linking/exercises/7-libgeom/rect.c
+/home/cyang58/cs220/labs/6-linking/exercises/7-libgeom/testgeom.c
+/home/cyang58/cs220/labs/lab6/exercises/1-log10/log10.c
+/home/cyang58/cs220/labs/lab6/exercises/2-multiple-symbols/def1.c
+/home/cyang58/cs220/labs/lab6/exercises/2-multiple-symbols/def2.c
+/home/cyang58/cs220/labs/lab6/exercises/2-multiple-symbols/main.c
+/home/cyang58/cs220/labs/lab6/exercises/3-multiple-defs/f.c
+/home/cyang58/cs220/labs/lab6/exercises/3-multiple-defs/main.c
+/home/cyang58/cs220/labs/lab6/exercises/4-static-dynamic/log10.c
+/home/cyang58/cs220/labs/lab6/exercises/5-libvec/addvec.c
+/home/cyang58/cs220/labs/lab6/exercises/5-libvec/multvec.c
+/home/cyang58/cs220/labs/lab6/exercises/5-libvec/testvec.c
+/home/cyang58/cs220/labs/lab6/exercises/7-libgeom/circ.c
+/home/cyang58/cs220/labs/lab6/exercises/7-libgeom/rect.c
+/home/cyang58/cs220/labs/lab6/exercises/7-libgeom/testgeom.c
+/home/cyang58/cs220/labs/7-assembly-language/exercises/hello.c
+/home/cyang58/cs220/labs/lab7/exercises/hello.c
+/home/cyang58/cs220/misc/doodles/220a/2020-08-28/hello-mem.c
+/home/cyang58/cs220/misc/doodles/220a/2020-08-28/hello.c
+/home/cyang58/cs220/misc/doodles/220a/2020-09-02/expr-vs-statement.c
+/home/cyang58/cs220/misc/doodles/220a/2020-09-02/fragments.c
+/home/cyang58/cs220/misc/doodles/220a/2020-09-02/sizeof.c
+/home/cyang58/cs220/misc/doodles/220a/2020-09-02/ternary.c
+/home/cyang58/cs220/misc/doodles/220a/2020-09-04/arrays.c
+/home/cyang58/cs220/misc/doodles/220a/2020-09-04/chars.c
+/home/cyang58/cs220/misc/doodles/220a/2020-09-04/ints.c
+/home/cyang58/cs220/misc/doodles/220a/2020-09-07/arrays.c
+/home/cyang58/cs220/misc/doodles/220a/2020-09-07/bases.c
+/home/cyang58/cs220/misc/doodles/220a/2020-09-07/sum.c
+/home/cyang58/cs220/misc/doodles/220a/2020-09-09/doodles.c
+/home/cyang58/cs220/misc/doodles/220a/2020-09-16/doodles.c
+/home/cyang58/cs220/misc/doodles/220a/2020-09-18/decl-defn.c
+/home/cyang58/cs220/misc/doodles/220a/2020-09-18/doodles.c
+/home/cyang58/cs220/misc/doodles/220a/2020-09-18/multi-array.c
+/home/cyang58/cs220/misc/doodles/220a/2020-09-18/ptr-array.c
+/home/cyang58/cs220/misc/doodles/220a/2020-09-21/ptr-ret.c
+/home/cyang58/cs220/misc/doodles/220a/2020-09-21/quadr.c
+/home/cyang58/cs220/misc/doodles/220a/2020-09-23/doodles.c
+/home/cyang58/cs220/misc/doodles/220a/2020-09-25/doodles.c
+/home/cyang58/cs220/misc/doodles/220a/2020-10-12/doodles.c
+/home/cyang58/cs220/misc/doodles/220a/2020-10-14/doodles.c
+/home/cyang58/cs220/misc/doodles/220a/2020-10-21/doodles.c
+/home/cyang58/cs220/misc/doodles/220a/2020-10-23/doodles.c
+/home/cyang58/cs220/misc/doodles/220b/2020-08-28/hello.c
+/home/cyang58/cs220/misc/doodles/220b/2020-09-02/assign.c
+/home/cyang58/cs220/misc/doodles/220b/2020-09-02/bits.c
+/home/cyang58/cs220/misc/doodles/220b/2020-09-02/expr.c
+/home/cyang58/cs220/misc/doodles/220b/2020-09-02/fragments.c
+/home/cyang58/cs220/misc/doodles/220b/2020-09-04/arrays.c
+/home/cyang58/cs220/misc/doodles/220b/2020-09-04/chars.c
+/home/cyang58/cs220/misc/doodles/220b/2020-09-04/ints.c
+/home/cyang58/cs220/misc/doodles/220b/2020-09-07/arrays.c
+/home/cyang58/cs220/misc/doodles/220b/2020-09-07/gsum.c
+/home/cyang58/cs220/misc/doodles/220b/2020-09-07/sum.c
+/home/cyang58/cs220/misc/doodles/220b/2020-09-09/doodles.c
+/home/cyang58/cs220/misc/doodles/220b/2020-09-16/doodles.c
+/home/cyang58/cs220/misc/doodles/220b/2020-09-18/arr-ptr.c
+/home/cyang58/cs220/misc/doodles/220b/2020-09-18/doodles.c
+/home/cyang58/cs220/misc/doodles/220b/2020-09-18/strings.c
+/home/cyang58/cs220/misc/doodles/220b/2020-09-21/doodles.c
+/home/cyang58/cs220/misc/doodles/220b/2020-09-21/even-odd.c
+/home/cyang58/cs220/misc/doodles/220b/2020-09-21/quadr.c
+/home/cyang58/cs220/misc/doodles/220b/2020-09-23/doodles.c
+/home/cyang58/cs220/misc/doodles/220b/2020-09-25/doodles.c
+/home/cyang58/cs220/misc/doodles/220b/2020-09-30/doodle.c
+/home/cyang58/cs220/misc/doodles/220b/2020-10-12/doodles.c
+/home/cyang58/cs220/misc/doodles/220b/2020-10-14/doodles.c
+/home/cyang58/cs220/misc/doodles/220b/2020-10-19/doodles.c
+/home/cyang58/cs220/misc/doodles/220b/2020-10-21/doodles.c
+/home/cyang58/cs220/misc/doodles/220b/2020-10-23/doodles.c
+/home/cyang58/cs220/projects/prj1/extras/flip-bits/flip-bits.c
+/home/cyang58/cs220/projects/prj1/prj1-sol/hamming.c
+/home/cyang58/cs220/projects/prj1/prj1-sol/main.c
+/home/cyang58/cs220/projects/prj2/bcd-test.c
+/home/cyang58/cs220/projects/prj2/prj2-sol/bcd-test.c
+/home/cyang58/cs220/projects/prj2/prj2-sol/bcd.c
+/home/cyang58/cs220/projects/prj2/prj2-sol/main.c
+/home/cyang58/cs220/projects/prj1-sol/hamming.c
+/home/cyang58/cs220/projects/prj1-sol/main.c
+/home/cyang58/cs220/projects/prj2-sol/bcd-test.c
+/home/cyang58/cs220/projects/prj2-sol/bcd.c
+/home/cyang58/cs220/projects/prj2-sol/main.c
+/home/cyang58/cs220/slides/intro/code/hello.c
+/home/cyang58/cs220/slides/c-intro/code/bases.c
+/home/cyang58/cs220/slides/c-intro/code/count-1s-1.c
+/home/cyang58/cs220/slides/c-intro/code/count-1s-2.c
+/home/cyang58/cs220/slides/c-intro/code/endian.c
+/home/cyang58/cs220/slides/c-intro/code/integer-sizes.c
+/home/cyang58/cs220/slides/c-intro/code/kilo-powers.c
+/home/cyang58/cs220/slides/c-intro/code/ptr-sum.c
+/home/cyang58/cs220/slides/c-intro/code/robust-sum.c
+/home/cyang58/cs220/slides/c-intro/code/sum-args.c
+/home/cyang58/cs220/slides/c-intro/code/wc.c
+/home/cyang58/cs220/slides/c-intro/code/sum.c
+/home/cyang58/cs220/slides/c-intro/code/out-bits.c
+/home/cyang58/cs220/slides/x86/code/abs-diff.c
+/home/cyang58/cs220/slides/x86/code/acc-fact.c
+/home/cyang58/cs220/slides/x86/code/arith.c
+/home/cyang58/cs220/slides/x86/code/array-access.c
+/home/cyang58/cs220/slides/x86/code/cmp-sets.c
+/home/cyang58/cs220/slides/x86/code/conditional-move.c
+/home/cyang58/cs220/slides/x86/code/div-mod.c
+/home/cyang58/cs220/slides/x86/code/dynamic-array.c
+/home/cyang58/cs220/slides/x86/code/fact-do-while.c
+/home/cyang58/cs220/slides/x86/code/fact-while.c
+/home/cyang58/cs220/slides/x86/code/find.c
+/home/cyang58/cs220/slides/x86/code/indirect-goto.c
+/home/cyang58/cs220/slides/x86/code/move.c
+/home/cyang58/cs220/slides/x86/code/mstore/main.c
+/home/cyang58/cs220/slides/x86/code/mstore/mstore.c
+/home/cyang58/cs220/slides/x86/code/point3.c
+/home/cyang58/cs220/slides/x86/code/read-point.c
+/home/cyang58/cs220/slides/x86/code/rec-fact.c
+/home/cyang58/cs220/slides/x86/code/scale.c
+/home/cyang58/cs220/slides/x86/code/stack-frame.c
+/home/cyang58/cs220/slides/x86/code/structs.c
+/home/cyang58/cs220/slides/x86/code/sum-dist-origin-s.c
+/home/cyang58/cs220/slides/x86/code/sum-dist-origin.c
+/home/cyang58/cs220/slides/x86/code/sum.c
+/home/cyang58/cs220/slides/x86/code/switch.c
+/home/cyang58/cs220/slides/x86/code/vframe.c
+cyang58@remote03:~/i220a/submit/lab8$ find -L ~/cs220 -name '*.c' | wc -l
+171
+cyang58@remote03:~/i220a/submit/lab8$ find / -name '*.c' 2>/dev/null >c-files.lst &
+[1] 1789720
+cyang58@remote03:~/i220a/submit/lab8$ jobs
+[1]+  Running                 find / -name '*.c' 2> /dev/null > c-files.lst &
+cyang58@remote03:~/i220a/submit/lab8$ kill %1
+cyang58@remote03:~/i220a/submit/lab8$ jobs
+[1]+  Terminated              find / -name '*.c' 2> /dev/null > c-files.lst
+cyang58@remote03:~/i220a/submit/lab8$ cat c-files.lst \
+> cat c-files.lst \[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K
+/backup/cyang58/linux/2019/09-08/cs120.c
+/backup/cyang58/linux/2019/09-08/100loop.c
+/backup/cyang58/linux/2019/09-08/826classwork.c
+/backup/cyang58/linux/2019/09-08/hello.c
+/backup/cyang58/linux/2019/09-08/multitable.c
+/backup/cyang58/linux/2019/09-08/lab/lab2.c
+/backup/cyang58/linux/2019/10-06/cs120.c
+/backup/cyang58/linux/2019/10-06/lab/lab2.c
+/backup/cyang58/linux/2019/10-06/100loop.c
+/backup/cyang58/linux/2019/10-06/826classwork.c
+/backup/cyang58/linux/2019/10-06/hello.c
+/backup/cyang58/linux/2019/10-06/multitable.c
+/backup/cyang58/linux/2019/10-20/cs120.c
+/backup/cyang58/linux/2019/10-20/lab/lab2.c
+/backup/cyang58/linux/2019/10-20/100loop.c
+/backup/cyang58/linux/2019/10-20/826classwork.c
+/backup/cyang58/linux/2019/10-20/hello.c
+/backup/cyang58/linux/2019/10-20/multitable.c
+/backup/cyang58/linux/2019/10-27/lab/lab2.c
+/backup/cyang58/linux/2019/10-27/cs120.c
+/backup/cyang58/linux/2019/10-27/100loop.c
+/backup/cyang58/linux/2019/10-27/826classwork.c
+/backup/cyang58/linux/2019/10-27/hello.c
+/backup/cyang58/linux/2019/10-27/multitable.c
+/backup/cyang58/linux/2019/11-01/cs120.c
+/backup/cyang58/linux/2019/11-01/lab/lab2.c
+/backup/cyang58/linux/2019/11-01/100loop.c
+/backup/cyang58/linux/2019/11-01/826classwork.c
+/backup/cyang58/linux/2019/11-01/hello.c
+/backup/cyang58/linux/2019/11-01/multitable.c
+/backup/cyang58/linux/2019/11-03/cs120.c
+/backup/cyang58/linux/2019/11-03/lab/lab2.c
+/backup/cyang58/linux/2019/11-03/100loop.c
+/backup/cyang58/linux/2019/11-03/826classwork.c
+/backup/cyang58/linux/2019/11-03/hello.c
+/backup/cyang58/linux/2019/11-03/multitable.c
+/backup/cyang58/linux/2019/11-24/cs120.c
+/backup/cyang58/linux/2019/11-24/lab/lab2.c
+/backup/cyang58/linux/2019/11-24/100loop.c
+/backup/cyang58/linux/2019/11-24/826classwork.c
+/backup/cyang58/linux/2019/11-24/hello.c
+/backup/cyang58/linux/2019/11-24/multitable.c
+/backup/cyang58/linux/2019/12-08/lab/lab2.c
+/backup/cyang58/linux/2019/12-08/cs120.c
+/backup/cyang58/linux/2019/12-08/100loop.c
+/backup/cyang58/linux/2019/12-08/826classwork.c
+/backup/cyang58/linux/2019/12-08/hello.c
+/backup/cyang58/linux/2019/12-08/multitable.c
+/backup/cyang58/linux/2019/12-15/cs120.c
+/backup/cyang58/linux/2019/12-15/lab/lab2.c
+/backup/cyang58/linux/2019/12-15/100loop.c
+/backup/cyang58/linux/2019/12-15/826classwork.c
+/backup/cyang58/linux/2019/12-15/hello.c
+/backup/cyang58/linux/2019/12-15/multitable.c
+/backup/cyang58/linux/2019/12-29/cs120.c
+/backup/cyang58/linux/2019/12-29/lab/lab2.c
+/backup/cyang58/linux/2019/12-29/100loop.c
+/backup/cyang58/linux/2019/12-29/826classwork.c
+/backup/cyang58/linux/2019/12-29/hello.c
+/backup/cyang58/linux/2019/12-29/multitable.c
+/backup/cyang58/linux/2020/01-19/cs120.c
+/backup/cyang58/linux/2020/01-19/lab/lab2.c
+/backup/cyang58/linux/2020/01-19/100loop.c
+/backup/cyang58/linux/2020/01-19/826classwork.c
+/backup/cyang58/linux/2020/01-19/hello.c
+/backup/cyang58/linux/2020/01-19/multitable.c
+/backup/cyang58/linux/2020/02-02/cs120.c
+/backup/cyang58/linux/2020/02-02/lab/lab2.c
+/backup/cyang58/linux/2020/02-02/100loop.c
+/backup/cyang58/linux/2020/02-02/826classwork.c
+/backup/cyang58/linux/2020/02-02/hello.c
+/backup/cyang58/linux/2020/02-02/multitable.c
+/backup/cyang58/linux/2020/08-30/cs120.c
+/backup/cyang58/linux/2020/08-30/git-repos/cs220/exercises/questions/src/x86/fns-asm.c
+/backup/cyang58/linux/2020/08-30/git-repos/cs220/slides/intro/code/hello.c
+/backup/cyang58/linux/2020/08-30/lab/lab2.c
+/backup/cyang58/linux/2020/08-30/projects/cs220/slides/intro/code/hello.c
+/backup/cyang58/linux/2020/08-30/projects/cs220/exercises/questions/src/x86/fns-asm.c
+/backup/cyang58/linux/2020/08-30/100loop.c
+/backup/cyang58/linux/2020/08-30/826classwork.c
+/backup/cyang58/linux/2020/08-30/hello.c
+/backup/cyang58/linux/2020/08-30/multitable.c
+/backup/cyang58/linux/2020/09-06/cs120.c
+/backup/cyang58/linux/2020/09-06/git-repos/cs220/exercises/questions/src/x86/fns-asm.c
+/backup/cyang58/linux/2020/09-06/git-repos/cs220/slides/intro/code/hello.c
+/backup/cyang58/linux/2020/09-06/lab/lab2.c
+/backup/cyang58/linux/2020/09-06/projects/cs220/exercises/questions/src/x86/fns-asm.c
+/backup/cyang58/linux/2020/09-06/projects/cs220/labs/lab1/exercises/1-hello/hello.c
+/backup/cyang58/linux/2020/09-06/projects/cs220/labs/lab1/exercises/3-multifile/main.c
+/backup/cyang58/linux/2020/09-06/projects/cs220/labs/lab1/exercises/3-multifile/quadr.c
+/backup/cyang58/linux/2020/09-06/projects/cs220/labs/lab1/exercises/4-from-scratch/key-value.c
+/backup/cyang58/linux/2020/09-06/projects/cs220/labs/lab1/exercises/4-from-scratch/main.c
+/backup/cyang58/linux/2020/09-06/projects/cs220/labs/lab1/exercises/4-from-scratch/process-file.c
+/backup/cyang58/linux/2020/09-06/projects/cs220/labs/lab1/exercises/5-auto-dependencies/main.c
+/backup/cyang58/linux/2020/09-06/projects/cs220/labs/lab1/exercises/5-auto-dependencies/quadr.c
+/backup/cyang58/linux/2020/09-06/projects/cs220/misc/doodles/220a/2020-09-02/expr-vs-statement.c
+/backup/cyang58/linux/2020/09-06/projects/cs220/misc/doodles/220a/2020-09-02/fragments.c
+/backup/cyang58/linux/2020/09-06/projects/cs220/misc/doodles/220a/2020-09-02/sizeof.c
+/backup/cyang58/linux/2020/09-06/projects/cs220/misc/doodles/220a/2020-09-02/ternary.c
+/backup/cyang58/linux/2020/09-06/projects/cs220/misc/doodles/220a/2020-08-28/hello-mem.c
+/backup/cyang58/linux/2020/09-06/projects/cs220/misc/doodles/220a/2020-08-28/hello.c
+/backup/cyang58/linux/2020/09-06/projects/cs220/misc/doodles/220b/2020-08-28/hello.c
+/backup/cyang58/linux/2020/09-06/projects/cs220/misc/doodles/220b/2020-09-02/assign.c
+/backup/cyang58/linux/2020/09-06/projects/cs220/misc/doodles/220b/2020-09-02/bits.c
+/backup/cyang58/linux/2020/09-06/projects/cs220/misc/doodles/220b/2020-09-02/expr.c
+/backup/cyang58/linux/2020/09-06/projects/cs220/misc/doodles/220b/2020-09-02/fragments.c
+/backup/cyang58/linux/2020/09-06/projects/cs220/slides/c-intro/code/bases.c
+/backup/cyang58/linux/2020/09-06/projects/cs220/slides/c-intro/code/count-1s-1.c
+/backup/cyang58/linux/2020/09-06/projects/cs220/slides/c-intro/code/count-1s-2.c
+/backup/cyang58/linux/2020/09-06/projects/cs220/slides/c-intro/code/endian.c
+/backup/cyang58/linux/2020/09-06/projects/cs220/slides/c-intro/code/integer-sizes.c
+/backup/cyang58/linux/2020/09-06/projects/cs220/slides/c-intro/code/kilo-powers.c
+/backup/cyang58/linux/2020/09-06/projects/cs220/slides/c-intro/code/out-bits.c
+/backup/cyang58/linux/2020/09-06/projects/cs220/slides/c-intro/code/ptr-sum.c
+/backup/cyang58/linux/2020/09-06/projects/cs220/slides/c-intro/code/robust-sum.c
+/backup/cyang58/linux/2020/09-06/projects/cs220/slides/c-intro/code/sum-args.c
+/backup/cyang58/linux/2020/09-06/projects/cs220/slides/c-intro/code/sum.c
+/backup/cyang58/linux/2020/09-06/projects/cs220/slides/c-intro/code/wc.c
+/backup/cyang58/linux/2020/09-06/projects/cs220/slides/intro/code/hello.c
+/backup/cyang58/linux/2020/09-06/projects/i220a/submit/lab1/exercises/1-hello/hello.c
+/backup/cyang58/linux/2020/09-06/projects/i220a/submit/lab1/exercises/3-multifile/main.c
+/backup/cyang58/linux/2020/09-06/projects/i220a/submit/lab1/exercises/3-multifile/quadr.c
+/backup/cyang58/linux/2020/09-06/projects/i220a/submit/lab1/exercises/4-from-scratch/key-value.c
+/backup/cyang58/linux/2020/09-06/projects/i220a/submit/lab1/exercises/4-from-scratch/main.c
+/backup/cyang58/linux/2020/09-06/projects/i220a/submit/lab1/exercises/4-from-scratch/process-file.c
+/backup/cyang58/linux/2020/09-06/projects/i220a/submit/lab1/exercises/5-auto-dependencies/main.c
+/backup/cyang58/linux/2020/09-06/projects/i220a/submit/lab1/exercises/5-auto-dependencies/quadr.c
+/backup/cyang58/linux/2020/09-06/100loop.c
+/backup/cyang58/linux/2020/09-06/826classwork.c
+/backup/cyang58/linux/2020/09-06/hello.c
+/backup/cyang58/linux/2020/09-06/multitable.c
+/backup/cyang58/linux/2020/09-13/lab/lab2.c
+/backup/cyang58/linux/2020/09-13/projects/cs220/labs/lab1/exercises/1-hello/hello.c
+/backup/cyang58/linux/2020/09-13/projects/cs220/labs/lab1/exercises/3-multifile/main.c
+/backup/cyang58/linux/2020/09-13/projects/cs220/labs/lab1/exercises/3-multifile/quadr.c
+/backup/cyang58/linux/2020/09-13/projects/cs220/labs/lab1/exercises/4-from-scratch/key-value.c
+/backup/cyang58/linux/2020/09-13/projects/cs220/labs/lab1/exercises/4-from-scratch/main.c
+/backup/cyang58/linux/2020/09-13/projects/cs220/labs/lab1/exercises/4-from-scratch/process-file.c
+/backup/cyang58/linux/2020/09-13/projects/cs220/labs/lab1/exercises/5-auto-dependencies/main.c
+/backup/cyang58/linux/2020/09-13/projects/cs220/labs/lab1/exercises/5-auto-dependencies/quadr.c
+/backup/cyang58/linux/2020/09-13/projects/cs220/misc/doodles/220b/2020-08-28/hello.c
+/backup/cyang58/linux/2020/09-13/projects/cs220/misc/doodles/220b/2020-09-02/assign.c
+/backup/cyang58/linux/2020/09-13/projects/cs220/misc/doodles/220b/2020-09-02/bits.c
+/backup/cyang58/linux/2020/09-13/projects/cs220/misc/doodles/220b/2020-09-02/expr.c
+/backup/cyang58/linux/2020/09-13/projects/cs220/misc/doodles/220b/2020-09-02/fragments.c
+/backup/cyang58/linux/2020/09-13/projects/cs220/misc/doodles/220a/2020-08-28/hello-mem.c
+/backup/cyang58/linux/2020/09-13/projects/cs220/misc/doodles/220a/2020-08-28/hello.c
+/backup/cyang58/linux/2020/09-13/projects/cs220/misc/doodles/220a/2020-09-02/expr-vs-statement.c
+/backup/cyang58/linux/2020/09-13/projects/cs220/misc/doodles/220a/2020-09-02/fragments.c
+/backup/cyang58/linux/2020/09-13/projects/cs220/misc/doodles/220a/2020-09-02/sizeof.c
+/backup/cyang58/linux/2020/09-13/projects/cs220/misc/doodles/220a/2020-09-02/ternary.c
+/backup/cyang58/linux/2020/09-13/projects/cs220/slides/intro/code/hello.c
+/backup/cyang58/linux/2020/09-13/projects/cs220/slides/c-intro/code/bases.c
+/backup/cyang58/linux/2020/09-13/projects/cs220/slides/c-intro/code/count-1s-1.c
+/backup/cyang58/linux/2020/09-13/projects/cs220/slides/c-intro/code/count-1s-2.c
+/backup/cyang58/linux/2020/09-13/projects/cs220/slides/c-intro/code/endian.c
+/backup/cyang58/linux/2020/09-13/projects/cs220/slides/c-intro/code/integer-sizes.c
+/backup/cyang58/linux/2020/09-13/projects/cs220/slides/c-intro/code/kilo-powers.c
+/backup/cyang58/linux/2020/09-13/projects/cs220/slides/c-intro/code/out-bits.c
+/backup/cyang58/linux/2020/09-13/projects/cs220/slides/c-intro/code/ptr-sum.c
+/backup/cyang58/linux/2020/09-13/projects/cs220/slides/c-intro/code/robust-sum.c
+/backup/cyang58/linux/2020/09-13/projects/cs220/slides/c-intro/code/sum-args.c
+/backup/cyang58/linux/2020/09-13/projects/cs220/slides/c-intro/code/sum.c
+/backup/cyang58/linux/2020/09-13/projects/cs220/slides/c-intro/code/wc.c
+/backup/cyang58/linux/2020/09-13/projects/cs220/exercises/questions/src/x86/fns-asm.c
+/backup/cyang58/linux/2020/09-13/projects/i220a/submit/lab1/exercises/1-hello/hello.c
+/backup/cyang58/linux/2020/09-13/projects/i220a/submit/lab1/exercises/3-multifile/main.c
+/backup/cyang58/linux/2020/09-13/projects/i220a/submit/lab1/exercises/3-multifile/quadr.c
+/backup/cyang58/linux/2020/09-13/projects/i220a/submit/lab1/exercises/4-from-scratch/key-value.c
+/backup/cyang58/linux/2020/09-13/projects/i220a/submit/lab1/exercises/4-from-scratch/main.c
+/backup/cyang58/linux/2020/09-13/projects/i220a/submit/lab1/exercises/4-from-scratch/process-file.c
+/backup/cyang58/linux/2020/09-13/projects/i220a/submit/lab1/exercises/5-auto-dependencies/main.c
+/backup/cyang58/linux/2020/09-13/projects/i220a/submit/lab1/exercises/5-auto-dependencies/quadr.c
+/backup/cyang58/linux/2020/09-13/cs120.c
+/backup/cyang58/linux/2020/09-13/100loop.c
+/backup/cyang58/linux/2020/09-13/826classwork.c
+/backup/cyang58/linux/2020/09-13/hello.c
+/backup/cyang58/linux/2020/09-13/multitable.c
+/backup/cyang58/linux/2020/09-13/git-repos/cs220/slides/intro/code/hello.c
+/backup/cyang58/linux/2020/09-13/git-repos/cs220/exercises/questions/src/x86/fns-asm.c
+/backup/cyang58/linux/2020/09-20/cs120.c
+/backup/cyang58/linux/2020/09-20/100loop.c
+/backup/cyang58/linux/2020/09-20/826classwork.c
+/backup/cyang58/linux/2020/09-20/hello.c
+/backup/cyang58/linux/2020/09-20/multitable.c
+/backup/cyang58/linux/2020/09-20/git-repos/cs220/slides/intro/code/hello.c
+/backup/cyang58/linux/2020/09-20/git-repos/cs220/exercises/questions/src/x86/fns-asm.c
+/backup/cyang58/linux/2020/09-20/lab/lab2.c
+/backup/cyang58/linux/2020/09-20/projects/cs220/exercises/questions/src/x86/fns-asm.c
+/backup/cyang58/linux/2020/09-20/projects/cs220/labs/lab1/exercises/1-hello/hello.c
+/backup/cyang58/linux/2020/09-20/projects/cs220/labs/lab1/exercises/3-multifile/main.c
+/backup/cyang58/linux/2020/09-20/projects/cs220/labs/lab1/exercises/3-multifile/quadr.c
+/backup/cyang58/linux/2020/09-20/projects/cs220/labs/lab1/exercises/4-from-scratch/key-value.c
+/backup/cyang58/linux/2020/09-20/projects/cs220/labs/lab1/exercises/4-from-scratch/main.c
+/backup/cyang58/linux/2020/09-20/projects/cs220/labs/lab1/exercises/4-from-scratch/process-file.c
+/backup/cyang58/linux/2020/09-20/projects/cs220/labs/lab1/exercises/5-auto-dependencies/main.c
+/backup/cyang58/linux/2020/09-20/projects/cs220/labs/lab1/exercises/5-auto-dependencies/quadr.c
+/backup/cyang58/linux/2020/09-20/projects/cs220/labs/lab2/exercises/1-hello-args/hello.c
+/backup/cyang58/linux/2020/09-20/projects/cs220/labs/lab2/exercises/2-hello-upcase-args/hello.c
+/backup/cyang58/linux/2020/09-20/projects/cs220/misc/doodles/220a/2020-09-18/decl-defn.c
+/backup/cyang58/linux/2020/09-20/projects/cs220/misc/doodles/220a/2020-09-18/doodles.c
+/backup/cyang58/linux/2020/09-20/projects/cs220/misc/doodles/220a/2020-09-18/multi-array.c
+/backup/cyang58/linux/2020/09-20/projects/cs220/misc/doodles/220a/2020-09-18/ptr-array.c
+/backup/cyang58/linux/2020/09-20/projects/cs220/misc/doodles/220a/2020-08-28/hello-mem.c
+/backup/cyang58/linux/2020/09-20/projects/cs220/misc/doodles/220a/2020-08-28/hello.c
+/backup/cyang58/linux/2020/09-20/projects/cs220/misc/doodles/220a/2020-09-02/expr-vs-statement.c
+/backup/cyang58/linux/2020/09-20/projects/cs220/misc/doodles/220a/2020-09-02/fragments.c
+/backup/cyang58/linux/2020/09-20/projects/cs220/misc/doodles/220a/2020-09-02/sizeof.c
+/backup/cyang58/linux/2020/09-20/projects/cs220/misc/doodles/220a/2020-09-02/ternary.c
+/backup/cyang58/linux/2020/09-20/projects/cs220/misc/doodles/220a/2020-09-04/arrays.c
+/backup/cyang58/linux/2020/09-20/projects/cs220/misc/doodles/220a/2020-09-04/chars.c
+/backup/cyang58/linux/2020/09-20/projects/cs220/misc/doodles/220a/2020-09-04/ints.c
+/backup/cyang58/linux/2020/09-20/projects/cs220/misc/doodles/220a/2020-09-07/arrays.c
+/backup/cyang58/linux/2020/09-20/projects/cs220/misc/doodles/220a/2020-09-07/bases.c
+/backup/cyang58/linux/2020/09-20/projects/cs220/misc/doodles/220a/2020-09-07/sum.c
+/backup/cyang58/linux/2020/09-20/projects/cs220/misc/doodles/220a/2020-09-09/doodles.c
+/backup/cyang58/linux/2020/09-20/projects/cs220/misc/doodles/220a/2020-09-16/doodles.c
+/backup/cyang58/linux/2020/09-20/projects/cs220/misc/doodles/220b/2020-08-28/hello.c
+/backup/cyang58/linux/2020/09-20/projects/cs220/misc/doodles/220b/2020-09-02/assign.c
+/backup/cyang58/linux/2020/09-20/projects/cs220/misc/doodles/220b/2020-09-02/bits.c
+/backup/cyang58/linux/2020/09-20/projects/cs220/misc/doodles/220b/2020-09-02/expr.c
+/backup/cyang58/linux/2020/09-20/projects/cs220/misc/doodles/220b/2020-09-02/fragments.c
+/backup/cyang58/linux/2020/09-20/projects/cs220/misc/doodles/220b/2020-09-04/arrays.c
+/backup/cyang58/linux/2020/09-20/projects/cs220/misc/doodles/220b/2020-09-04/chars.c
+/backup/cyang58/linux/2020/09-20/projects/cs220/misc/doodles/220b/2020-09-04/ints.c
+/backup/cyang58/linux/2020/09-20/projects/cs220/misc/doodles/220b/2020-09-07/arrays.c
+/backup/cyang58/linux/2020/09-20/projects/cs220/misc/doodles/220b/2020-09-07/gsum.c
+/backup/cyang58/linux/2020/09-20/projects/cs220/misc/doodles/220b/2020-09-07/sum.c
+/backup/cyang58/linux/2020/09-20/projects/cs220/misc/doodles/220b/2020-09-09/doodles.c
+/backup/cyang58/linux/2020/09-20/projects/cs220/misc/doodles/220b/2020-09-16/doodles.c
+/backup/cyang58/linux/2020/09-20/projects/cs220/misc/doodles/220b/2020-09-18/arr-ptr.c
+/backup/cyang58/linux/2020/09-20/projects/cs220/misc/doodles/220b/2020-09-18/doodles.c
+/backup/cyang58/linux/2020/09-20/projects/cs220/misc/doodles/220b/2020-09-18/strings.c
+/backup/cyang58/linux/2020/09-20/projects/cs220/projects/prj1/extras/flip-bits/flip-bits.c
+/backup/cyang58/linux/2020/09-20/projects/cs220/projects/prj1/prj1-sol/hamming.c
+/backup/cyang58/linux/2020/09-20/projects/cs220/projects/prj1/prj1-sol/main.c
+/backup/cyang58/linux/2020/09-20/projects/cs220/slides/c-intro/code/sum.c
+/backup/cyang58/linux/2020/09-20/projects/cs220/slides/c-intro/code/bases.c
+/backup/cyang58/linux/2020/09-20/projects/cs220/slides/c-intro/code/count-1s-1.c
+/backup/cyang58/linux/2020/09-20/projects/cs220/slides/c-intro/code/count-1s-2.c
+/backup/cyang58/linux/2020/09-20/projects/cs220/slides/c-intro/code/endian.c
+/backup/cyang58/linux/2020/09-20/projects/cs220/slides/c-intro/code/integer-sizes.c
+/backup/cyang58/linux/2020/09-20/projects/cs220/slides/c-intro/code/kilo-powers.c
+/backup/cyang58/linux/2020/09-20/projects/cs220/slides/c-intro/code/ptr-sum.c
+/backup/cyang58/linux/2020/09-20/projects/cs220/slides/c-intro/code/robust-sum.c
+/backup/cyang58/linux/2020/09-20/projects/cs220/slides/c-intro/code/sum-args.c
+/backup/cyang58/linux/2020/09-20/projects/cs220/slides/c-intro/code/wc.c
+/backup/cyang58/linux/2020/09-20/projects/cs220/slides/c-intro/code/out-bits.c
+/backup/cyang58/linux/2020/09-20/projects/cs220/slides/intro/code/hello.c
+/backup/cyang58/linux/2020/09-20/projects/i220a/submit/lab1/exercises/1-hello/hello.c
+/backup/cyang58/linux/2020/09-20/projects/i220a/submit/lab1/exercises/3-multifile/main.c
+/backup/cyang58/linux/2020/09-20/projects/i220a/submit/lab1/exercises/3-multifile/quadr.c
+/backup/cyang58/linux/2020/09-20/projects/i220a/submit/lab1/exercises/4-from-scratch/key-value.c
+/backup/cyang58/linux/2020/09-20/projects/i220a/submit/lab1/exercises/4-from-scratch/main.c
+/backup/cyang58/linux/2020/09-20/projects/i220a/submit/lab1/exercises/4-from-scratch/process-file.c
+/backup/cyang58/linux/2020/09-20/projects/i220a/submit/lab1/exercises/5-auto-dependencies/main.c
+/backup/cyang58/linux/2020/09-20/projects/i220a/submit/lab1/exercises/5-auto-dependencies/quadr.c
+/backup/cyang58/linux/2020/09-20/projects/i220a/submit/lab2/exercises/1-hello-args/hello.c
+/backup/cyang58/linux/2020/09-20/projects/i220a/submit/lab2/exercises/2-hello-upcase-args/hello.c
+/backup/cyang58/linux/2020/09-20/projects/i220a/submit/lab3/dir/t2.c
+/backup/cyang58/linux/2020/09-20/projects/i220a/submit/lab3/t1.c
+/backup/cyang58/linux/2020/09-20/projects/i220a/submit/lab3/v.c
+/backup/cyang58/linux/2020/09-20/projects/i220a/submit/lab3/x.c
+/backup/cyang58/linux/2020/09-27/cs120.c
+/backup/cyang58/linux/2020/09-27/100loop.c
+/backup/cyang58/linux/2020/09-27/826classwork.c
+/backup/cyang58/linux/2020/09-27/hello.c
+/backup/cyang58/linux/2020/09-27/multitable.c
+/backup/cyang58/linux/2020/09-27/git-repos/cs220/exercises/questions/src/x86/fns-asm.c
+/backup/cyang58/linux/2020/09-27/git-repos/cs220/slides/intro/code/hello.c
+/backup/cyang58/linux/2020/09-27/lab/lab2.c
+/backup/cyang58/linux/2020/09-27/projects/cs220/exercises/questions/src/x86/fns-asm.c
+/backup/cyang58/linux/2020/09-27/projects/cs220/labs/4-pointers/exercises/1-pointers/pointers.c
+/backup/cyang58/linux/2020/09-27/projects/cs220/labs/4-pointers/exercises/2-in-pointers/in-pointers.c
+/backup/cyang58/linux/2020/09-27/projects/cs220/labs/4-pointers/exercises/3-bad-types/bad-types.c
+/backup/cyang58/linux/2020/09-27/projects/cs220/labs/4-pointers/exercises/4-cast-types/cast-types.c
+/backup/cyang58/linux/2020/09-27/projects/cs220/labs/4-pointers/exercises/5-void-pointers/void-pointers.c
+/backup/cyang58/linux/2020/09-27/projects/cs220/labs/4-pointers/exercises/6-in-voids/in-voids.c
+/backup/cyang58/linux/2020/09-27/projects/cs220/labs/lab1/exercises/1-hello/hello.c
+/backup/cyang58/linux/2020/09-27/projects/cs220/labs/lab1/exercises/3-multifile/main.c
+/backup/cyang58/linux/2020/09-27/projects/cs220/labs/lab1/exercises/3-multifile/quadr.c
+/backup/cyang58/linux/2020/09-27/projects/cs220/labs/lab1/exercises/4-from-scratch/key-value.c
+/backup/cyang58/linux/2020/09-27/projects/cs220/labs/lab1/exercises/4-from-scratch/main.c
+/backup/cyang58/linux/2020/09-27/projects/cs220/labs/lab1/exercises/4-from-scratch/process-file.c
+/backup/cyang58/linux/2020/09-27/projects/cs220/labs/lab1/exercises/5-auto-dependencies/main.c
+/backup/cyang58/linux/2020/09-27/projects/cs220/labs/lab1/exercises/5-auto-dependencies/quadr.c
+/backup/cyang58/linux/2020/09-27/projects/cs220/labs/lab2/exercises/1-hello-args/hello.c
+/backup/cyang58/linux/2020/09-27/projects/cs220/labs/lab2/exercises/2-hello-upcase-args/hello.c
+/backup/cyang58/linux/2020/09-27/projects/cs220/misc/doodles/220a/2020-08-28/hello-mem.c
+/backup/cyang58/linux/2020/09-27/projects/cs220/misc/doodles/220a/2020-08-28/hello.c
+/backup/cyang58/linux/2020/09-27/projects/cs220/misc/doodles/220a/2020-09-02/expr-vs-statement.c
+/backup/cyang58/linux/2020/09-27/projects/cs220/misc/doodles/220a/2020-09-02/fragments.c
+/backup/cyang58/linux/2020/09-27/projects/cs220/misc/doodles/220a/2020-09-02/sizeof.c
+/backup/cyang58/linux/2020/09-27/projects/cs220/misc/doodles/220a/2020-09-02/ternary.c
+/backup/cyang58/linux/2020/09-27/projects/cs220/misc/doodles/220a/2020-09-04/arrays.c
+/backup/cyang58/linux/2020/09-27/projects/cs220/misc/doodles/220a/2020-09-04/chars.c
+/backup/cyang58/linux/2020/09-27/projects/cs220/misc/doodles/220a/2020-09-04/ints.c
+/backup/cyang58/linux/2020/09-27/projects/cs220/misc/doodles/220a/2020-09-07/arrays.c
+/backup/cyang58/linux/2020/09-27/projects/cs220/misc/doodles/220a/2020-09-07/bases.c
+/backup/cyang58/linux/2020/09-27/projects/cs220/misc/doodles/220a/2020-09-07/sum.c
+/backup/cyang58/linux/2020/09-27/projects/cs220/misc/doodles/220a/2020-09-09/doodles.c
+/backup/cyang58/linux/2020/09-27/projects/cs220/misc/doodles/220a/2020-09-16/doodles.c
+/backup/cyang58/linux/2020/09-27/projects/cs220/misc/doodles/220a/2020-09-18/decl-defn.c
+/backup/cyang58/linux/2020/09-27/projects/cs220/misc/doodles/220a/2020-09-18/doodles.c
+/backup/cyang58/linux/2020/09-27/projects/cs220/misc/doodles/220a/2020-09-18/multi-array.c
+/backup/cyang58/linux/2020/09-27/projects/cs220/misc/doodles/220a/2020-09-18/ptr-array.c
+/backup/cyang58/linux/2020/09-27/projects/cs220/misc/doodles/220a/2020-09-21/ptr-ret.c
+/backup/cyang58/linux/2020/09-27/projects/cs220/misc/doodles/220a/2020-09-21/quadr.c
+/backup/cyang58/linux/2020/09-27/projects/cs220/misc/doodles/220a/2020-09-23/doodles.c
+/backup/cyang58/linux/2020/09-27/projects/cs220/misc/doodles/220b/2020-09-21/doodles.c
+/backup/cyang58/linux/2020/09-27/projects/cs220/misc/doodles/220b/2020-09-21/even-odd.c
+/backup/cyang58/linux/2020/09-27/projects/cs220/misc/doodles/220b/2020-09-21/quadr.c
+/backup/cyang58/linux/2020/09-27/projects/cs220/misc/doodles/220b/2020-09-23/doodles.c
+/backup/cyang58/linux/2020/09-27/projects/cs220/misc/doodles/220b/2020-08-28/hello.c
+/backup/cyang58/linux/2020/09-27/projects/cs220/misc/doodles/220b/2020-09-02/assign.c
+/backup/cyang58/linux/2020/09-27/projects/cs220/misc/doodles/220b/2020-09-02/bits.c
+/backup/cyang58/linux/2020/09-27/projects/cs220/misc/doodles/220b/2020-09-02/expr.c
+/backup/cyang58/linux/2020/09-27/projects/cs220/misc/doodles/220b/2020-09-02/fragments.c
+/backup/cyang58/linux/2020/09-27/projects/cs220/misc/doodles/220b/2020-09-04/arrays.c
+/backup/cyang58/linux/2020/09-27/projects/cs220/misc/doodles/220b/2020-09-04/chars.c
+/backup/cyang58/linux/2020/09-27/projects/cs220/misc/doodles/220b/2020-09-04/ints.c
+/backup/cyang58/linux/2020/09-27/projects/cs220/misc/doodles/220b/2020-09-07/arrays.c
+/backup/cyang58/linux/2020/09-27/projects/cs220/misc/doodles/220b/2020-09-07/gsum.c
+/backup/cyang58/linux/2020/09-27/projects/cs220/misc/doodles/220b/2020-09-07/sum.c
+/backup/cyang58/linux/2020/09-27/projects/cs220/misc/doodles/220b/2020-09-09/doodles.c
+/backup/cyang58/linux/2020/09-27/projects/cs220/misc/doodles/220b/2020-09-16/doodles.c
+/backup/cyang58/linux/2020/09-27/projects/cs220/misc/doodles/220b/2020-09-18/arr-ptr.c
+/backup/cyang58/linux/2020/09-27/projects/cs220/misc/doodles/220b/2020-09-18/doodles.c
+/backup/cyang58/linux/2020/09-27/projects/cs220/misc/doodles/220b/2020-09-18/strings.c
+/backup/cyang58/linux/2020/09-27/projects/cs220/projects/prj1/extras/flip-bits/flip-bits.c
+/backup/cyang58/linux/2020/09-27/projects/cs220/projects/prj1/prj1-sol/hamming.c
+/backup/cyang58/linux/2020/09-27/projects/cs220/projects/prj1/prj1-sol/main.c
+/backup/cyang58/linux/2020/09-27/projects/cs220/slides/c-intro/code/sum.c
+/backup/cyang58/linux/2020/09-27/projects/cs220/slides/c-intro/code/bases.c
+/backup/cyang58/linux/2020/09-27/projects/cs220/slides/c-intro/code/councyang58@remote03:~/i220a/submit/lab8$ clear
+[H[2J[3Jcyang58@remote03:~/i220a/submit/lab8$ cd ~
+cyang58@remote03:~$ pwd
+/home/cyang58
+cyang58@remote03:~$ xx=123
+cyang58@remote03:~$ pwd; echo $xx; (xx=abc; cd /; pwd; echo $xx); pwd; echo $xx
+/home/cyang58
+123
+/
+abc
+/home/cyang58
+123
+cyang58@remote03:~$ grep -i 'MAIN(' `find ~/cs220/projects -name '*.[ch]'`
+/home/cyang58/cs220/projects/prj1/extras/flip-bits/flip-bits.c:main(int argc, const char *argv[])
+/home/cyang58/cs220/projects/prj1/prj1-sol/main.c:main(int argc, const char *argv[])
+/home/cyang58/cs220/projects/prj2/prj2-sol/bcd-test.c:main(void)
+/home/cyang58/cs220/projects/prj2/prj2-sol/main.c:main()
+/home/cyang58/cs220/projects/prj1-sol/main.c:main(int argc, const char *argv[])
+/home/cyang58/cs220/projects/prj2-sol/bcd-test.c:main(void)
+/home/cyang58/cs220/projects/prj2-sol/main.c:main()
+cyang58@remote03:~$ grep -i 'MAIN(' `find ~/cs220/projects -name '*.[ch]'` | wc =[K-l[Kl
+7
+cyang58@remote03:~$ echo $?
+0
+cyang58@remote03:~$ false; echo 123
+123
+cyang58@remote03:~$ true; echo 123
+123
+cyang58@remote03:~$ false && echo 123
+cyang58@remote03:~$ true && echo 123
+123
+cyang58@remote03:~$ false || echo 123
+123
+cyang58@remote03:~$ true || echo 123
+cyang58@remote03:~$ sl[K[Ksleep 11[K-[K0
+echo 123
+cyang58@remote03:~$ echo 123
+123
+cyang58@remote03:~$ exit
+
+Script done on 2020-10-25 17:49:06-04:00 [COMMAND_EXIT_CODE="0"]
