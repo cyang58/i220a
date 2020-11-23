@@ -1,0 +1,1106 @@
+Script started on 2020-11-22 22:19:20-05:00 [TERM="xterm" TTY="/dev/pts/1" COLUMNS="129" LINES="82"]
+cyang58@remote-n06:~/i220a/submit/lab12$ ls
+exercises  lab12.LOG
+cyang58@remote-n06:~/i220a/submit/lab12$ cd [K[K[Kls
+exercises  lab12.LOG
+cyang58@remote-n06:~/i220a/submit/lab12$ cd exercises/
+cyang58@remote-n06:~/i220a/submit/lab12/exercises$ ls
+file-char-count  file-copy  no-buffer-copy  rec-io  stdin-char-count
+cyang58@remote-n06:~/i220a/submit/lab12/exercises$ cd stdin-char-count/
+cyang58@remote-n06:~/i220a/submit/lab12/exercises/stdin-char-count$ cat stdin-char-count.c 
+#include <stdio.h>
+
+int
+main(int argc, const char *argv[])
+{
+  printf("EOF = %d\n", EOF);
+  char c;
+  int count = 0;
+  while ((c = getchar()) != EOF) count++;
+  printf("%d\n", count);
+  return 0;
+}
+cyang58@remote-n06:~/i220a/submit/lab12/exercises/stdin-char-count$ cat ma[K[KMakefile 
+CC = gcc
+CFLAGS = -g -Wall -std=c11 -funsigned-char
+
+TARGETS = stdin-char-count
+
+$(TARGETS):
+
+
+clean:
+		rm -f $(TARGETS) *.o *~
+cyang58@remote-n06:~/i220a/submit/lab12/exercises/stdin-char-count$ make
+gcc -g -Wall -std=c11 -funsigned-char    stdin-char-count.c   -o stdin-char-count
+cyang58@remote-n06:~/i220a/submit/lab12/exercises/stdin-char-count$ ./stdin-char-count < stdin-char-count.c
+EOF = -1
+^C
+cyang58@remote-n06:~/i220a/submit/lab12/exercises/stdin-char-count$ Âì™ÂºÑ[K=[K[Knano stdin-char-count.c
+[?1049h[22;0;0t[1;82r(B[m[4l[?7h[39;49m[?1h=[?1h=[?1h=[?25l[39;49m(B[m[H[2J[80;57H(B[0;7m[ Reading File ](B[m[80;63H(B[0;7m 12 lines ](B[m[H(B[0;7m  GNU nano 3.2                                           stdin-char-count.c                                                      [1;128H(B[m[81d(B[0;7m^G(B[m Get Help     (B[0;7m^O(B[m Write Out    (B[0;7m^W(B[m Where Is     (B[0;7m^K(B[m Cut Text     (B[0;7m^J(B[m Justify[81G(B[0;7m^C(B[m Cur Pos[97G(B[0;7mM-U(B[m Undo[81;113H(B[0;7mM-A(B[m Mark Text[82d(B[0;7m^X(B[m Exit[82;17H(B[0;7m^R(B[m Read File    (B[0;7m^\(B[m Replace[49G(B[0;7m^U(B[m Uncut Text   (B[0;7m^T(B[m To Spell     (B[0;7m^_(B[m Go To Line   (B[0;7mM-E(B[m Redo[82;113H(B[0;7mM-6(B[m Copy Text[80d[3d(B[0;1m[36m#include[39m(B[m (B[0;1m[33m<stdio.h>[5d(B[0m[32mint[6d[39m(B[mmain([32mint[39m(B[m argc, [32mconst[39m(B[m [32mchar[39m(B[m *argv[])[7d{[8d printf((B[0;1m[33m"EOF = %d\n"[39m(B[m, (B[0;1m[31mEOF[39m(B[m);[9;3H[32mchar[39m(B[m c;[10;3H[32mint[39m(B[m count = 0;[11;3H(B[0;1m[33mwhile[39m(B[m ((c = getchar()) != (B[0;1m[31mEOF[39m(B[m) count++;[12;3Hprintf((B[0;1m[33m"%d\n"[39m(B[m, count);[13;3H[35mreturn[39m(B[m 0;[14d}[3d[?12l[?25h[?25l[4d[?12l[?25h[?25l[5d[?12l[?25h[?25l[6d[?12l[?25h[?25l[7d[?12l[?25h[?25l{[?12l[?25h[?25l[8d[?12l[?25h[?25l[9d[?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l[C[?12l[?25h[?25l[C[?12l[?25h[?25l[C[?12l[?25h[?25l[C[?12l[?25h[?25l[1;120H(B[0;7mModified(B[m[9;3Hcha c;[K[?12l[?25h[?25l c;[K[?12l[?25h[?25l c;[K[?12l[?25h[?25l c;[K[?12l[?25h[?25li c;[?12l[?25h[?25ln c;[?12l[?25h[?25l[32mint[39m(B[m c;[?12l[?25h[?25l[80d(B[0;7mSave modified buffer?  (Answering "No" will DISCARD changes.)                                                                    [81;1H Y(B[m Yes[K[82d(B[0;7m N(B[m No  [82;18H(B[0;7mC(B[m Cancel[K[80;63H[?12l[?25h[?25l[81d(B[0;7m^G(B[m Get Help[81;33H(B[0;7mM-D(B[m DOS Format[81;65H(B[0;7mM-A(B[m Append[81;97H(B[0;7mM-B(B[m Backup File[82d(B[0;7m^C(B[m Cancel[17G         [33G(B[0;7mM-M(B[m Mac Format[82;65H(B[0;7mM-P(B[m Prepend[82;97H(B[0;7m^T(B[m To Files[80d(B[0;7mFile Name to Write: stdin-char-count.c                       (B[m[80;39H[?12l[?25h[?25l[K[1;128H[1;120H(B[0;7m        (B[m[80;56H(B[0;7m[ Wrote 12 lines ](B[m[J[82;129H[?12l[?25h[82;1H[?1049l[23;0;0t[?1l>cyang58@remote-n06:~/i220a/submit/lab12/exercises/stdin-char-count$ ,a[K[Kmake
+gcc -g -Wall -std=c11 -funsigned-char    stdin-char-count.c   -o stdin-char-count
+cyang58@remote-n06:~/i220a/submit/lab12/exercises/stdin-char-count$ ./stdin-char-count <stdin-char-count.c
+EOF = -1
+197
+cyang58@remote-n06:~/i220a/submit/lab12/exercises/stdin-char-count$ wc -c stdin-char-count.c.[K
+197 stdin-char-count.c
+cyang58@remote-n06:~/i220a/submit/lab12/exercises/stdin-char-count$ cd ../file-c[K[K[K[K[K[K
+cyang58@remote-n06:~/i220a/submit/lab12/exercises$ ls
+file-char-count  file-copy  no-buffer-copy  rec-io  stdin-char-count
+cyang58@remote-n06:~/i220a/submit/lab12/exercises$ cd file-char-count/
+cyang58@remote-n06:~/i220a/submit/lab12/exercises/file-char-count$ clear
+[H[2J[3Jcyang58@remote-n06:~/i220a/submit/lab12/exercises/file-char-count$ cat fiu[Kle-char-count.c 
+#include <errno.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+/** Output number of chars in file specified by single command-line
+ *  argument.
+ */
+int
+main(int argc, const char *argv[])
+{
+  if (argc != 2) {
+    fprintf(stderr, "usage: %s FILE_NAME\n", argv[0]);
+    exit(1);
+  }
+  const char *fName = argv[1];
+  FILE *in = fopen(fName, "r");
+  if (!in) {
+    fprintf(stderr, "cannot read %s: %s\n", fName, strerror(errno));
+    exit(1);
+  }
+  int c;
+  int count = 0;
+  while ((c = fgetc(in)) != EOF) count++;
+  printf("%d\n", count);
+  return 0;
+}
+cyang58@remote-n06:~/i220a/submit/lab12/exercises/file-char-count$ make
+gcc -g -Wall -std=c11    file-char-count.c   -o file-char-count
+cyang58@remote-n06:~/i220a/submit/lab12/exercises/file-char-count$ ./file-char-count file-char-count.c
+566
+cyang58@remote-n06:~/i220a/submit/lab12/exercises/file-char-count$ wc wf[Ki[K[Kfile-char-count.c
+ 27  81 566 file-char-count.c
+cyang58@remote-n06:~/i220a/submit/lab12/exercises/file-char-count$ ./file-char-count xxx
+cannot read xxx: No such file or directory
+cyang58@remote-n06:~/i220a/submit/lab12/exercises/file-char-count$ valgrind ./file-char-count file-char-count.c
+==875298== Memcheck, a memory error detector
+==875298== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==875298== Using Valgrind-3.14.0 and LibVEX; rerun with -h for copyright info
+==875298== Command: ./file-char-count file-char-count.c
+==875298== 
+566
+==875298== 
+==875298== HEAP SUMMARY:
+==875298==     in use at exit: 552 bytes in 1 blocks
+==875298==   total heap usage: 3 allocs, 2 frees, 9,768 bytes allocated
+==875298== 
+==875298== LEAK SUMMARY:
+==875298==    definitely lost: 0 bytes in 0 blocks
+==875298==    indirectly lost: 0 bytes in 0 blocks
+==875298==      possibly lost: 0 bytes in 0 blocks
+==875298==    still reachable: 552 bytes in 1 blocks
+==875298==         suppressed: 0 bytes in 0 blocks
+==875298== Rerun with --leak-check=full to see details of leaked memory
+==875298== 
+==875298== For counts of detected and suppressed errors, rerun with: -v
+==875298== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+cyang58@remote-n06:~/i220a/submit/lab12/exercises/file-char-count$ c[Knano file-char-count.c
+[?1049h[22;0;0t[1;82r(B[m[4l[?7h[39;49m[?1h=[?1h=[?1h=[?25l[39;49m(B[m[H[2J[80;57H(B[0;7m[ Reading File ](B[m[80;63H(B[0;7m 27 lines ](B[m[H(B[0;7m  GNU nano 3.2                                            file-char-count.c                                                      [1;128H(B[m[81d(B[0;7m^G(B[m Get Help     (B[0;7m^O(B[m Write Out    (B[0;7m^W(B[m Where Is     (B[0;7m^K(B[m Cut Text     (B[0;7m^J(B[m Justify[81G(B[0;7m^C(B[m Cur Pos[97G(B[0;7mM-U(B[m Undo[81;113H(B[0;7mM-A(B[m Mark Text[82d(B[0;7m^X(B[m Exit[82;17H(B[0;7m^R(B[m Read File    (B[0;7m^\(B[m Replace[49G(B[0;7m^U(B[m Uncut Text   (B[0;7m^T(B[m To Spell     (B[0;7m^_(B[m Go To Line   (B[0;7mM-E(B[m Redo[82;113H(B[0;7mM-6(B[m Copy Text[80d[3d(B[0;1m[36m#include[39m(B[m (B[0;1m[33m<errno.h>[4d[36m#include[39m(B[m (B[0;1m[33m<stdio.h>[5d[36m#include[39m(B[m (B[0;1m[33m<stdlib.h>[6d[36m#include[39m(B[m (B[0;1m[33m<string.h>[8d[34m/** Output number of chars in file specified by single command-line[9d *  argument.[10d */[11d(B[0m[32mint[12d[39m(B[mmain([32mint[39m(B[m argc, [32mconst[39m(B[m [32mchar[39m(B[m *argv[])[13d{[14d (B[0;1m[33mif[39m(B[m (argc != 2) {[15;5Hfprintf(stderr, (B[0;1m[33m"usage: %s FILE_NAME\n"[39m(B[m, argv[0]);[16;5Hexit(1);[17;3H}[18d[32mconst[39m(B[m [32mchar[39m(B[m *fName = argv[1];[19;3H(B[0;1m[31mFILE[39m(B[m *in = fopen(fName, (B[0;1m[33m"r"[39m(B[m);[20;3H(B[0;1m[33mif[39m(B[m (!in) {[21;5Hfprintf(stderr, (B[0;1m[33m"cannot read %s: %s\n"[39m(B[m, fName, strerror(errno));[22;5Hexit(1);[23;3H}[24d[32mint[39m(B[m c;[25;3H[32mint[39m(B[m count = 0;[26;3H(B[0;1m[33mwhile[39m(B[m ((c = fgetc(in)) != (B[0;1m[31mEOF[39m(B[m) count++;[27;3Hprintf((B[0;1m[33m"%d\n"[39m(B[m, count);[28;3H[35mreturn[39m(B[m 0;[29d}[3d[?12l[?25h[?25l[4d[?12l[?25h[?25l[5d[?12l[?25h[?25l[6d[?12l[?25h[?25l[7d[?12l[?25h[?25l[8d[?12l[?25h[?25l[9d[?12l[?25h[?25l[10d[?12l[?25h[?25l[11d[?12l[?25h[?25l[12d[?12l[?25h[?25l[13d[?12l[?25h[?25l[14d[?12l[?25h[?25l[15d[?12l[?25h[?25l[16d[?12l[?25h[?25l[17d[?12l[?25h[?25l[18d[?12l[?25h[?25l[19d[?12l[?25h[?25l[20d[?12l[?25h[?25l[21d[?12l[?25h[?25l[22d[?12l[?25h[?25l[23d[?12l[?25h[?25l[24d[?12l[?25h[?25l[25d[?12l[?25h[?25l[26d[?12l[?25h[?25l[27d[?12l[?25h[?25l[28d[?12l[?25h[?25l[1;120H(B[0;7mModified[80d(B[m[K[1;128H[28;80r[28;1HM[1;82r[29;1H[?12l[?25h[?25l[A[?12l[?25h[?25l[8G[42m[1K [49m(B[m[?12l[?25h[?25l[K[?12l[?25h[?25l[28;80r[80;1H
+[1;82r[27;25H[?12l[?25h[?25l7[28;80r8[28dM[1;82r[28;1H[?12l[?25h[?25l[42m [49m(B[m[?12l[?25h[?25l[42m [49m(B[m[?12l[?25h[?25l  d[?12l[?25h[?25l[42m  [49m(B[m[K[?12l[?25h[?25l  f[?12l[?25h[?25lc[?12l[?25h[?25ll[?12l[?25h[?25lo[?12l[?25h[?25ls[?12l[?25h[?25le[?12l[?25h[?25l([?12l[?25h[?25li[?12l[?25h[?25ln[?12l[?25h[?25l)[?12l[?25h[?25l;[?12l[?25h[?25l[80d(B[0;7mSave modified buffer?  (Answering "No" will DISCARD changes.)                                                                    [81;1H Y(B[m Yes[K[82d(B[0;7m N(B[m No  [82;18H(B[0;7mC(B[m Cancel[K[80;63H[?12l[?25h[?25l[81d(B[0;7m^G(B[m Get Help[81;33H(B[0;7mM-D(B[m DOS Format[81;65H(B[0;7mM-A(B[m Append[81;97H(B[0;7mM-B(B[m Backup File[82d(B[0;7m^C(B[m Cancel[17G         [33G(B[0;7mM-M(B[m Mac Format[82;65H(B[0;7mM-P(B[m Prepend[82;97H(B[0;7m^T(B[m To Files[80d(B[0;7mFile Name to Write: file-char-count.c                        (B[m[80;38H[?12l[?25h[?25l[K[1;128H[1;120H(B[0;7m        (B[m[80;56H(B[0;7m[ Wrote 28 lines ](B[m[J[82;129H[?12l[?25h[82;1H[?1049l[23;0;0t[?1l>cyang58@remote-n06:~/i220a/submit/lab12/exercises/file-char-count$ nano file-char-count.c[22@valgrind ./file-char-count[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[23P./file-char-count xxx[1Pwc file-char-count.c[15@./file-char-count[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cmake[K
+gcc -g -Wall -std=c11    file-char-count.c   -o file-char-count
+cyang58@remote-n06:~/i220a/submit/lab12/exercises/file-char-count$ makenano file-char-count.c[22@valgrind ./file-char-count[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[23P./file-char-count xxxvalgrind ./file-char-count file-char-count.c
+==875558== Memcheck, a memory error detector
+==875558== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==875558== Using Valgrind-3.14.0 and LibVEX; rerun with -h for copyright info
+==875558== Command: ./file-char-count file-char-count.c
+==875558== 
+580
+==875558== 
+==875558== HEAP SUMMARY:
+==875558==     in use at exit: 0 bytes in 0 blocks
+==875558==   total heap usage: 3 allocs, 3 frees, 9,768 bytes allocated
+==875558== 
+==875558== All heap blocks were freed -- no leaks are possible
+==875558== 
+==875558== For counts of detected and suppressed errors, rerun with: -v
+==875558== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+cyang58@remote-n06:~/i220a/submit/lab12/exercises/file-char-count$ valgrind ./file-char-count file-char-count.cmake[Knano file-char-count.c
+[?1049h[22;0;0t[1;82r(B[m[4l[?7h[39;49m[?1h=[?1h=[?1h=[?25l[39;49m(B[m[H[2J[80;57H(B[0;7m[ Reading File ](B[m[80;63H(B[0;7m 28 lines ](B[m[H(B[0;7m  GNU nano 3.2                                            file-char-count.c                                                      [1;128H(B[m[81d(B[0;7m^G(B[m Get Help     (B[0;7m^O(B[m Write Out    (B[0;7m^W(B[m Where Is     (B[0;7m^K(B[m Cut Text     (B[0;7m^J(B[m Justify[81G(B[0;7m^C(B[m Cur Pos[97G(B[0;7mM-U(B[m Undo[81;113H(B[0;7mM-A(B[m Mark Text[82d(B[0;7m^X(B[m Exit[82;17H(B[0;7m^R(B[m Read File    (B[0;7m^\(B[m Replace[49G(B[0;7m^U(B[m Uncut Text   (B[0;7m^T(B[m To Spell     (B[0;7m^_(B[m Go To Line   (B[0;7mM-E(B[m Redo[82;113H(B[0;7mM-6(B[m Copy Text[80d[3d(B[0;1m[36m#include[39m(B[m (B[0;1m[33m<errno.h>[4d[36m#include[39m(B[m (B[0;1m[33m<stdio.h>[5d[36m#include[39m(B[m (B[0;1m[33m<stdlib.h>[6d[36m#include[39m(B[m (B[0;1m[33m<string.h>[8d[34m/** Output number of chars in file specified by single command-line[9d *  argument.[10d */[11d(B[0m[32mint[12d[39m(B[mmain([32mint[39m(B[m argc, [32mconst[39m(B[m [32mchar[39m(B[m *argv[])[13d{[14d (B[0;1m[33mif[39m(B[m (argc != 2) {[15;5Hfprintf(stderr, (B[0;1m[33m"usage: %s FILE_NAME\n"[39m(B[m, argv[0]);[16;5Hexit(1);[17;3H}[18d[32mconst[39m(B[m [32mchar[39m(B[m *fName = argv[1];[19;3H(B[0;1m[31mFILE[39m(B[m *in = fopen(fName, (B[0;1m[33m"r"[39m(B[m);[20;3H(B[0;1m[33mif[39m(B[m (!in) {[21;5Hfprintf(stderr, (B[0;1m[33m"cannot read %s: %s\n"[39m(B[m, fName, strerror(errno));[22;5Hexit(1);[23;3H}[24d[32mint[39m(B[m c;[25;3H[32mint[39m(B[m count = 0;[26;3H(B[0;1m[33mwhile[39m(B[m ((c = fgetc(in)) != (B[0;1m[31mEOF[39m(B[m) count++;[27;3Hprintf((B[0;1m[33m"%d\n"[39m(B[m, count);[28;3Hfclose(in);[29;3H[35mreturn[39m(B[m 0;[30d}[3d[?12l[?25h[?25l[4d[?12l[?25h[?25l[5d[?12l[?25h[?25l[6d[?12l[?25h[?25l[7d[?12l[?25h[?25l[8d[?12l[?25h[?25l[9d[?12l[?25h[?25l[10d[?12l[?25h[?25l[11d[?12l[?25h[?25l[12d[?12l[?25h[?25l[13d[?12l[?25h[?25l[14d[?12l[?25h[?25l[15d[?12l[?25h[?25l[16d[?12l[?25h[?25l[17d[?12l[?25h[?25l[18d[?12l[?25h[?25l[19d[?12l[?25h[?25l[20d[?12l[?25h[?25l[21d[?12l[?25h[?25l[22d[?12l[?25h[?25l[23d[?12l[?25h[?25l[24d[?12l[?25h[?25l[25d[?12l[?25h[?25l[26d[?12l[?25h[?25l[27d[?12l[?25h[?25l[28d[?12l[?25h[?25l[80d[K[29d[?12l[?25h[?25l[30d[?12l[?25h[?25l[31d[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[81d[J[82;129H[?12l[?25h[82;1H[?1049l[23;0;0t[?1l>cyang58@remote-n06:~/i220a/submit/lab12/exercises/file-char-count$ y[Knano file-char-count.c[22@valgrind ./file-char-count[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K[K[Kt.c
+==876011== Memcheck, a memory error detector
+==876011== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==876011== Using Valgrind-3.14.0 and LibVEX; rerun with -h for copyright info
+==876011== Command: ./file-char-count file-char-count.c
+==876011== 
+580
+==876011== 
+==876011== HEAP SUMMARY:
+==876011==     in use at exit: 0 bytes in 0 blocks
+==876011==   total heap usage: 3 allocs, 3 frees, 9,768 bytes allocated
+==876011== 
+==876011== All heap blocks were freed -- no leaks are possible
+==876011== 
+==876011== For counts of detected and suppressed errors, rerun with: -v
+==876011== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+cyang58@remote-n06:~/i220a/submit/lab12/exercises/file-char-count$ ecd [K[K[K[Kcd ..
+cyang58@remote-n06:~/i220a/submit/lab12/exercises$ c[Klsc
+bash: lsc: command not found
+cyang58@remote-n06:~/i220a/submit/lab12/exercises$ lcea[K[K[K[Kclear
+[H[2J[3Jcyang58@remote-n06:~/i220a/submit/lab12/exercises$ ls
+file-char-count  file-copy  no-buffer-copy  rec-io  stdin-char-count
+cyang58@remote-n06:~/i220a/submit/lab12/exercises$ cd fu[Kile-c
+bash: cd: file-c: No such file or directory
+cyang58@remote-n06:~/i220a/submit/lab12/exercises$ c[Kcd fuk[K[Kile-copy/
+cyang58@remote-n06:~/i220a/submit/lab12/exercises/file-copy$ ls
+file-copy.c  Makefile
+cyang58@remote-n06:~/i220a/submit/lab12/exercises/file-copy$ cat file-copy.c 
+#include <errno.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+static void
+doCopy(const char *inName, FILE *in, const char *outName, FILE *out)
+{
+  int c;
+  while ((c = fgetc(in)) != EOF) {
+    if (fputc(c, out) == EOF) {
+      fprintf(stderr, "error writing to %s: %s\n", outName, strerror(errno));
+      exit(1);
+    }
+  }
+}
+
+/** Output number of chars in file specified by single command-line
+ *  argument.
+ */
+int
+main(int argc, const char *argv[])
+{
+  if (argc != 3) {
+    fprintf(stderr, "usage: %s SRC_NAME DEST_NAME\n", argv[0]);
+    exit(1);
+  }
+  const char *srcName = argv[1];
+  const char *destName = argv[2];
+  FILE *in = fopen(srcName, "r");
+  if (!in) {
+    fprintf(stderr, "cannot read %s: %s\n", srcName, strerror(errno));
+    exit(1);
+  }
+  FILE *out = fopen(destName, "w");
+  if (!out) {
+    fprintf(stderr, "cannot write %s: %s\n", destName, strerror(errno));
+    exit(1);
+  }
+  doCopy(srcName, in, destName, out);
+  if (fclose(in) != 0) {
+    fprintf(stderr, "cannot close %s: %s\n", srcName, strerror(errno));
+    exit(1);
+  }
+  if (fclose(out) != 0) {
+    fprintf(stderr, "cannot close %s: %s\n", destName, strerror(errno));
+    exit(1);
+  }
+  return 0;
+}
+cyang58@remote-n06:~/i220a/submit/lab12/exercises/file-copy$ make
+gcc -g -Wall -std=c11    file-copy.c   -o file-copy
+cyang58@remote-n06:~/i220a/submit/lab12/exercises/file-copy$ ./file-copy 
+usage: ./file-copy SRC_NAME DEST_NAME
+cyang58@remote-n06:~/i220a/submit/lab12/exercises/file-copy$ .file0[K-copy[K[K[K[K[K[K[K[K[K[K./file-copy 
+usage: ./file-copy SRC_NAME DEST_NAME
+cyang58@remote-n06:~/i220a/submit/lab12/exercises/file-copy$ ls -l file-copy t
+ls: cannot access 't': No such file or directory
+-rwxr-x--- 1 cyang58 cyang58 19840 Nov 22 22:37 file-copy
+cyang58@remote-n06:~/i220a/submit/lab12/exercises/file-copy$ ls -l file-copy t[K
+-rwxr-x--- 1 cyang58 cyang58 19840 Nov 22 22:37 file-copy
+cyang58@remote-n06:~/i220a/submit/lab12/exercises/file-copy$ ./file-copy file-copy t
+cyang58@remote-n06:~/i220a/submit/lab12/exercises/file-copy$ ./file-copy file-copy t[7Pls -l file-copy t
+-rwxr-x--- 1 cyang58 cyang58 19840 Nov 22 22:37 file-copy
+-rw-r----- 1 cyang58 cyang58 19840 Nov 22 22:38 t
+cyang58@remote-n06:~/i220a/submit/lab12/exercises/file-copy$ cmp file-copy t
+cyang58@remote-n06:~/i220a/submit/lab12/exercises/file-copy$ ./file-copy ma[K[KMakefile t
+cyang58@remote-n06:~/i220a/submit/lab12/exercises/file-copy$ cp[Km[ [K[Kp f[KMakefile t
+cyang58@remote-n06:~/i220a/submit/lab12/exercises/file-copy$ cho[Kmod a-w t
+cyang58@remote-n06:~/i220a/submit/lab12/exercises/file-copy$ ./file-copy file-copy.c t
+cannot write t: Permission denied
+cyang58@remote-n06:~/i220a/submit/lab12/exercises/file-copy$ cmp f[KMakefile t
+cyang58@remote-n06:~/i220a/submit/lab12/exercises/file-copy$ make
+gcc -g -Wall -std=c11    file-copy.c   -o file-copy
+cyang58@remote-n06:~/i220a/submit/lab12/exercises/file-copy$ ./file-copy m[KMakefile t
+cannot write t: Permission denied
+cyang58@remote-n06:~/i220a/submit/lab12/exercises/file-copy$ cm[K[Kchmpo[K[Kod a[KA[Ka+w t
+cyang58@remote-n06:~/i220a/submit/lab12/exercises/file-copy$ vin [K[K[K[Knano t
+[?1049h[22;0;0t[1;82r(B[m[4l[?7h[39;49m[?1h=[?1h=[?1h=[?25l[39;49m(B[m[H[2J[80;57H(B[0;7m[ Reading File ](B[m[80;63H(B[0;7m 10 lines ](B[m[H(B[0;7m  GNU nano 3.2                                                    t                                                              [1;128H(B[m[81d(B[0;7m^G(B[m Get Help     (B[0;7m^O(B[m Write Out    (B[0;7m^W(B[m Where Is     (B[0;7m^K(B[m Cut Text     (B[0;7m^J(B[m Justify[81G(B[0;7m^C(B[m Cur Pos[97G(B[0;7mM-U(B[m Undo[81;113H(B[0;7mM-A(B[m Mark Text[82d(B[0;7m^X(B[m Exit[82;17H(B[0;7m^R(B[m Read File    (B[0;7m^\(B[m Replace[49G(B[0;7m^U(B[m Uncut Text   (B[0;7m^T(B[m To Spell     (B[0;7m^_(B[m Go To Line   (B[0;7mM-E(B[m Redo[82;113H(B[0;7mM-6(B[m Copy Text[80d[3d[39;49m(B[mCC = gcc[4dCFLAGS = -g -Wall -std=c11[6dTARGETS = file-copy[8d$(TARGETS):[11dclean:[12;17Hrm -f $(TARGETS) *.o *~[3d[?12l[?25h[?25l[80d[J[82;129H[?12l[?25h[82;1H[?1049l[23;0;0t[?1l>cyang58@remote-n06:~/i220a/submit/lab12/exercises/file-copy$ rm-f[K[K -f t
+cyang58@remote-n06:~/i220a/submit/lab12/exercises/file-copy$ make
+make: 'file-copy' is up to date.
+cyang58@remote-n06:~/i220a/submit/lab12/exercises/file-copy$ ,al[K[K[K.[K./file-copy c[Kfile-copy t
+cyang58@remote-n06:~/i220a/submit/lab12/exercises/file-copy$ ./file-copy  [KMakefile  t[Kt[K[Kt
+cyang58@remote-n06:~/i220a/submit/lab12/exercises/file-copy$ wl -c f[KMakefile file-copy.c
+bash: wl: command not found
+cyang58@remote-n06:~/i220a/submit/lab12/exercises/file-copy$ wl -c Makefile file-copy.c[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Kwc -l m[KMakefile [K
+10 Makefile
+cyang58@remote-n06:~/i220a/submit/lab12/exercises/file-copy$ wc -l Makefile[K[K[K[K[K[K[K[Kfile-copy.c
+50 file-copy.c
+cyang58@remote-n06:~/i220a/submit/lab12/exercises/file-copy$ wc -l file-copy.c[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Kwc -l t
+26 t
+cyang58@remote-n06:~/i220a/submit/lab12/exercises/file-copy$ ./cop[K[K[K[K[Kcat Makefile 
+CC = gcc
+CFLAGS = -g -Wall -std=c11
+
+TARGETS = file-copy
+
+$(TARGETS):
+
+
+clean:
+		rm -f $(TARGETS) *.o *~
+cyang58@remote-n06:~/i220a/submit/lab12/exercises/file-copy$ cat Makefile [K[K[K[K[K[K[K[K[Kt
+ELF          >    –      @       E          @ 8  @ # "       @       @       @       h      h                   ®      ®      ®                                                         p      p                                        }      }                                                                    Ë-      Ë=      Ë=      à      ®                   ¯-      ¯=      ¯=      ‡      ‡                   ƒ      ƒ      ƒ      D       D              PÂtd   Ä       Ä       Ä       D       D              QÂtd                                                  RÂtd   Ë-      Ë=      Ë=                         /lib64/ld-linux-x86-64.so.2          GNU                        GNU ‚†OìxÆ-r<l˝ì
+[‰ÚõÏ             Å          —eŒm9Úã                                              Ü                       s                      3                                            -                      a                      A                      ¢                                                                   ±                       X                      I   "                   :     Ä@              libc.so.6 exit fopen fgetc __errno_location fputc fclose stderr fprintf __cxa_finalize strerror __libc_start_main ferror GLIBC_2.2.5 _ITM_deregisterTMCloneTable __gmon_start__ _ITM_registerTMCloneTable                                      ui	   z       Ë=             ∞      =             p      h@             h@      ÿ?                    ‡?                    Ë?         	           ?                    ¯?                    Ä@                    @                     @                    (@                    0@                    8@                    @@                    H@         
+           P@                    X@                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    HÉÏHã›/  HÖ¿tˇ–HÉƒ√         ˇ5‚/  ˇ%‰/  @ ˇ%‚/  h    È‡ˇˇˇˇ%⁄/  h   È–ˇˇˇˇ%“/  h   È¿ˇˇˇˇ% /  h   È∞ˇˇˇˇ%¬/  h   È†ˇˇˇˇ%∫/  h   Èêˇˇˇˇ%≤/  h   ÈÄˇˇˇˇ%™/  h   Èpˇˇˇˇ%¢/  h   È`ˇˇˇˇ%2/  fê        1ÌIâ—^Hâ‚HÉ‰PTLçä  Hç#  Hç=S  ˇÊ.  ÙD  Hç=i/  Hçb/  H9¯tHãæ.  HÖ¿t	ˇ‡Ä    √Ä    Hç=9/  Hç52/  H)˛H¡˛HâH¡Ë?H∆H—˛tHãï.  HÖ¿tˇ‡fD  √Ä    Ä=/   u/UHÉ=v.   HâÂtHã=⁄.  Ë-ˇˇˇËhˇˇˇ∆È.  ]√Ä    √Ä    È{ˇˇˇUHâÂHÉÏ0Hâ}ËHâu‡HâUÿHâM–ÎPHãU–ãE¸Hâ÷â«Ëê˛ˇˇÉ¯ˇu:ËF˛ˇˇã â«ËΩ˛ˇˇHâ¡HãÉ.  HãUÿHç5¸  Hâ«∏    Ëk˛ˇˇø   ËÅ˛ˇˇHãE‡Hâ«Ë5˛ˇˇâE¸É}¸ˇtHãE–Hâ«Ë ˛ˇˇÖ¿tãê…√UHâÂHÉÏ0â}‹Hâu–É}‹t,HãE–HãHã.  Hç5¨  Hâ«∏    Ë˛ˇˇø   Ë˛ˇˇHãE–Hã@HâE¯HãE–Hã@HâEHãE¯Hç5ê  Hâ«Ë›˝ˇˇHâEËHÉ}Ë u:Ëm˝ˇˇã â«Ë‰˝ˇˇHâ¡Hã™-  HãU¯Hç5\  Hâ«∏    Ëí˝ˇˇø   Ë®˝ˇˇHãEHç5N  Hâ«ËÖ˝ˇˇHâE‡HÉ}‡ u:Ë˝ˇˇã â«Ëå˝ˇˇHâ¡HãR-  HãUHç5  Hâ«∏    Ë:˝ˇˇø   ËP˝ˇˇHãM‡HãUHãuËHãE¯Hâ«ËM˛ˇˇHãEËHâ«Ë‹¸ˇˇÖ¿t:Ë≥¸ˇˇã â«Ë*˝ˇˇHâ¡Hã,  HãU¯Hç5Õ  Hâ«∏    Ëÿ¸ˇˇø   ËÓ¸ˇˇHãE‡Hâ«Ëí¸ˇˇÖ¿t:Ëi¸ˇˇã â«Ë‡¸ˇˇHâ¡Hã¶,  HãUHç5É  Hâ«∏    Ëé¸ˇˇø   Ë§¸ˇˇ∏    …√f.Ñ      AWIâ◊AVIâˆAUAâ˝ATLç%¿)  UHç-¿)  SL)ÂHÉÏË√˚ˇˇH¡˝t1€ Lâ˙LâˆDâÔAˇ‹HÉ√H9›uÍHÉƒ[]A\A]A^A_√ √   HÉÏHÉƒ√                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     error writing to %s: %s
+ usage: %s SRC_NAME DEST_NAME
+ r cannot read %s: %s
+ a cannot write %s: %s
+ cannot close %s: %s
+    ;D      †Ôˇˇê   @ˇˇ∏   Pˇˇ`   5Òˇˇ–   «Òˇˇ   êÛˇˇ  ÛˇˇX             zR xê      ËÔˇˇ+                  zR xê  $      Ôˇˇ†    FJwÄ ?;*3$"       D   ÄÔˇˇ              \   ]ˇˇí    AÜCç     |   œˇˇº   AÜC∑ D   ú   xÚˇˇ]    BèEéE çE(åH0ÜH8ÉG@j8A0A(B BBB    ‰   êÚˇˇ                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   ∞      p                                         t             Ë=                           =                    ı˛ˇo                 ∞             0      
+       À                                            @             ÿ                            ò             ¿             ÿ       	              ˚ˇˇo           ˛ˇˇo    †      ˇˇˇo           ˇˇo    |      ˘ˇˇo                                                                                                                                   ¯=                      6      F      V      f      v      Ü      ñ      ¶      ∂              h@      GCC: (Debian 8.3.0-6) 8.3.0 ,             µ      N                      û       ”   π   ô  µ      N          /   ÿ9   Œ  ”  
+  W    %   int ñ   ¯  ñl   Ó  ól   ë     ë       ÿ1$  	L   3e    	J  6	ã   	p   7	ã   	9  8	ã   	2  9	ã    	>   :	ã   (	‡  ;	ã   0	Z   <	ã   8	    =	ã   @	V  @	ã   H	  A	ã   P	   B	ã   X	g   D=  `	   FC  h	d  He   p	+  Ie   t	   Js   x	≠   MP   Ä	G  NW   Ç	(  OI  É	ß   QY  à	   Y   ê	ê  [d  ò	
+  \o  †	o  ]C  ®	}   ^	G   ∞	}  _
+-   ∏	3  `e   ¿	A  bu  ƒ Œ   ù   
+z  +  8  ù   ë   Y  9     0  ç  _    j  ë   Ö  9    %  âë  $  s  äë  ä   ãë  ë   j  e   G      º      ú2    
+e   ëL≈   2  ë@ü   8  ëhÑ  8  ë`in 	ë  ëXout #	ë  ëP 8  ò   l  µ      í       úS   8  ëXin "ë  ëP6   28  ëHout Aë  ë@c 	e   ël  %   :;9I  $ >     $ >   I  & I  :;9  	 :;9I8  
+ :;9   <  I  ! I/  4 :;9I?<  .?:;9'I@ñB   :;9I  4 :;9I  4 :;9I  .:;9'@ñB   :;9I   x   ‡   ˚      /usr/lib/gcc/x86_64-linux-gnu/8/include /usr/include/x86_64-linux-gnu/bits /usr/include/x86_64-linux-gnu/bits/types /usr/include  file-copy.c    stddef.h   types.h   struct_FILE.h   FILE.h   stdio.h     	µ      	v/FYX+õ	‰$ f! ∫PCÂg"†ªªg?uX+†gAuX+†u∫@KX+†∫AKX+
+†Y _IO_buf_end _old_offset _IO_save_end short int size_t outName _IO_write_ptr _flags inName _IO_buf_base _markers _IO_read_end _freeres_buf stderr long long int srcName _lock _cur_column file-copy.c argv _IO_FILE GNU C11 8.3.0 -mtune=generic -march=x86-64 -g -std=c11 unsigned char argc _IO_marker _shortbuf _IO_write_base _unused2 _IO_read_ptr short unsigned int main _freeres_list __pad5 destName _IO_codecvt /home/cyang58/i220a/submit/lab12/exercises/file-copy long unsigned int _IO_write_end __off64_t __off_t _chain _IO_wide_data _IO_backup_base stdin _flags2 _mode _IO_read_base _vtable_offset _IO_save_base _fileno doCopy stdout _IO_lock_t                                 ®                    ƒ                    ‰                                        0                    ∞                    |                    †                   	 ¿                   
+ ò                                                              ¿                    –                    t                                          Ä                     »                     Ë=                    =                    ¯=                    ÿ?                     @                    `@                    Ä@                                                                                                                                                      Òˇ                                         0              !     p              7     à@             F     =              m     ∞              y     Ë=              ò    Òˇ                §     µ      í           Òˇ                ´     Ï!                   Òˇ                π      =                    ¯=              ”      Ë=              Ê      Ä               ˘      @              $                       p                                  =                      œ     `@              Y                     m    p@              t                        t              à                     õ                     Æ                     Õ    `@              ⁄                     Ô                      ˛   h@                                           ]       ≈     ê@              ”    –      +       *    p@              6    G      º      ;                     N                     `   p@              l                      Ü                     ú  "                   ∏    Ä@              crtstuff.c deregister_tm_clones __do_global_dtors_aux completed.7325 __do_global_dtors_aux_fini_array_entry frame_dummy __frame_dummy_init_array_entry file-copy.c doCopy __FRAME_END__ __init_array_end _DYNAMIC __init_array_start __GNU_EH_FRAME_HDR _GLOBAL_OFFSET_TABLE_ __libc_csu_fini __errno_location@@GLIBC_2.2.5 _ITM_deregisterTMCloneTable ferror@@GLIBC_2.2.5 _edata fclose@@GLIBC_2.2.5 fgetc@@GLIBC_2.2.5 fputc@@GLIBC_2.2.5 __libc_start_main@@GLIBC_2.2.5 __data_start fprintf@@GLIBC_2.2.5 __gmon_start__ __dso_handle _IO_stdin_used __libc_csu_init __bss_start main fopen@@GLIBC_2.2.5 exit@@GLIBC_2.2.5 __TMC_END__ _ITM_registerTMCloneTable strerror@@GLIBC_2.2.5 __cxa_finalize@@GLIBC_2.2.5 stderr@@GLIBC_2.2.5  .symtab .strtab .shstrtab .interp .note.ABI-tag .note.gnu.build-id .gnu.hash .dynsym .dynstr .gnu.version .gnu.version_r .rela.dyn .rela.plt .init .plt.got .text .fini .rodata .eh_frame_hdr .eh_frame .init_array .fini_array .dynamic .got.plt .data .bss .comment .debug_aranges .debug_info .debug_abbrev .debug_line .debug_str                                                                                   ®      ®                                    #             ƒ      ƒ                                     1             ‰      ‰      $                              D   ˆˇˇo                   (                             N             0      0      Ä                          V             ∞      ∞      À                              ^   ˇˇˇo       |      |                                   k   ˛ˇˇo       †      †                                   z             ¿      ¿      ÿ                            Ñ      B       ò      ò      ÿ                           é                                                         â                           †                             î             ¿      ¿                                   ù             –      –      °                             £             t      t      	                              ©                             }                              ±             Ä       Ä       D                              ø             »       »       (                             …             Ë=      Ë-                                   ’             =      -                                   ·             ¯=      ¯-      ‡                           ò             ÿ?      ÿ/      (                             Í              @       0      `                             Û             `@      `0                                    ˘             Ä@      p0                                     ˛      0               p0                                                        å0      0                                                   º0      ¢                             "                     ^4      '                             0                     Ö5      |                             <     0               7      Ö                                                  à9      h      !   3                 	                      @      Ã                                                   ºC      G                             CC = gcc
+CFLAGS = -g -Wall -std=c11
+
+TARGETS = file-copy
+
+$(TARGETS):
+
+
+clean:
+		rm -f $(TARGETS) *.o *~
+cyang58@remote-n06:~/i220a/submit/lab12/exercises/file-copy$ xterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorc[Kcl[K[K
+bash: xterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256color: command not found
+cyang58@remote-n06:~/i220a/submit/lab12/exercises/file-copy$ clear
+[H[2J[3Jcyang58@remote-n06:~/i220a/submit/lab12/exercises/file-copy$ clear
+[H[2J[3Jcyang58@remote-n06:~/i220a/submit/lab12/exercises/file-copy$ ls
+file-copy  file-copy.c	Makefile  t
+cyang58@remote-n06:~/i220a/submit/lab12/exercises/file-copy$ n[Kcat[K[K[Knano t 
+[?1049h[22;0;0t[1;82r(B[m[4l[?7h[39;49m[?1h=[?1h=[?1h=[?25l[39;49m(B[m[H[2J[80;57H(B[0;7m[ Reading File ](B[m[80;63H(B[0;7m 26 lines ](B[m[H(B[0;7m  GNU nano 3.2                                                    t                                                              [1;128H(B[m[81d(B[0;7m^G(B[m Get Help     (B[0;7m^O(B[m Write Out    (B[0;7m^W(B[m Where Is     (B[0;7m^K(B[m Cut Text     (B[0;7m^J(B[m Justify[81G(B[0;7m^C(B[m Cur Pos[97G(B[0;7mM-U(B[m Undo[81;113H(B[0;7mM-A(B[m Mark Text[82d(B[0;7m^X(B[m Exit[82;17H(B[0;7m^R(B[m Read File    (B[0;7m^\(B[m Replace[49G(B[0;7m^U(B[m Uncut Text   (B[0;7m^T(B[m To Spell     (B[0;7m^_(B[m Go To Line   (B[0;7mM-E(B[m Redo[82;113H(B[0;7mM-6(B[m Copy Text[80d[3d[39;49m(B[m^?ELF^B^A^A^@^@^@^@^@^@^@^@^@^C^@>^@^A^@^@^@ÔøΩ^P^@^@^@^@^@^@@^@^@^@^@^@^@^@^HE^@^@^@^@^@^@^@^@^@^@@^@8^@^K^@@^@#^@"^@^F^@^@^@^D^@$[4;1H[ÔøΩÔøΩÔøΩÔøΩ^R^B^@^@^@^N^@^@^@^A^@^@^@^F^@^@^@^@^AÔøΩ^@^@^@^@^B^N^@^@^@^O^@^@^@ÔøΩeÔøΩm9ÔøΩÔøΩ^\^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^$[5;1H^@^@^@^@^@^@^@^@^@^@^@P@^@^@^@^@^@^@^G^@^@^@^K^@^@^@^@^@^@^@^@^@^@^@X@^@^@^@^@^@^@^G^@^@^@^M^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@$[6;1H^@usage: %s SRC_NAME DEST_NAME[7d^@r^@cannot read %s: %s[8d^@a^@cannot write %s: %s[9d^@cannot close %s: %s[10d^@^@^@^@^A^[^C;D^@^@^@^G^@^@^@ÔøΩÔøΩÔøΩÔøΩÔøΩ^@^@^@@ÔøΩÔøΩÔøΩÔøΩ^@^@^@PÔøΩÔøΩÔøΩ`^@^@^@5ÔøΩÔøΩÔøΩÔøΩ^@^@^@ÔøΩÔøΩÔøΩÔøΩÔøΩ^@^@^@ÔøΩÔøΩÔøΩÔøΩ^P^A^@^@ÔøΩÔøΩÔøΩÔøΩX^A^@^@^@^@^@^@^T^@^@^@^@^@$[11;1H^@^@^@^@^@^@^@ÔøΩ^@^@^@^@^@^@^@^K^@^@^@^@^@^@^@^X^@^@^@^@^@^@^@^U^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^C^@^@^@^@^@^@^@^@@^@^@^@^@^@^@^B^@$[12;1H^A^@^@^C^B^GW^A^@^@^C^A^F^L^A^@^@^C^B^E%^@^@^@^E^D^Eint^@^C^H^EÔøΩ^@^@^@^BÔøΩ^A^@^@^CÔøΩ^Yl^@^@^@^BÔøΩ^A^@^@^CÔøΩ^[l^@^@^@^F^HÔøΩ^@^@^@^C^A^$[13;1H^B^@^@^D\^Yo^B^@^@ÔøΩ     o^A^@^@^D]^TC^B^@^@ÔøΩ    }^@^@^@^D^[65GG^@^@^@ÔøΩ[13;81H}^A^@^@^D_[14d-^@^@^@ÔøΩ[14;17H3^B^@^@^D`^Ge^@^@^@ÔøΩ    A^A^@^@^Db^Hu^B^@^@ÔøΩ^@^BÔøΩ^@^@^@^E^G^YÔøΩ^@^@^@[15dz^B^@^@^D+^N^K^]^A^@^@^F^H8^B^@^@^F^HÔøΩ^@^@^@^LÔøΩ^@^@^@Y^B^@^@^M9^@^@^@^@^@^F^H0^B^@^@^KÔøΩ^A^@^@^F^H_^B^@^@^K^G^B^@^@^F^Hj^B^@^@^LÔøΩ$[16;1He^@^@^@^BÔøΩL^PÔøΩ^@^@^@^A^V^\2^C^@^@^BÔøΩ@^QÔøΩ^@^@^@^A^\^O8^C^@^@^BÔøΩh^QÔøΩ^A^@^@^A^]^O8^C^@^@^BÔøΩ`^Rin^@^A^^     ÔøΩ^B^@^@^BÔøΩX^Rout^@^A#   $[17;1H^V^@^C^N:^K;^K9^K^@^@^K^S^@^C^N<^Y^@^@^L^A^AI^S^A^S^@^@^M!^@I^S/^K^@^@^N4^@^C^N:^K;^K9^KI^S?^Y<^Y^@^@^O.^A?^Y^C^N:^K;^K9^K'^YI^S$[18;1HÔøΩ^E^AY^B^B^@^A^A_IO_buf_end^@_old_offset^@_IO_save_end^@short int^@size_t^@outName^@_IO_write_ptr^@_flags^@inName^@_IO_buf_base^$[19;1H^@ÔøΩ^F^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^C^@^K^@^@^P^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^C^@^L^@ ^P^@^@^@^@^@^@^@^@^@^@^@^@^@^@$[20;1HCFLAGS = -g -Wall -std=c11[22dTARGETS = file-copy[24d$(TARGETS):[27dclean:[28;17Hrm -f $(TARGETS) *.o *~[3d[?12l[?25h[?25l[80d[J[82;129H[?12l[?25h[82;1H[?1049l[23;0;0t[?1l>cyang58@remote-n06:~/i220a/submit/lab12/exercises/file-copy$ cm[ f[K[K[Kp n[KMakefile t
+Makefile t differ: byte 1, line 1
+cyang58@remote-n06:~/i220a/submit/lab12/exercises/file-copy$ make
+make: 'file-copy' is up to date.
+cyang58@remote-n06:~/i220a/submit/lab12/exercises/file-copy$ cmp f[Kma[K[KMakefile  t[K[Kt
+Makefile t differ: byte 1, line 1
+cyang58@remote-n06:~/i220a/submit/lab12/exercises/file-copy$ ch[K[Kchmod t
+chmod: missing operand after ‚Äòt‚Äô
+Try 'chmod --help' for more information.
+cyang58@remote-n06:~/i220a/submit/lab12/exercises/file-copy$ chmod t[K[K a+w t
+cyang58@remote-n06:~/i220a/submit/lab12/exercises/file-copy$ c[Kv[Kr[K./file-copy file-copy t
+cyang58@remote-n06:~/i220a/submit/lab12/exercises/file-copy$ .fi[K[K[K.,/f[K[K[K[K./file-copy  [KNa[K[KMakefile tr[K
+cyang58@remote-n06:~/i220a/submit/lab12/exercises/file-copy$ vin[K[K[Kv[Kna[K[Kwc - l t
+^C
+cyang58@remote-n06:~/i220a/submit/lab12/exercises/file-copy$ rm -fg[K t
+cyang58@remote-n06:~/i220a/submit/lab12/exercises/file-copy$ ls
+file-copy  file-copy.c	Makefile
+cyang58@remote-n06:~/i220a/submit/lab12/exercises/file-copy$ lsrm -f t[1@wc - l[C[C[14@./file-copy Makefile[C[C[1@file-copy[C[C[12Pchmod a+w[C[Ct[K[K[K[K[K[K[K[Kchmp Makefile tmake[Kcmp Makefile t[7Pnano t ls[Kclearxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256color[A[A[A[A[A[A[A[A[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ccat t[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K[A[A[A[A[A[A[A[A[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[CMakefile [6Pwc -l t[K[K[K[K[K[K[Kchmod a=[K+w t
+chmod: cannot access 't': No such file or directory
+cyang58@remote-n06:~/i220a/submit/lab12/exercises/file-copy$ cmp f[Km[KMakefile t
+cmp: t: No such file or directory
+cyang58@remote-n06:~/i220a/submit/lab12/exercises/file-copy$ make
+make: 'file-copy' is up to date.
+cyang58@remote-n06:~/i220a/submit/lab12/exercises/file-copy$ ./file-copy file-copyt[K t
+cyang58@remote-n06:~/i220a/submit/lab12/exercises/file-copy$ ./file-copy  [KMakefile t
+cyang58@remote-n06:~/i220a/submit/lab12/exercises/file-copy$ wc - l[K[Kl t
+26 t
+cyang58@remote-n06:~/i220a/submit/lab12/exercises/file-copy$ wc -l[K[K[K[K[Kwc -l Makefile file-copy.c
+  10 Makefile
+  50 file-copy.c
+  60 total
+cyang58@remote-n06:~/i220a/submit/lab12/exercises/file-copy$ cat [K[K[K[Kv[Kcat Nam[K[K[KF[Kfe[Kt[K[Kt [K[Kt
+ELF          >    –      @       E          @ 8  @ # "       @       @       @       h      h                   ®      ®      ®                                                         p      p                                        }      }                                                                    Ë-      Ë=      Ë=      à      ®                   ¯-      ¯=      ¯=      ‡      ‡                   ƒ      ƒ      ƒ      D       D              PÂtd   Ä       Ä       Ä       D       D              QÂtd                                                  RÂtd   Ë-      Ë=      Ë=                         /lib64/ld-linux-x86-64.so.2          GNU                        GNU ‚†OìxÆ-r<l˝ì
+[‰ÚõÏ             Å          —eŒm9Úã                                              Ü                       s                      3                                            -                      a                      A                      ¢                                                                   ±                       X                      I   "                   :     Ä@              libc.so.6 exit fopen fgetc __errno_location fputc fclose stderr fprintf __cxa_finalize strerror __libc_start_main ferror GLIBC_2.2.5 _ITM_deregisterTMCloneTable __gmon_start__ _ITM_registerTMCloneTable                                      ui	   z       Ë=             ∞      =             p      h@             h@      ÿ?                    ‡?                    Ë?         	           ?                    ¯?                    Ä@                    @                     @                    (@                    0@                    8@                    @@                    H@         
+           P@                    X@                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    HÉÏHã›/  HÖ¿tˇ–HÉƒ√         ˇ5‚/  ˇ%‰/  @ ˇ%‚/  h    È‡ˇˇˇˇ%⁄/  h   È–ˇˇˇˇ%“/  h   È¿ˇˇˇˇ% /  h   È∞ˇˇˇˇ%¬/  h   È†ˇˇˇˇ%∫/  h   Èêˇˇˇˇ%≤/  h   ÈÄˇˇˇˇ%™/  h   Èpˇˇˇˇ%¢/  h   È`ˇˇˇˇ%2/  fê        1ÌIâ—^Hâ‚HÉ‰PTLçä  Hç#  Hç=S  ˇÊ.  ÙD  Hç=i/  Hçb/  H9¯tHãæ.  HÖ¿t	ˇ‡Ä    √Ä    Hç=9/  Hç52/  H)˛H¡˛HâH¡Ë?H∆H—˛tHãï.  HÖ¿tˇ‡fD  √Ä    Ä=/   u/UHÉ=v.   HâÂtHã=⁄.  Ë-ˇˇˇËhˇˇˇ∆È.  ]√Ä    √Ä    È{ˇˇˇUHâÂHÉÏ0Hâ}ËHâu‡HâUÿHâM–ÎPHãU–ãE¸Hâ÷â«Ëê˛ˇˇÉ¯ˇu:ËF˛ˇˇã â«ËΩ˛ˇˇHâ¡HãÉ.  HãUÿHç5¸  Hâ«∏    Ëk˛ˇˇø   ËÅ˛ˇˇHãE‡Hâ«Ë5˛ˇˇâE¸É}¸ˇtHãE–Hâ«Ë ˛ˇˇÖ¿tãê…√UHâÂHÉÏ0â}‹Hâu–É}‹t,HãE–HãHã.  Hç5¨  Hâ«∏    Ë˛ˇˇø   Ë˛ˇˇHãE–Hã@HâE¯HãE–Hã@HâEHãE¯Hç5ê  Hâ«Ë›˝ˇˇHâEËHÉ}Ë u:Ëm˝ˇˇã â«Ë‰˝ˇˇHâ¡Hã™-  HãU¯Hç5\  Hâ«∏    Ëí˝ˇˇø   Ë®˝ˇˇHãEHç5N  Hâ«ËÖ˝ˇˇHâE‡HÉ}‡ u:Ë˝ˇˇã â«Ëå˝ˇˇHâ¡HãR-  HãUHç5  Hâ«∏    Ë:˝ˇˇø   ËP˝ˇˇHãM‡HãUHãuËHãE¯Hâ«ËM˛ˇˇHãEËHâ«Ë‹¸ˇˇÖ¿t:Ë≥¸ˇˇã â«Ë*˝ˇˇHâ¡Hã,  HãU¯Hç5Õ  Hâ«∏    Ëÿ¸ˇˇø   ËÓ¸ˇˇHãE‡Hâ«Ëí¸ˇˇÖ¿t:Ëi¸ˇˇã â«Ë‡¸ˇˇHâ¡Hã¶,  HãUHç5É  Hâ«∏    Ëé¸ˇˇø   Ë§¸ˇˇ∏    …√f.Ñ      AWIâ◊AVIâˆAUAâ˝ATLç%¿)  UHç-¿)  SL)ÂHÉÏË√˚ˇˇH¡˝t1€ Lâ˙LâˆDâÔAˇ‹HÉ√H9›uÍHÉƒ[]A\A]A^A_√ √   HÉÏHÉƒ√                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     error writing to %s: %s
+ usage: %s SRC_NAME DEST_NAME
+ r cannot read %s: %s
+ a cannot write %s: %s
+ cannot close %s: %s
+    ;D      †Ôˇˇê   @ˇˇ∏   Pˇˇ`   5Òˇˇ–   «Òˇˇ   êÛˇˇ  ÛˇˇX             zR xê      ËÔˇˇ+                  zR xê  $      Ôˇˇ†    FJwÄ ?;*3$"       D   ÄÔˇˇ              \   ]ˇˇí    AÜCç     |   œˇˇº   AÜC∑ D   ú   xÚˇˇ]    BèEéE çE(åH0ÜH8ÉG@j8A0A(B BBB    ‰   êÚˇˇ                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   ∞      p                                         t             Ë=                           =                    ı˛ˇo                 ∞             0      
+       À                                            @             ÿ                            ò             ¿             ÿ       	              ˚ˇˇo           ˛ˇˇo    †      ˇˇˇo           ˇˇo    |      ˘ˇˇo                                                                                                                                   ¯=                      6      F      V      f      v      Ü      ñ      ¶      ∂              h@      GCC: (Debian 8.3.0-6) 8.3.0 ,             µ      N                      û       ”   π   ô  µ      N          /   ÿ9   Œ  ”  
+  W    %   int ñ   ¯  ñl   Ó  ól   ë     ë       ÿ1$  	L   3e    	J  6	ã   	p   7	ã   	9  8	ã   	2  9	ã    	>   :	ã   (	‡  ;	ã   0	Z   <	ã   8	    =	ã   @	V  @	ã   H	  A	ã   P	   B	ã   X	g   D=  `	   FC  h	d  He   p	+  Ie   t	   Js   x	≠   MP   Ä	G  NW   Ç	(  OI  É	ß   QY  à	   Y   ê	ê  [d  ò	
+  \o  †	o  ]C  ®	}   ^	G   ∞	}  _
+-   ∏	3  `e   ¿	A  bu  ƒ Œ   ù   
+z  +  8  ù   ë   Y  9     0  ç  _    j  ë   Ö  9    %  âë  $  s  äë  ä   ãë  ë   j  e   G      º      ú2    
+e   ëL≈   2  ë@ü   8  ëhÑ  8  ë`in 	ë  ëXout #	ë  ëP 8  ò   l  µ      í       úS   8  ëXin "ë  ëP6   28  ëHout Aë  ë@c 	e   ël  %   :;9I  $ >     $ >   I  & I  :;9  	 :;9I8  
+ :;9   <  I  ! I/  4 :;9I?<  .?:;9'I@ñB   :;9I  4 :;9I  4 :;9I  .:;9'@ñB   :;9I   x   ‡   ˚      /usr/lib/gcc/x86_64-linux-gnu/8/include /usr/include/x86_64-linux-gnu/bits /usr/include/x86_64-linux-gnu/bits/types /usr/include  file-copy.c    stddef.h   types.h   struct_FILE.h   FILE.h   stdio.h     	µ      	v/FYX+õ	‰$ f! ∫PCÂg"†ªªg?uX+†gAuX+†u∫@KX+†∫AKX+
+†Y _IO_buf_end _old_offset _IO_save_end short int size_t outName _IO_write_ptr _flags inName _IO_buf_base _markers _IO_read_end _freeres_buf stderr long long int srcName _lock _cur_column file-copy.c argv _IO_FILE GNU C11 8.3.0 -mtune=generic -march=x86-64 -g -std=c11 unsigned char argc _IO_marker _shortbuf _IO_write_base _unused2 _IO_read_ptr short unsigned int main _freeres_list __pad5 destName _IO_codecvt /home/cyang58/i220a/submit/lab12/exercises/file-copy long unsigned int _IO_write_end __off64_t __off_t _chain _IO_wide_data _IO_backup_base stdin _flags2 _mode _IO_read_base _vtable_offset _IO_save_base _fileno doCopy stdout _IO_lock_t                                 ®                    ƒ                    ‰                                        0                    ∞                    |                    †                   	 ¿                   
+ ò                                                              ¿                    –                    t                                          Ä                     »                     Ë=                    =                    ¯=                    ÿ?                     @                    `@                    Ä@                                                                                                                                                      Òˇ                                         0              !     p              7     à@             F     =              m     ∞              y     Ë=              ò    Òˇ                §     µ      í           Òˇ                ´     Ï!                   Òˇ                π      =                    ¯=              ”      Ë=              Ê      Ä               ˘      @              $                       p                                  =                      œ     `@              Y                     m    p@              t                        t              à                     õ                     Æ                     Õ    `@              ⁄                     Ô                      ˛   h@                                           ]       ≈     ê@              ”    –      +       *    p@              6    G      º      ;                     N                     `   p@              l                      Ü                     ú  "                   ∏    Ä@              crtstuff.c deregister_tm_clones __do_global_dtors_aux completed.7325 __do_global_dtors_aux_fini_array_entry frame_dummy __frame_dummy_init_array_entry file-copy.c doCopy __FRAME_END__ __init_array_end _DYNAMIC __init_array_start __GNU_EH_FRAME_HDR _GLOBAL_OFFSET_TABLE_ __libc_csu_fini __errno_location@@GLIBC_2.2.5 _ITM_deregisterTMCloneTable ferror@@GLIBC_2.2.5 _edata fclose@@GLIBC_2.2.5 fgetc@@GLIBC_2.2.5 fputc@@GLIBC_2.2.5 __libc_start_main@@GLIBC_2.2.5 __data_start fprintf@@GLIBC_2.2.5 __gmon_start__ __dso_handle _IO_stdin_used __libc_csu_init __bss_start main fopen@@GLIBC_2.2.5 exit@@GLIBC_2.2.5 __TMC_END__ _ITM_registerTMCloneTable strerror@@GLIBC_2.2.5 __cxa_finalize@@GLIBC_2.2.5 stderr@@GLIBC_2.2.5  .symtab .strtab .shstrtab .interp .note.ABI-tag .note.gnu.build-id .gnu.hash .dynsym .dynstr .gnu.version .gnu.version_r .rela.dyn .rela.plt .init .plt.got .text .fini .rodata .eh_frame_hdr .eh_frame .init_array .fini_array .dynamic .got.plt .data .bss .comment .debug_aranges .debug_info .debug_abbrev .debug_line .debug_str                                                                                   ®      ®                                    #             ƒ      ƒ                                     1             ‰      ‰      $                              D   ˆˇˇo                   (                             N             0      0      Ä                          V             ∞      ∞      À                              ^   ˇˇˇo       |      |                                   k   ˛ˇˇo       †      †                                   z             ¿      ¿      ÿ                            Ñ      B       ò      ò      ÿ                           é                                                         â                           †                             î             ¿      ¿                                   ù             –      –      °                             £             t      t      	                              ©                             }                              ±             Ä       Ä       D                              ø             »       »       (                             …             Ë=      Ë-                                   ’             =      -                                   ·             ¯=      ¯-      ‡                           ò             ÿ?      ÿ/      (                             Í              @       0      `                             Û             `@      `0                                    ˘             Ä@      p0                                     ˛      0               p0                                                        å0      0                                                   º0      ¢                             "                     ^4      '                             0                     Ö5      |                             <     0               7      Ö                                                  à9      h      !   3                 	                      @      Ã                                                   ºC      G                             CC = gcc
+CFLAGS = -g -Wall -std=c11
+
+TARGETS = file-copy
+
+$(TARGETS):
+
+
+clean:
+		rm -f $(TARGETS) *.o *~
+cyang58@remote-n06:~/i220a/submit/lab12/exercises/file-copy$ xterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256color^C
+cyang58@remote-n06:~/i220a/submit/lab12/exercises/file-copy$ clear
+[H[2J[3Jcyang58@remote-n06:~/i220a/submit/lab12/exercises/file-copy$ c[Kmake
+make: 'file-copy' is up to date.
+cyang58@remote-n06:~/i220a/submit/lab12/exercises/file-copy$ rm t
+cyang58@remote-n06:~/i220a/submit/lab12/exercises/file-copy$ k[Kmake
+make: 'file-copy' is up to date.
+cyang58@remote-n06:~/i220a/submit/lab12/exercises/file-copy$ ls
+file-copy  file-copy.c	Makefile
+cyang58@remote-n06:~/i220a/submit/lab12/exercises/file-copy$ cat Makefile 
+CC = gcc
+CFLAGS = -g -Wall -std=c11
+
+TARGETS = file-copy
+
+$(TARGETS):
+
+
+clean:
+		rm -f $(TARGETS) *.o *~
+cyang58@remote-n06:~/i220a/submit/lab12/exercises/file-copy$ rm -f t
+cyang58@remote-n06:~/i220a/submit/lab12/exercises/file-copy$ rm -f t
+cyang58@remote-n06:~/i220a/submit/lab12/exercises/file-copy$ cho[Kmod a+w tg[K
+chmod: cannot access 't': No such file or directory
+cyang58@remote-n06:~/i220a/submit/lab12/exercises/file-copy$ ./file-copy Mae[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K./file-copy file-copy.c t
+cyang58@remote-n06:~/i220a/submit/lab12/exercises/file-copy$ ./file-copy Makefile t
+cyang58@remote-n06:~/i220a/submit/lab12/exercises/file-copy$ -[Kwc -l Makefile file-copy.c
+  10 Makefile
+  50 file-copy.c
+  60 total
+cyang58@remote-n06:~/i220a/submit/lab12/exercises/file-copy$ wc-l t
+bash: wc-l: command not found
+cyang58@remote-n06:~/i220a/submit/lab12/exercises/file-copy$ wc-l t[K[K[K[K[Kc-l[K[K -l t
+60 t
+cyang58@remote-n06:~/i220a/submit/lab12/exercises/file-copy$ cd .//n[K[Kn[K[K./no-buffer-copy/
+cyang58@remote-n06:~/i220a/submit/lab12/exercises/no-buffer-copy$ cd .[K[K[K[Kcd file-c[K[K[K[K[K[K../file-copy/
+cyang58@remote-n06:~/i220a/submit/lab12/exercises/file-copy$ clear
+[H[2J[3Jcyang58@remote-n06:~/i220a/submit/lab12/exercises/file-copy$ rm -0[Kf r[Kt
+cyang58@remote-n06:~/i220a/submit/lab12/exercises/file-copy$ ./file-copy fi[K[K[K[K[K[K[K[K[K[K[K[K[K[Kcd .//[K[K./buf[K[K[Kno-buffer-copy/
+cyang58@remote-n06:~/i220a/submit/lab12/exercises/no-buffer-copy$ clear
+[H[2J[3Jcyang58@remote-n06:~/i220a/submit/lab12/exercises/no-buffer-copy$ catr [K[K[K [Kt nob[K-buffer-copy.c 
+#include <errno.h>
+#include <stdbool.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+static void
+doCopy(const char *inName, FILE *in, const char *outName, FILE *out)
+{
+  int c;
+  while ((c = fgetc(in)) != EOF) {
+    if (fputc(c, out) == EOF) {
+      fprintf(stderr, "error writing to %s: %s\n", outName, strerror(errno));
+      exit(1);
+    }
+  }
+}
+
+/** Output number of chars in file specified by single command-line
+ *  argument.
+ */
+int
+main(int argc, const char *argv[])
+{
+  if (argc != 3 && argc != 4) {
+    fprintf(stderr, "usage: %s SRC_NAME DEST_NAME [IS_BUFFERED]\n", argv[0]);
+    exit(1);
+  }
+  const bool isBuffered = argc == 4 && atoi(argv[3]) == 1;
+  const int bufMode = (isBuffered) ? _IOFBF : _IONBF;
+  const char *srcName = argv[1];
+  const char *destName = argv[2];
+  FILE *in = fopen(srcName, "r");
+  if (!in) {
+    fprintf(stderr, "cannot read %s: %s\n", srcName, strerror(errno));
+    exit(1);
+  }
+  if (setvbuf(in, NULL, bufMode, 0) != 0) {
+    fprintf(stderr, "cannot set %d buffering for  %s: %s\n", isBuffered,
+            srcName, strerror(errno));
+    exit(1);
+  }
+  FILE *out = fopen(destName, "w");
+  if (!out) {
+    fprintf(stderr, "cannot write %s: %s\n", destName, strerror(errno));
+    exit(1);
+  }
+  if (setvbuf(out, NULL, bufMode, 0) != 0) {
+    fprintf(stderr, "cannot set %d buffering for  %s: %s\n", isBuffered,
+            destName, strerror(errno));
+    exit(1);
+  }
+  doCopy(srcName, in, destName, out);
+  if (fclose(in) != 0) {
+    fprintf(stderr, "cannot close %s: %s\n", srcName, strerror(errno));
+    exit(1);
+  }
+  if (fclose(out) != 0) {
+    fprintf(stderr, "cannot close %s: %s\n", destName, strerror(errno));
+    exit(1);
+  }
+  return 0;
+}
+cyang58@remote-n06:~/i220a/submit/lab12/exercises/no-buffer-copy$ ma[K[Kmake
+gcc -g -Wall -std=c11    no-buffer-copy.c   -o no-buffer-copy
+cyang58@remote-n06:~/i220a/submit/lab12/exercises/no-buffer-copy$ time ./no-buffer-copy `which gcc` /dev/null 1
+
+real	0m0.019s
+user	0m0.012s
+sys	0m0.003s
+cyang58@remote-n06:~/i220a/submit/lab12/exercises/no-buffer-copy$ time ./no-buffer-copy `which gcc` /dev/null 1[K0
+
+real	0m1.062s
+user	0m0.622s
+sys	0m0.437s
+cyang58@remote-n06:~/i220a/submit/lab12/exercises/no-buffer-copy$ cd ../rec-io/
+cyang58@remote-n06:~/i220a/submit/lab12/exercises/rec-io$ cat gr[Ken-rand-points.c 
+#include <errno.h>
+#include <math.h>
+#include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
+
+#include "point2.h"
+
+static void __attribute__((noreturn))
+usage(const char *progName)
+{
+  fprintf(stderr, "usage: %s N_POINTS OUT_FILE\n", progName);
+  exit(1);
+}
+
+static int
+randCoord(void)
+{
+  enum { MAX = 1000 }; //exclusive
+  //statistically unsound; see
+  //<https://stackoverflow.com/questions/4195958/how-do-i-scale-down-numbers-from-rand>
+  return rand() % MAX;
+}
+
+int
+main(int argc, const char *argv[])
+{
+  if (argc != 3) usage(argv[0]);
+  int nPoints = atoi(argv[1]);
+  if (nPoints <= 0) usage(argv[0]);
+  const char *outName = argv[2];
+  FILE *out = fopen(outName, "w");
+  if (!out) {
+    fprintf(stderr, "cannot write %s: %s\n", outName, strerror(errno));
+    exit(1);
+  }
+  double sum = 0.0;
+  for (int i = 0; i < nPoints; i++) {
+    Point2 point2 = { .x = randCoord(), .y = randCoord(), };
+    if (fwrite(&point2, sizeof(Point2), 1, out) != 1) {
+      fprintf(stderr, "cannot write Point2(%d, %d) to %s: %s\n",
+              point2.x, point2.y, outName, strerror(errno));
+      exit(1);
+    }
+    double mag = magnitudePoint2(&point2);
+    sum += mag;
+  }
+  fprintf(stderr, "average magnitude = %g\n", sum/nPoints);
+  if (fclose(out) != 0) {
+    fprintf(stderr, "cannot close %s: %s\n", outName, strerror(errno));
+    exit(1);
+  }
+  return 0;
+}
+cyang58@remote-n06:~/i220a/submit/lab12/exercises/rec-io$ ./gr[Ken-r[K[K[K[K[K[K[Kmake
+gcc -g -Wall -std=c11   -c -o gen-rand-points.o gen-rand-points.c
+gcc   gen-rand-points.o  -lm -o gen-rand-points
+gcc -g -Wall -std=c11   -c -o stat-points.o stat-points.c
+gcc -g -Wall -std=c11   -c -o dyn-array.o dyn-array.c
+gcc   stat-points.o dyn-array.o  -lm -o stat-points
+cyang58@remote-n06:~/i220a/submit/lab12/exercises/rec-io$ ./gen-rand-points 100 point.dat
+average magnitude = 752.156
+cyang58@remote-n06:~/i220a/submit/lab12/exercises/rec-io$ ./stat-points points.dat
+min = 363.006
+average = 812.444
+median = 773.59
+max = 1199.85
+cyang58@remote-n06:~/i220a/submit/lab12/exercises/rec-io$ c[Kls
+dyn-array.c  dyn-array.o      gen-rand-points.c  Makefile  point.dat   stat-points    stat-points.o
+dyn-array.h  gen-rand-points  gen-rand-points.o  point2.h  points.dat  stat-points.c
+cyang58@remote-n06:~/i220a/submit/lab12/exercises/rec-io$ cat stat-points.c
+#include <assert.h>
+#include <errno.h>
+#include <math.h>
+#include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
+
+#include "dyn-array.h"
+#include "point2.h"
+
+static void
+readPoints(const char *inName, DynArray *points)
+{
+  FILE *in = fopen(inName, "r");
+  if (!in) {
+    fprintf(stderr, "cannot read %s: %s\n", inName, strerror(errno));
+    exit(1);
+  }
+  Point2 point2;
+  while (fread(&point2, sizeof(Point2), 1, in) == 1) {
+    addElementDynArray(points, &point2);
+  }
+  if (fclose(in) != 0) {
+    fprintf(stderr, "cannot close %s: %s\n", inName, strerror(errno));
+    exit(1);
+  }
+}
+
+static int
+comparePoint2(const void *p1, const void *p2)
+{
+  return magnitudePoint2(p1) - magnitudePoint2(p2);
+}
+
+static double
+averagePoints(const DynArray *points)
+{
+  const int n = nElementsDynArray(points);
+  assert(n > 0);
+  double sum = 0;
+  for (int i = 0; i < n; i++) {
+    const Point2 *p = getElementDynArray(points, i);
+    double mag = magnitudePoint2(p);
+    sum += mag;
+  }
+  return sum/n;
+}
+
+static void
+statPoints(DynArray *points, FILE *out)
+{
+  sortDynArray(points, comparePoint2);
+  const int n = nElementsDynArray(points);
+  if (n > 0) {
+    double min = magnitudePoint2(getElementDynArray(points, 0));
+    double max = magnitudePoint2(getElementDynArray(points, n - 1));
+    double average = averagePoints(points);
+    double median = magnitudePoint2(getElementDynArray(points, n/2));
+    fprintf(out, "min = %g\naverage = %g\nmedian = %g\nmax = %g\n",
+            min, average, median, max);
+  }
+}
+
+int
+main(int argc, const char *argv[])
+{
+  if (argc != 2) {
+    fprintf(stderr, "usage: %s BINARY_POINTS_FILE\n", argv[0]);
+    exit(1);
+  }
+  DynArray *points = newDynArray(sizeof(Point2));
+  readPoints(argv[1], points);
+  statPoints(points, stdout);
+  freeDynArray(points);
+  return 0;
+}
+cyang58@remote-n06:~/i220a/submit/lab12/exercises/rec-io$ nanocat stat-points.c[1Pstat-points.c[1Pstat-points.c[1Pstat-points.c[1Pstat-points.cnstat-points.castat-points.cnstat-points.costat-points.c stat-points.c
+[?1049h[22;0;0t[1;82r(B[m[4l[?7h[39;49m[?1h=[?1h=[?1h=[?25l[39;49m(B[m[H[2J[80;57H(B[0;7m[ Reading File ](B[m[80;63H(B[0;7m 76 lines ](B[m[H(B[0;7m  GNU nano 3.2                                              stat-points.c                                                        [1;128H(B[m[81d(B[0;7m^G(B[m Get Help     (B[0;7m^O(B[m Write Out    (B[0;7m^W(B[m Where Is     (B[0;7m^K(B[m Cut Text     (B[0;7m^J(B[m Justify[81G(B[0;7m^C(B[m Cur Pos[97G(B[0;7mM-U(B[m Undo[81;113H(B[0;7mM-A(B[m Mark Text[82d(B[0;7m^X(B[m Exit[82;17H(B[0;7m^R(B[m Read File    (B[0;7m^\(B[m Replace[49G(B[0;7m^U(B[m Uncut Text   (B[0;7m^T(B[m To Spell     (B[0;7m^_(B[m Go To Line   (B[0;7mM-E(B[m Redo[82;113H(B[0;7mM-6(B[m Copy Text[80d[3d(B[0;1m[36m#include[39m(B[m (B[0;1m[33m<assert.h>[4d[36m#include[39m(B[m (B[0;1m[33m<errno.h>[5d[36m#include[39m(B[m (B[0;1m[33m<math.h>[6d[36m#include[39m(B[m (B[0;1m[33m<stdlib.h>[7d[36m#include[39m(B[m (B[0;1m[33m<stdio.h>[8d[36m#include[39m(B[m (B[0;1m[33m<string.h>[10d[36m#include[39m(B[m (B[0;1m[33m"dyn-array.h"[11d[36m#include[39m(B[m (B[0;1m[33m"point2.h"[13d(B[0m[32mstatic[39m(B[m [32mvoid[14d[39m(B[mreadPoints([32mconst[39m(B[m [32mchar[39m(B[m *inName, DynArray *points)[15d{[16d (B[0;1m[31mFILE[39m(B[m *in = fopen(inName, (B[0;1m[33m"r"[39m(B[m);[17;3H(B[0;1m[33mif[39m(B[m (!in) {[18;5Hfprintf(stderr, (B[0;1m[33m"cannot read %s: %s\n"[39m(B[m, inName, strerror(errno));[19;5Hexit(1);[20;3H}[21dPoint2 point2;[22;3H(B[0;1m[33mwhile[39m(B[m (fread(&point2, [32msizeof[39m(B[m(Point2), 1, in) == 1) {[23;5HaddElementDynArray(points, &point2);[24;3H}[25d(B[0;1m[33mif[39m(B[m (fclose(in) != 0) {[26;5Hfprintf(stderr, (B[0;1m[33m"cannot close %s: %s\n"[39m(B[m, inName, strerror(errno));[27;5Hexit(1);[28;3H}[29d}[31d[32mstatic[39m(B[m [32mint[32d[39m(B[mcomparePoint2([32mconst[39m(B[m [32mvoid[39m(B[m *p1, [32mconst[39m(B[m [32mvoid[39m(B[m *p2)[33d{[34d [35mreturn[39m(B[m magnitudePoint2(p1) - magnitudePoint2(p2);[35d}[37d[32mstatic[39m(B[m [32mdouble[38d[39m(B[maveragePoints([32mconst[39m(B[m DynArray *points)[39d{[40d [32mconst[39m(B[m [32mint[39m(B[m n = nElementsDynArray(points);[41;3Hassert(n > 0);[42;3H[32mdouble[39m(B[m sum = 0;[43;3H(B[0;1m[33mfor[39m(B[m ([32mint[39m(B[m i = 0; i < n; i++) {[44;5H[32mconst[39m(B[m Point2 *p = getElementDynArray(points, i);[45;5H[32mdouble[39m(B[m mag = magnitudePoint2(p);[46;5Hsum += mag;[47;3H}[48d[35mreturn[39m(B[m sum/n;[49d}[51d[32mstatic[39m(B[m [32mvoid[52d[39m(B[mstatPoints(DynArray *points, (B[0;1m[31mFILE[39m(B[m *out)[53d{[54d sortDynArray(points, comparePoint2);[55;3H[32mconst[39m(B[m [32mint[39m(B[m n = nElementsDynArray(points);[56;3H(B[0;1m[33mif[39m(B[m (n > 0) {[57;5H[32mdouble[39m(B[m min = magnitudePoint2(getElementDynArray(points, 0));[58;5H[32mdouble[39m(B[m max = magnitudePoint2(getElementDynArray(points, n - 1));[59;5H[32mdouble[39m(B[m average = averagePoints(points);[60;5H[32mdouble[39m(B[m median = magnitudePoint2(getElementDynArray(points, n/2));[61;5Hfprintf(out, (B[0;1m[33m"min = %g\naverage = %g\nmedian = %g\nmax = %g\n"[39m(B[m,[62;13Hmin, average, median, max);[63;3H}[64d}[66d[32mint[67d[39m(B[mmain([32mint[39m(B[m argc, [32mconst[39m(B[m [32mchar[39m(B[m *argv[])[68d{[69d (B[0;1m[33mif[39m(B[m (argc != 2) {[70;5Hfprintf(stderr, (B[0;1m[33m"usage: %s BINARY_POINTS_FILE\n"[39m(B[m, argv[0]);[71;5Hexit(1);[72;3H}[73dDynArray *points = newDynArray([32msizeof[39m(B[m(Point2));[74;3HreadPoints(argv[1], points);[75;3HstatPoints(points, stdout);[76;3HfreeDynArray(points);[77;3H[35mreturn[39m(B[m 0;[78d}[3d[?12l[?25h[?25l[80d[J[82;129H[?12l[?25h[82;1H[?1049l[23;0;0t[?1l>cyang58@remote-n06:~/i220a/submit/lab12/exercises/rec-io$ nano stat-points.c[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Knano stat-points.c
+[?1049h[22;0;0t[1;82r(B[m[4l[?7h[39;49m[?1h=[?1h=[?1h=[?25l[39;49m(B[m[H[2J[80;57H(B[0;7m[ Reading File ](B[m[80;63H(B[0;7m 76 lines ](B[m[H(B[0;7m  GNU nano 3.2                                              stat-points.c                                                        [1;128H(B[m[81d(B[0;7m^G(B[m Get Help     (B[0;7m^O(B[m Write Out    (B[0;7m^W(B[m Where Is     (B[0;7m^K(B[m Cut Text     (B[0;7m^J(B[m Justify[81G(B[0;7m^C(B[m Cur Pos[97G(B[0;7mM-U(B[m Undo[81;113H(B[0;7mM-A(B[m Mark Text[82d(B[0;7m^X(B[m Exit[82;17H(B[0;7m^R(B[m Read File    (B[0;7m^\(B[m Replace[49G(B[0;7m^U(B[m Uncut Text   (B[0;7m^T(B[m To Spell     (B[0;7m^_(B[m Go To Line   (B[0;7mM-E(B[m Redo[82;113H(B[0;7mM-6(B[m Copy Text[80d[3d(B[0;1m[36m#include[39m(B[m (B[0;1m[33m<assert.h>[4d[36m#include[39m(B[m (B[0;1m[33m<errno.h>[5d[36m#include[39m(B[m (B[0;1m[33m<math.h>[6d[36m#include[39m(B[m (B[0;1m[33m<stdlib.h>[7d[36m#include[39m(B[m (B[0;1m[33m<stdio.h>[8d[36m#include[39m(B[m (B[0;1m[33m<string.h>[10d[36m#include[39m(B[m (B[0;1m[33m"dyn-array.h"[11d[36m#include[39m(B[m (B[0;1m[33m"point2.h"[13d(B[0m[32mstatic[39m(B[m [32mvoid[14d[39m(B[mreadPoints([32mconst[39m(B[m [32mchar[39m(B[m *inName, DynArray *points)[15d{[16d (B[0;1m[31mFILE[39m(B[m *in = fopen(inName, (B[0;1m[33m"r"[39m(B[m);[17;3H(B[0;1m[33mif[39m(B[m (!in) {[18;5Hfprintf(stderr, (B[0;1m[33m"cannot read %s: %s\n"[39m(B[m, inName, strerror(errno));[19;5Hexit(1);[20;3H}[21dPoint2 point2;[22;3H(B[0;1m[33mwhile[39m(B[m (fread(&point2, [32msizeof[39m(B[m(Point2), 1, in) == 1) {[23;5HaddElementDynArray(points, &point2);[24;3H}[25d(B[0;1m[33mif[39m(B[m (fclose(in) != 0) {[26;5Hfprintf(stderr, (B[0;1m[33m"cannot close %s: %s\n"[39m(B[m, inName, strerror(errno));[27;5Hexit(1);[28;3H}[29d}[31d[32mstatic[39m(B[m [32mint[32d[39m(B[mcomparePoint2([32mconst[39m(B[m [32mvoid[39m(B[m *p1, [32mconst[39m(B[m [32mvoid[39m(B[m *p2)[33d{[34d [35mreturn[39m(B[m magnitudePoint2(p1) - magnitudePoint2(p2);[35d}[37d[32mstatic[39m(B[m [32mdouble[38d[39m(B[maveragePoints([32mconst[39m(B[m DynArray *points)[39d{[40d [32mconst[39m(B[m [32mint[39m(B[m n = nElementsDynArray(points);[41;3Hassert(n > 0);[42;3H[32mdouble[39m(B[m sum = 0;[43;3H(B[0;1m[33mfor[39m(B[m ([32mint[39m(B[m i = 0; i < n; i++) {[44;5H[32mconst[39m(B[m Point2 *p = getElementDynArray(points, i);[45;5H[32mdouble[39m(B[m mag = magnitudePoint2(p);[46;5Hsum += mag;[47;3H}[48d[35mreturn[39m(B[m sum/n;[49d}[51d[32mstatic[39m(B[m [32mvoid[52d[39m(B[mstatPoints(DynArray *points, (B[0;1m[31mFILE[39m(B[m *out)[53d{[54d sortDynArray(points, comparePoint2);[55;3H[32mconst[39m(B[m [32mint[39m(B[m n = nElementsDynArray(points);[56;3H(B[0;1m[33mif[39m(B[m (n > 0) {[57;5H[32mdouble[39m(B[m min = magnitudePoint2(getElementDynArray(points, 0));[58;5H[32mdouble[39m(B[m max = magnitudePoint2(getElementDynArray(points, n - 1));[59;5H[32mdouble[39m(B[m average = averagePoints(points);[60;5H[32mdouble[39m(B[m median = magnitudePoint2(getElementDynArray(points, n/2));[61;5Hfprintf(out, (B[0;1m[33m"min = %g\naverage = %g\nmedian = %g\nmax = %g\n"[39m(B[m,[62;13Hmin, average, median, max);[63;3H}[64d}[66d[32mint[67d[39m(B[mmain([32mint[39m(B[m argc, [32mconst[39m(B[m [32mchar[39m(B[m *argv[])[68d{[69d (B[0;1m[33mif[39m(B[m (argc != 2) {[70;5Hfprintf(stderr, (B[0;1m[33m"usage: %s BINARY_POINTS_FILE\n"[39m(B[m, argv[0]);[71;5Hexit(1);[72;3H}[73dDynArray *points = newDynArray([32msizeof[39m(B[m(Point2));[74;3HreadPoints(argv[1], points);[75;3HstatPoints(points, stdout);[76;3HfreeDynArray(points);[77;3H[35mreturn[39m(B[m 0;[78d}[3d[?12l[?25h[?25l[4d[?12l[?25h[?25l[5d[?12l[?25h[?25l[6d[?12l[?25h[?25l[7d[?12l[?25h[?25l[8d[?12l[?25h[?25l[9d[?12l[?25h[?25l[10d[?12l[?25h[?25l[11d[?12l[?25h[?25l[12d[?12l[?25h[?25l[13d[?12l[?25h[?25l[14d[?12l[?25h[?25l[15d[?12l[?25h[?25l[16d[?12l[?25h[?25l[17d[?12l[?25h[?25l[18d[?12l[?25h[?25l[19d[?12l[?25h[?25l[20d[?12l[?25h[?25l[21d[?12l[?25h[?25l[22d[?12l[?25h[?25l[23d[?12l[?25h[?25l[24d[?12l[?25h[?25l[25d[?12l[?25h[?25l[26d[?12l[?25h[?25l[27d[?12l[?25h[?25l[A[?12l[?25h[?25l[80d[K[25d[?12l[?25h[?25l[A[?12l[?25h[?25l[A[?12l[?25h[?25l[A[?12l[?25h[?25l[A[?12l[?25h[?25l[A[?12l[?25h[?25l[A[?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25le[?12l[?25h[?25lx[?12l[?25h[?25li[?12l[?25h[?25lt[?12l[?25h[?25l([?12l[?25h[?25l1[?12l[?25h[?25l)[?12l[?25h[?25l;[?12l[?25h[?25l[20d[?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l}[?12l[?25h[?25l[21d[?12l[?25h[?25l [?12l[?25h[?25l[A[?12l[?25h[?25l [?12l[?25h[?25l}[?12l[?25h[?25l[A[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[18;70H[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[17;13H[?12l[?25h[?25l[16;33H[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[1;120H(B[0;7mModified(B[m[16;30H(B[0;1m[33mb"[39m(B[m);[?12l[?25h[?25l"rb);[K[?12l[?25h[?25ly);[?12l[?25h[?25l);[K[?12l[?25h[?25l(B[0;1m[33m"rb"[39m(B[m);[?12l[?25h[?25l[80d(B[0;7mSave modified buffer?  (Answering "No" will DISCARD changes.)                                                                    [81;1H Y(B[m Yes[K[82d(B[0;7m N(B[m No  [82;18H(B[0;7mC(B[m Cancel[K[80;63H[?12l[?25h[?25l[81d(B[0;7m^G(B[m Get Help[81;33H(B[0;7mM-D(B[m DOS Format[81;65H(B[0;7mM-A(B[m Append[81;97H(B[0;7mM-B(B[m Backup File[82d(B[0;7m^C(B[m Cancel[17G         [33G(B[0;7mM-M(B[m Mac Format[82;65H(B[0;7mM-P(B[m Prepend[82;97H(B[0;7m^T(B[m To Files[80d(B[0;7mFile Name to Write: stat-points.c                            (B[m[80;34H[?12l[?25h[?25l[K[1;128H[1;120H(B[0;7m        (B[m[80;56H(B[0;7m[ Wrote 76 lines ](B[m[J[82;129H[?12l[?25h[82;1H[?1049l[23;0;0t[?1l>cyang58@remote-n06:~/i220a/submit/lab12/exercises/rec-io$ nano stat-points.c[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Kmame[K[Kke
+gcc -g -Wall -std=c11   -c -o stat-points.o stat-points.c
+gcc   stat-points.o dyn-array.o  -lm -o stat-points
+cyang58@remote-n06:~/i220a/submit/lab12/exercises/rec-io$ makenano stat-points.c[1Pcat[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+#include <assert.h>
+#include <errno.h>
+#include <math.h>
+#include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
+
+#include "dyn-array.h"
+#include "point2.h"
+
+static void
+readPoints(const char *inName, DynArray *points)
+{
+  FILE *in = fopen(inName, "rb");
+  if (!in) {
+    fprintf(stderr, "cannot read %s: %s\n", inName, strerror(errno));
+    exit(1);
+  }
+  Point2 point2;
+  while (fread(&point2, sizeof(Point2), 1, in) == 1) {
+    addElementDynArray(points, &point2);
+  }
+  if (fclose(in) != 0) {
+    fprintf(stderr, "cannot close %s: %s\n", inName, strerror(errno));
+    exit(1);
+  }
+}
+
+static int
+comparePoint2(const void *p1, const void *p2)
+{
+  return magnitudePoint2(p1) - magnitudePoint2(p2);
+}
+
+static double
+averagePoints(const DynArray *points)
+{
+  const int n = nElementsDynArray(points);
+  assert(n > 0);
+  double sum = 0;
+  for (int i = 0; i < n; i++) {
+    const Point2 *p = getElementDynArray(points, i);
+    double mag = magnitudePoint2(p);
+    sum += mag;
+  }
+  return sum/n;
+}
+
+static void
+statPoints(DynArray *points, FILE *out)
+{
+  sortDynArray(points, comparePoint2);
+  const int n = nElementsDynArray(points);
+  if (n > 0) {
+    double min = magnitudePoint2(getElementDynArray(points, 0));
+    double max = magnitudePoint2(getElementDynArray(points, n - 1));
+    double average = averagePoints(points);
+    double median = magnitudePoint2(getElementDynArray(points, n/2));
+    fprintf(out, "min = %g\naverage = %g\nmedian = %g\nmax = %g\n",
+            min, average, median, max);
+  }
+}
+
+int
+main(int argc, const char *argv[])
+{
+  if (argc != 2) {
+    fprintf(stderr, "usage: %s BINARY_POINTS_FILE\n", argv[0]);
+    exit(1);
+  }
+  DynArray *points = newDynArray(sizeof(Point2));
+  readPoints(argv[1], points);
+  statPoints(points, stdout);
+  freeDynArray(points);
+  return 0;
+}
+cyang58@remote-n06:~/i220a/submit/lab12/exercises/rec-io$ [Acat stat-points.cmake[Knano stat-points.c[1Pcat[C[C[C[C[C[C[C[C[C[C[C[C[C[Cls[Kcat stat-points.c[1@nano[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Kclear
+[H[2J[3Jcyang58@remote-n06:~/i220a/submit/lab12/exercises/rec-io$ cat gen-rand-points
+ELF          >    ‡      @       0G          @ 8  @ # "       @       @       @       h      h                   ®      ®      ®                                                         –      –                                        ›      ›                                           P      P                   ÿ-      ÿ=      ÿ=      †      ∏                   Ë-      Ë=      Ë=                               ƒ      ƒ      ƒ      D       D              PÂtd   î       î       î       T       T              QÂtd                                                  RÂtd   ÿ-      ÿ=      ÿ=      (      (             /lib64/ld-linux-x86-64.so.2          GNU                        GNU ±+ØDµUmºQu÷ê
+%.<:             Å          —eŒm9Úã                        j                                             {                      ∫                      ö                      '                       d                      ï                      _                      é                      6                       P                      ±                      Ç                      ¢   "                   á     Ä@              libm.so.6 _ITM_deregisterTMCloneTable __gmon_start__ _ITM_registerTMCloneTable sqrt libc.so.6 exit fopen __errno_location fclose rand stderr fwrite atoi fprintf __cxa_finalize strerror __libc_start_main GLIBC_2.2.5                                        ui	   Ã         U          ui	   Ã       ÿ=             ¿      ‡=             Ä      p@             p@      ÿ?                    ‡?                    Ë?                    ?                    ¯?                    Ä@                    @                     @                    (@                    0@                    8@                    @@         	           H@         
+           P@                    X@                    `@                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    HÉÏHã›/  HÖ¿tˇ–HÉƒ√         ˇ5‚/  ˇ%‰/  @ ˇ%‚/  h    È‡ˇˇˇˇ%⁄/  h   È–ˇˇˇˇ%“/  h   È¿ˇˇˇˇ% /  h   È∞ˇˇˇˇ%¬/  h   È†ˇˇˇˇ%∫/  h   Èêˇˇˇˇ%≤/  h   ÈÄˇˇˇˇ%™/  h   Èpˇˇˇˇ%¢/  h   È`ˇˇˇˇ%ö/  h	   ÈPˇˇˇˇ%"/  fê        1ÌIâ—^Hâ‚HÉ‰PTLç⁄  Hçs  Hç=y  ˇ÷.  ÙD  Hç=a/  HçZ/  H9¯tHãÆ.  HÖ¿t	ˇ‡Ä    √Ä    Hç=1/  Hç5*/  H)˛H¡˛HâH¡Ë?H∆H—˛tHãÖ.  HÖ¿tˇ‡fD  √Ä    Ä=/   u/UHÉ=f.   HâÂtHã=“.  Ë-ˇˇˇËhˇˇˇ∆Ÿ.  ]√Ä    √Ä    È{ˇˇˇUHâÂHÉÏHâ}¯HãE¯ã Ú*»HãE¯ã Ú*¿ÚY»HãE¯ã@Ú*–HãE¯ã@Ú*¿ÚY¬ÚX¡Ëî˛ˇˇfH~¿HâEÚE…√UHâÂHÉÏHâ}¯HãQ.  HãU¯Hç5Œ  Hâ«∏    Ë	˛ˇˇø   Ë/˛ˇˇUHâÂËf˛ˇˇâ¡∫”Mbâ»˜Í¡˙â»¡¯)¬â–i¿Ë  )¡â»]√UHâÂHÉÏ@â}ÃHâu¿É}ÃtHãE¿Hã Hâ«Ë{ˇˇˇHãE¿HÉ¿Hã Hâ«Ëº˝ˇˇâEÉ} HãE¿Hã Hâ«ËPˇˇˇHãE¿Hã@HâEËHãEËHç5B  Hâ«Ëu˝ˇˇHâE‡HÉ}‡ u:Ë5˝ˇˇã â«Ë¨˝ˇˇHâ¡Hãr-  HãUËHç5  Hâ«∏    Ë*˝ˇˇø   ËP˝ˇˇfÔ¿ÚE¯«EÙ    È°   ËˇˇˇâE–Ëˇ˛ˇˇâE‘HãU‡HçE–Hâ—∫   æ   Hâ«Ë˝ˇˇHÉ¯tFË≥¸ˇˇã â«Ë*˝ˇˇHâ«ãM‘ãU–HãÍ,  HãuËIâ˘IâHç5ô  Hâ«∏    Ëú¸ˇˇø   Ë¬¸ˇˇHçE–Hâ«Ë˚˝ˇˇfH~¿HâEÿÚE¯ÚXEÿÚE¯ÉEÙãEÙ;EåSˇˇˇÚ*MÚE¯Ú^¡Hãy,  Hç5Y  Hâ«∏   Ë5¸ˇˇHãE‡Hâ«Ë¸ˇˇÖ¿t:Ë ¸ˇˇã â«Ëw¸ˇˇHâ¡Hã=,  HãUËHç51  Hâ«∏    Ëı˚ˇˇø   Ë¸ˇˇ∏    …√@ AWIâ◊AVIâˆAUAâ˝ATLç%P)  UHç-P)  SL)ÂHÉÏËc˚ˇˇH¡˝t1€ Lâ˙LâˆDâÔAˇ‹HÉ√H9›uÍHÉƒ[]A\A]A^A_√ √   HÉÏHÉƒ√                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         usage: %s N_POINTS OUT_FILE
+ w cannot write %s: %s
+     cannot write Point2(%d, %d) to %s: %s
+ average magnitude = %g
+ cannot close %s: %s
+ ;P   	   åÔˇˇú   <ˇˇƒ   Lˇˇl   1Òˇˇ‹   àÒˇˇ¸   ΩÒˇˇ  ÈÒˇˇ8  ‹Ûˇˇ\  <Ùˇˇ§         zR xê      ÿÔˇˇ+                  zR xê  $      ËÓˇˇ∞    FJwÄ ?;*3$"       D   pÔˇˇ              \   MˇˇW    AÜCR     |   Ñˇˇ5    AÜC      ò   ùˇˇ,    AÜCg       ∏   ©ˇˇÔ   AÜCÍ     D   ‹   xÚˇˇ]    BèEéE çE(åH0ÜH8ÉG@j8A0A(B BBB    $  êÚˇˇ                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   ¿      Ä                           U                            ‘             ÿ=                           ‡=                    ı˛ˇo                 »             0      
+       ÿ                                            @                                         ‡                          ÿ       	              ˚ˇˇo           ˛ˇˇo    »      ˇˇˇo           ˇˇo    †      ˘ˇˇo                                                                                                                                   Ë=                      6      F      V      f      v      Ü      ñ      ¶      ∂      ∆              p@      GCC: (Debian 8.3.0-6) 8.3.0 ,             ≈      ß                      e       Ò   ê  j  ≈      ß          (  }  Õ  »  *  A   int ∏   Î  ñ^   ·  ó^   Ö   1  Ö   ¶   ⁄  K   ÿB   ≥   Ë   ÿ19  	o   3W    	p  6	   	å   7	   	6  8	   	X  9	    	a   :	   (	3   ;	   0	v   <	   8	    =	   @	\  @	   H	  A	   P	&   B	   X	É   DR  `	˝  FX  h	   HW   p	(  IW   t	   Je   x	◊   M4   Ä	M  NI   Ç	F  O^  É	—   Qn  à	   Yq   ê	ø  [y  ò	  \Ñ  †	ß  ]X  ®	ô   ^	}   ∞	µ  _
+ü   ∏	0  `W   ¿	g  bä  ƒ Ï   ≤   
+£  +;  M  ≤   Ö   n  B     E  º  t      Ö   ö  B    "  â¶  9  ú  ä¶  ¨   ã¶  	‰  x W    y 
+W        ƒ  ‰  ¢  W   }      Ô      ú√  6  
+W   ëº„   √  ë∞P  W   ë`R   …  ëXout  	¶  ëPsum %
+ò   ëh9      π       i &W   ëdE      ù       Z   '‰  ë@mag -ò   ëH   …  å   Û  W   Q      ,       ú  ;   MAX Ë     
+      5       ú2  D  
+…  ëh ¡   
+ò   ≈      W       úb  p 
+4b  ëh    %  $ >  $ >   :;9I      I  & I  :;9  	 :;9I8  
+ :;9   <  I  ! I/  4 :;9I?<  :;9   :;9I8  .?:;9'I@ñB   :;9I  4 :;9I  4 :;9I    .:;9'I@ñB  >I:;9  (   .:;9'á@ñB   :;9I   À   Ú   ˚      /usr/include/x86_64-linux-gnu/bits /usr/lib/gcc/x86_64-linux-gnu/8/include /usr/include/x86_64-linux-gnu/bits/types /usr/include  point2.h    gen-rand-points.c    types.h   stddef.h   struct_FILE.h   FILE.h   stdio.h    7 	≈      	ªfJf$Ç"t)J't
+Çg-ª◊£
+Nt◊2Â fÂÇ◊ fÂªg@uX+
+†ëtYX.<X	=∫5hW7 †	 K! x‰ J
+∫)∫@KX+
+†Y _IO_buf_end _old_offset usage _fileno _IO_save_end _IO_write_end short int size_t outName point2 _IO_write_ptr _flags _IO_buf_base _markers _IO_read_end _freeres_buf float stderr long long int magnitudePoint2 _lock _cur_column argv _IO_FILE GNU C11 8.3.0 -mtune=generic -march=x86-64 -g -std=c11 unsigned char argc _IO_marker _shortbuf nPoints _IO_write_base _unused2 _IO_read_ptr short unsigned int gen-rand-points.c main _freeres_list __pad5 _IO_codecvt long unsigned int double __off64_t __off_t randCoord _chain _IO_wide_data _IO_backup_base stdin _flags2 _mode _IO_read_base progName _vtable_offset _IO_save_base /home/cyang58/i220a/submit/lab12/exercises/rec-io stdout _IO_lock_t                                  ®                    ƒ                    ‰                                        0                    »                    †                    »                   	                    
+ ‡                                                              –                    ‡                    ‘                                          î                     Ë                     ÿ=                    ‡=                    Ë=                    ÿ?                     @                    h@                    Ä@                                                                                                                                                      Òˇ                                        @              !     Ä              7     à@             F     ‡=              m     ¿              y     ÿ=              ò    Òˇ                ™     ≈      W       ∫           5       ¿     Q      ,           Òˇ                      L"                   Òˇ                ÿ      ‡=              È     Ë=              Ú      ÿ=                   î                    @              	                   .    –             >                     \                      ¥     h@              x    x@                                   8   ‘              ì                     ≤    h@              ø                     ‘                      „   p@                                 ˇ    p      ]       ‰     ê@              ∏    ‡      +           x@                  }      Ô                            3                     E                     W                     k   x@              w                      ë                     £                     π  "                   ’                     Á    Ä@              crtstuff.c deregister_tm_clones __do_global_dtors_aux completed.7325 __do_global_dtors_aux_fini_array_entry frame_dummy __frame_dummy_init_array_entry gen-rand-points.c magnitudePoint2 usage randCoord __FRAME_END__ __init_array_end _DYNAMIC __init_array_start __GNU_EH_FRAME_HDR _GLOBAL_OFFSET_TABLE_ __libc_csu_fini __errno_location@@GLIBC_2.2.5 _ITM_deregisterTMCloneTable _edata fclose@@GLIBC_2.2.5 __libc_start_main@@GLIBC_2.2.5 __data_start fprintf@@GLIBC_2.2.5 __gmon_start__ __dso_handle _IO_stdin_used __libc_csu_init __bss_start main fopen@@GLIBC_2.2.5 atoi@@GLIBC_2.2.5 exit@@GLIBC_2.2.5 fwrite@@GLIBC_2.2.5 __TMC_END__ _ITM_registerTMCloneTable sqrt@@GLIBC_2.2.5 strerror@@GLIBC_2.2.5 __cxa_finalize@@GLIBC_2.2.5 rand@@GLIBC_2.2.5 stderr@@GLIBC_2.2.5  .symtab .strtab .shstrtab .interp .note.ABI-tag .note.gnu.build-id .gnu.hash .dynsym .dynstr .gnu.version .gnu.version_r .rela.dyn .rela.plt .init .plt.got .text .fini .rodata .eh_frame_hdr .eh_frame .init_array .fini_array .dynamic .got.plt .data .bss .comment .debug_aranges .debug_info .debug_abbrev .debug_line .debug_str                                                                                    ®      ®                                    #             ƒ      ƒ                                     1             ‰      ‰      $                              D   ˆˇˇo                   (                             N             0      0      ò                          V             »      »      ÿ                              ^   ˇˇˇo       †      †      "                            k   ˛ˇˇo       »      »      @                            z                         ÿ                            Ñ      B       ‡      ‡                                 é                                                         â                           ∞                             î             –      –                                   ù             ‡      ‡      Ò                             £             ‘      ‘      	                              ©                             î                              ±             î       î       T                              ø             Ë       Ë       h                             …             ÿ=      ÿ-                                   ’             ‡=      ‡-                                   ·             Ë=      Ë-                                 ò             ÿ?      ÿ/      (                             Í              @       0      h                             Û             h@      h0                                    ˘             Ä@      x0                                     ˛      0               x0                                                        î0      0                                                   ƒ0      i                             "                     -5      ã                             0                     ∏6      œ                             <     0               á8      Æ                                                  8;      ∞      !   5                 	                      ËB      ˚                                                   „E      G                             cyang58@remote-n06:~/i220a/submit/lab12/exercises/rec-io$ xterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256colorxterm-256color^C
+cyang58@remote-n06:~/i220a/submit/lab12/exercises/rec-io$ cat gen-rand-points.c
+#include <errno.h>
+#include <math.h>
+#include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
+
+#include "point2.h"
+
+static void __attribute__((noreturn))
+usage(const char *progName)
+{
+  fprintf(stderr, "usage: %s N_POINTS OUT_FILE\n", progName);
+  exit(1);
+}
+
+static int
+randCoord(void)
+{
+  enum { MAX = 1000 }; //exclusive
+  //statistically unsound; see
+  //<https://stackoverflow.com/questions/4195958/how-do-i-scale-down-numbers-from-rand>
+  return rand() % MAX;
+}
+
+int
+main(int argc, const char *argv[])
+{
+  if (argc != 3) usage(argv[0]);
+  int nPoints = atoi(argv[1]);
+  if (nPoints <= 0) usage(argv[0]);
+  const char *outName = argv[2];
+  FILE *out = fopen(outName, "w");
+  if (!out) {
+    fprintf(stderr, "cannot write %s: %s\n", outName, strerror(errno));
+    exit(1);
+  }
+  double sum = 0.0;
+  for (int i = 0; i < nPoints; i++) {
+    Point2 point2 = { .x = randCoord(), .y = randCoord(), };
+    if (fwrite(&point2, sizeof(Point2), 1, out) != 1) {
+      fprintf(stderr, "cannot write Point2(%d, %d) to %s: %s\n",
+              point2.x, point2.y, outName, strerror(errno));
+      exit(1);
+    }
+    double mag = magnitudePoint2(&point2);
+    sum += mag;
+  }
+  fprintf(stderr, "average magnitude = %g\n", sum/nPoints);
+  if (fclose(out) != 0) {
+    fprintf(stderr, "cannot close %s: %s\n", outName, strerror(errno));
+    exit(1);
+  }
+  return 0;
+}
+cyang58@remote-n06:~/i220a/submit/lab12/exercises/rec-io$ cat gen-rand-points.c[1P gen-rand-points.c[1P gen-rand-points.c[1P gen-rand-points.cn gen-rand-points.ca gen-rand-points.cn gen-rand-points.co gen-rand-points.c
+[?1049h[22;0;0t[1;82r(B[m[4l[?7h[39;49m[?1h=[?1h=[?1h=[?25l[39;49m(B[m[H[2J[80;57H(B[0;7m[ Reading File ](B[m[80;63H(B[0;7m 54 lines ](B[m[H(B[0;7m  GNU nano 3.2                                            gen-rand-points.c                                                      [1;128H(B[m[81d(B[0;7m^G(B[m Get Help     (B[0;7m^O(B[m Write Out    (B[0;7m^W(B[m Where Is     (B[0;7m^K(B[m Cut Text     (B[0;7m^J(B[m Justify[81G(B[0;7m^C(B[m Cur Pos[97G(B[0;7mM-U(B[m Undo[81;113H(B[0;7mM-A(B[m Mark Text[82d(B[0;7m^X(B[m Exit[82;17H(B[0;7m^R(B[m Read File    (B[0;7m^\(B[m Replace[49G(B[0;7m^U(B[m Uncut Text   (B[0;7m^T(B[m To Spell     (B[0;7m^_(B[m Go To Line   (B[0;7mM-E(B[m Redo[82;113H(B[0;7mM-6(B[m Copy Text[80d[3d(B[0;1m[36m#include[39m(B[m (B[0;1m[33m<errno.h>[4d[36m#include[39m(B[m (B[0;1m[33m<math.h>[5d[36m#include[39m(B[m (B[0;1m[33m<stdlib.h>[6d[36m#include[39m(B[m (B[0;1m[33m<stdio.h>[7d[36m#include[39m(B[m (B[0;1m[33m<string.h>[9d[36m#include[39m(B[m (B[0;1m[33m"point2.h"[11d(B[0m[32mstatic[39m(B[m [32mvoid[39m(B[m [36m__attribute__((noreturn))[12d[39m(B[musage([32mconst[39m(B[m [32mchar[39m(B[m *progName)[13d{[14d fprintf(stderr, (B[0;1m[33m"usage: %s N_POINTS OUT_FILE\n"[39m(B[m, progName);[15;3Hexit(1);[16d}[18d[32mstatic[39m(B[m [32mint[19d[39m(B[mrandCoord([32mvoid[39m(B[m)[20d{[21d [32menum[39m(B[m { (B[0;1m[31mMAX[39m(B[m = 1000 }; (B[0;1m[34m//exclusive[22;3H//statistically unsound; see[23;3H//<https://stackoverflow.com/questions/4195958/how-do-i-scale-down-numbers-from-rand>[24;3H(B[0m[35mreturn[39m(B[m rand() % (B[0;1m[31mMAX[39m(B[m;[25d}[27d[32mint[28d[39m(B[mmain([32mint[39m(B[m argc, [32mconst[39m(B[m [32mchar[39m(B[m *argv[])[29d{[30d (B[0;1m[33mif[39m(B[m (argc != 3) usage(argv[0]);[31;3H[32mint[39m(B[m nPoints = atoi(argv[1]);[32;3H(B[0;1m[33mif[39m(B[m (nPoints <= 0) usage(argv[0]);[33;3H[32mconst[39m(B[m [32mchar[39m(B[m *outName = argv[2];[34;3H(B[0;1m[31mFILE[39m(B[m *out = fopen(outName, (B[0;1m[33m"w"[39m(B[m);[35;3H(B[0;1m[33mif[39m(B[m (!out) {[36;5Hfprintf(stderr, (B[0;1m[33m"cannot write %s: %s\n"[39m(B[m, outName, strerror(errno));[37;5Hexit(1);[38;3H}[39d[32mdouble[39m(B[m sum = 0.0;[40;3H(B[0;1m[33mfor[39m(B[m ([32mint[39m(B[m i = 0; i < nPoints; i++) {[41;5HPoint2 point2 = { .x = randCoord(), .y = randCoord(), };[42;5H(B[0;1m[33mif[39m(B[m (fwrite(&point2, [32msizeof[39m(B[m(Point2), 1, out) != 1) {[43;7Hfprintf(stderr, (B[0;1m[33m"cannot write Point2(%d, %d) to %s: %s\n"[39m(B[m,[44;15Hpoint2.x, point2.y, outName, strerror(errno));[45;7Hexit(1);[46;5H}[47d[32mdouble[39m(B[m mag = magnitudePoint2(&point2);[48;5Hsum += mag;[49;3H}[50dfprintf(stderr, (B[0;1m[33m"average magnitude = %g\n"[39m(B[m, sum/nPoints);[51;3H(B[0;1m[33mif[39m(B[m (fclose(out) != 0) {[52;5Hfprintf(stderr, (B[0;1m[33m"cannot close %s: %s\n"[39m(B[m, outName, strerror(errno));[53;5Hexit(1);[54;3H}[55d[35mreturn[39m(B[m 0;[56d}[3d[?12l[?25h[?25l[4d[?12l[?25h[?25l[5d[?12l[?25h[?25l[6d[?12l[?25h[?25l[7d[?12l[?25h[?25l[8d[?12l[?25h[?25l[9d[?12l[?25h[?25l[10d[?12l[?25h[?25l[11d[?12l[?25h[?25l[12d[?12l[?25h[?25l[13d[?12l[?25h[?25l[14d[?12l[?25h[?25l[15d[?12l[?25h[?25l[16d[?12l[?25h[?25l[17d[?12l[?25h[?25l[18d[?12l[?25h[?25l[19d[?12l[?25h[?25l[20d[?12l[?25h[?25l[21d[?12l[?25h[?25l[22d[?12l[?25h[?25l[23d[?12l[?25h[?25l[24d[?12l[?25h[?25l[25d[?12l[?25h[?25l[26d[?12l[?25h[?25l[27d[?12l[?25h[?25l[28d[?12l[?25h[?25l[80d[K[28dm[?12l[?25h[?25la[?12l[?25h[?25l[29d[?12l[?25h[?25l[30d[?12l[?25h[?25l[31d[?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l[C[?12l[?25h[?25l[C[?12l[?25h[?25l[C[?12l[?25h[?25l [?12l[?25h[?25ln[?12l[?25h[?25lP[?12l[?25h[?25lo[?12l[?25h[?25li[?12l[?25h[?25ln[?12l[?25h[?25lt[?12l[?25h[?25ls[?12l[?25h[?25l [?12l[?25h[?25l=[?12l[?25h[?25l [?12l[?25h[?25la[?12l[?25h[?25lt[?12l[?25h[?25lo[?12l[?25h[?25li([?12l[?25h[?25la[?12l[?25h[?25lr[?12l[?25h[?25lg[?12l[?25h[?25lv[?12l[?25h[?25l[[?12l[?25h[?25l1[?12l[?25h[?25l][?12l[?25h[?25l)[?12l[?25h[?25l;[?12l[?25h[?25l[32d[?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l[33;4H[?12l[?25h[?25l[C[?12l[?25h[?25l[34d[?12l[?25h[?25l[35d[?12l[?25h[?25l [?12l[?25h[?25l([?12l[?25h[?25l![?12l[?25h[?25lo[?12l[?25h[?25lu[?12l[?25h[?25lt[?12l[?25h[?25l)[?12l[?25h[?25l [?12l[?25h[?25l{[?12l[?25h[?25l[36d[?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25lf[?12l[?25h[?25lp[?12l[?25h[?25lr[?12l[?25h[?25li[?12l[?25h[?25ln[?12l[?25h[?25lt[?12l[?25h[?25l[A[?12l[?25h[?25l[A[?12l[?25h[?25l[A[?12l[?25h[?25l[34d[?12l[?25h[?25lt[?12l[?25h[?25l [?12l[?25h[?25l=[?12l[?25h[?25l [?12l[?25h[?25lf[?12l[?25h[?25lo[?12l[?25h[?25lp[?12l[?25h[?25le[?12l[?25h[?25ln[?12l[?25h[?25l([?12l[?25h[?25lo[?12l[?25h[?25lu[?12l[?25h[?25lt[?12l[?25h[?25lN[?12l[?25h[?25la[?12l[?25h[?25lm[?12l[?25h[?25le[?12l[?25h[?25l,[?12l[?25h[?25l [?12l[?25h[?25l[C[?12l[?25h[?25l[C[?12l[?25h[?25l[C[?12l[?25h[?25l)[?12l[?25h[?25l;[?12l[?25h[?25l[35d[?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[34;35H[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[1;120H(B[0;7mModified(B[m[34;32H(B[0;1m[33mb"[39m(B[m);[?12l[?25h[?25l[80d(B[0;7mSave modified buffer?  (Answering "No" will DISCARD changes.)                                                                    [81;1H Y(B[m Yes[K[82d(B[0;7m N(B[m No  [82;18H(B[0;7mC(B[m Cancel[K[80;63H[?12l[?25h[?25l[81d(B[0;7m^G(B[m Get Help[81;33H(B[0;7mM-D(B[m DOS Format[81;65H(B[0;7mM-A(B[m Append[81;97H(B[0;7mM-B(B[m Backup File[82d(B[0;7m^C(B[m Cancel[17G         [33G(B[0;7mM-M(B[m Mac Format[82;65H(B[0;7mM-P(B[m Prepend[82;97H(B[0;7m^T(B[m To Files[80d(B[0;7mFile Name to Write: gen-rand-points.c                        (B[m[80;38H[?12l[?25h[?25l[K[1;128H[1;120H(B[0;7m        (B[m[80;56H(B[0;7m[ Wrote 54 lines ](B[m[J[82;129H[?12l[?25h[82;1H[?1049l[23;0;0t[?1l>cyang58@remote-n06:~/i220a/submit/lab12/exercises/rec-io$ make
+gcc -g -Wall -std=c11   -c -o gen-rand-points.o gen-rand-points.c
+gcc   gen-rand-points.o  -lm -o gen-rand-points
+gcc -g -Wall -std=c11   -c -o stat-points.o stat-points.c
+[01m[Kstat-points.c:[m[K In function ‚Äò[01m[Kmain[m[K‚Äô:
+[01m[Kstat-points.c:73:14:[m[K [01;35m[Kwarning: [m[Kcomparison between pointer and integer
+   if(argv[2] [01;35m[K==[m[K 'a'){
+              [01;35m[K^~[m[K
+[01m[Kstat-points.c:74:5:[m[K [01;35m[Kwarning: [m[Kimplicit declaration of function ‚Äò[01m[KappendPoints[m[K‚Äô; did you mean ‚Äò[01m[KreadPoints[m[K‚Äô? [[01;35m[K-Wimplicit-function-declaration[m[K]
+     [01;35m[KappendPoints[m[K(points, argv[1]);
+     [01;35m[K^~~~~~~~~~~~[m[K
+     [32m[KreadPoints[m[K
+[01m[Kstat-points.c:[m[K At top level:
+[01m[Kstat-points.c:84:1:[m[K [01;35m[Kwarning: [m[Kconflicting types for ‚Äò[01m[KappendPoints[m[K‚Äô
+ [01;35m[KappendPoints[m[K(DynArray *points, const char * nameofFile)
+ [01;35m[K^~~~~~~~~~~~[m[K
+[01m[Kstat-points.c:84:1:[m[K [01;31m[Kerror: [m[Kstatic declaration of ‚Äò[01m[KappendPoints[m[K‚Äô follows non-static declaration
+[01m[Kstat-points.c:74:5:[m[K [01;36m[Knote: [m[Kprevious implicit declaration of ‚Äò[01m[KappendPoints[m[K‚Äô was here
+     [01;36m[KappendPoints[m[K(points, argv[1]);
+     [01;36m[K^~~~~~~~~~~~[m[K
+[01m[Kstat-points.c:[m[K In function ‚Äò[01m[KappendPoints[m[K‚Äô:
+[01m[Kstat-points.c:94:17:[m[K [01;35m[Kwarning: [m[Kunknown escape sequence: '\i'
+     fprintf(pt, [01;35m[K"min = %g\naverage = %g\nmedian = %g\nmax = %g\i"[m[K, min, avg, med, max);
+                 [01;35m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+At top level:
+[01m[Kstat-points.c:84:1:[m[K [01;35m[Kwarning: [m[K‚Äò[01m[KappendPoints[m[K‚Äô defined but not used [[01;35m[K-Wunused-function[m[K]
+ [01;35m[KappendPoints[m[K(DynArray *points, const char * nameofFile)
+ [01;35m[K^~~~~~~~~~~~[m[K
+make: *** [<builtin>: stat-points.o] Error 1
+cyang58@remote-n06:~/i220a/submit/lab12/exercises/rec-io$ make
+gcc -g -Wall -std=c11   -c -o stat-points.o stat-points.c
+[01m[Kstat-points.c:[m[K In function ‚Äò[01m[KappendPoints[m[K‚Äô:
+[01m[Kstat-points.c:76:17:[m[K [01;35m[Kwarning: [m[Kunknown escape sequence: '\i'
+     fprintf(pt, [01;35m[K"min = %g\naverage = %g\nmedian = %g\nmax = %g\i"[m[K, min, avg, med, max);
+                 [01;35m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[Kstat-points.c:81:1:[m[K [01;35m[Kwarning: [m[K‚Äò[01m[Kmain[m[K‚Äô is normally a non-static function [[01;35m[K-Wmain[m[K]
+ [01;35m[Kmain[m[K(int argc, const char *argv[])
+ [01;35m[K^~~~[m[K
+[01m[Kstat-points.c:[m[K In function ‚Äò[01m[Kmain[m[K‚Äô:
+[01m[Kstat-points.c:89:14:[m[K [01;35m[Kwarning: [m[Kcomparison between pointer and integer
+   if(argv[2] [01;35m[K==[m[K 'a'){
+              [01;35m[K^~[m[K
+[01m[Kstat-points.c:[m[K In function ‚Äò[01m[KappendPoints[m[K‚Äô:
+[01m[Kstat-points.c:98:1:[m[K [01;31m[Kerror: [m[Kexpected declaration or statement at end of input
+ [01;31m[K}[m[K
+ [01;31m[K^[m[K
+At top level:
+[01m[Kstat-points.c:81:1:[m[K [01;35m[Kwarning: [m[K‚Äò[01m[Kmain[m[K‚Äô defined but not used [[01;35m[K-Wunused-function[m[K]
+ [01;35m[Kmain[m[K(int argc, const char *argv[])
+ [01;35m[K^~~~[m[K
+make: *** [<builtin>: stat-points.o] Error 1
+cyang58@remote-n06:~/i220a/submit/lab12/exercises/rec-io$ clear
+[H[2J[3Jcyang58@remote-n06:~/i220a/submit/lab12/exercises/rec-io$ make
+gcc -g -Wall -std=c11   -c -o stat-points.o stat-points.c
+[01m[Kstat-points.c:[m[K In function ‚Äò[01m[KappendPoints[m[K‚Äô:
+[01m[Kstat-points.c:76:17:[m[K [01;35m[Kwarning: [m[Kunknown escape sequence: '\i'
+     fprintf(pt, [01;35m[K"min = %g\naverage = %g\nmedian = %g\nmax = %g\i"[m[K, min, avg, med, max);
+                 [01;35m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[Kstat-points.c:81:1:[m[K [01;35m[Kwarning: [m[K‚Äò[01m[Kmain[m[K‚Äô is normally a non-static function [[01;35m[K-Wmain[m[K]
+ [01;35m[Kmain[m[K(int argc, const char *argv[])
+ [01;35m[K^~~~[m[K
+[01m[Kstat-points.c:[m[K In function ‚Äò[01m[Kmain[m[K‚Äô:
+[01m[Kstat-points.c:89:14:[m[K [01;35m[Kwarning: [m[Kcomparison between pointer and integer
+   if(argv[2] [01;35m[K==[m[K 'a'){
+              [01;35m[K^~[m[K
+[01m[Kstat-points.c:[m[K In function ‚Äò[01m[KappendPoints[m[K‚Äô:
+[01m[Kstat-points.c:98:1:[m[K [01;31m[Kerror: [m[Kexpected declaration or statement at end of input
+ [01;31m[K}[m[K
+ [01;31m[K^[m[K
+At top level:
+[01m[Kstat-points.c:81:1:[m[K [01;35m[Kwarning: [m[K‚Äò[01m[Kmain[m[K‚Äô defined but not used [[01;35m[K-Wunused-function[m[K]
+ [01;35m[Kmain[m[K(int argc, const char *argv[])
+ [01;35m[K^~~~[m[K
+make: *** [<builtin>: stat-points.o] Error 1
+cyang58@remote-n06:~/i220a/submit/lab12/exercises/rec-io$ make
+gcc -g -Wall -std=c11   -c -o stat-points.o stat-points.c
+[01m[Kstat-points.c:[m[K In function ‚Äò[01m[KappendPoints[m[K‚Äô:
+[01m[Kstat-points.c:75:17:[m[K [01;35m[Kwarning: [m[Kunknown escape sequence: '\i'
+     fprintf(pt, [01;35m[K"min = %g\naverage = %g\nmedian = %g\nmax = %g\i"[m[K, min, avg, med, max);
+                 [01;35m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[Kstat-points.c:80:1:[m[K [01;35m[Kwarning: [m[K‚Äò[01m[Kmain[m[K‚Äô is normally a non-static function [[01;35m[K-Wmain[m[K]
+ [01;35m[Kmain[m[K(int argc, const char *argv[])
+ [01;35m[K^~~~[m[K
+[01m[Kstat-points.c:[m[K In function ‚Äò[01m[Kmain[m[K‚Äô:
+[01m[Kstat-points.c:88:14:[m[K [01;35m[Kwarning: [m[Kcomparison between pointer and integer
+   if(argv[2] [01;35m[K==[m[K 'a'){
+              [01;35m[K^~[m[K
+[01m[Kstat-points.c:[m[K In function ‚Äò[01m[KappendPoints[m[K‚Äô:
+[01m[Kstat-points.c:97:1:[m[K [01;31m[Kerror: [m[Kexpected declaration or statement at end of input
+ [01;31m[K}[m[K
+ [01;31m[K^[m[K
+At top level:
+[01m[Kstat-points.c:80:1:[m[K [01;35m[Kwarning: [m[K‚Äò[01m[Kmain[m[K‚Äô defined but not used [[01;35m[K-Wunused-function[m[K]
+ [01;35m[Kmain[m[K(int argc, const char *argv[])
+ [01;35m[K^~~~[m[K
+make: *** [<builtin>: stat-points.o] Error 1
+cyang58@remote-n06:~/i220a/submit/lab12/exercises/rec-io$ make
+gcc -g -Wall -std=c11   -c -o stat-points.o stat-points.c
+[01m[Kstat-points.c:[m[K In function ‚Äò[01m[KappendPoints[m[K‚Äô:
+[01m[Kstat-points.c:75:17:[m[K [01;35m[Kwarning: [m[Kunknown escape sequence: '\i'
+     fprintf(pt, [01;35m[K"min = %g\naverage = %g\nmedian = %g\nmax = %g\i"[m[K, min, avg, med, max);
+                 [01;35m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[Kstat-points.c:[m[K In function ‚Äò[01m[Kmain[m[K‚Äô:
+[01m[Kstat-points.c:89:14:[m[K [01;35m[Kwarning: [m[Kcomparison between pointer and integer
+   if(argv[2] [01;35m[K==[m[K 'a'){
+              [01;35m[K^~[m[K
+gcc   stat-points.o dyn-array.o  -lm -o stat-points
+cyang58@remote-n06:~/i220a/submit/lab12/exercises/rec-io$ cat stat-points.c
+#include <assert.h>
+#include <errno.h>
+#include <math.h>
+#include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
+
+#include "dyn-array.h"
+#include "point2.h"
+
+static void
+readPoints(const char *inName, DynArray *points)
+{
+  FILE *in = fopen(inName, "rb");
+  if (!in) {
+    fprintf(stderr, "cannot read %s: %s\n", inName, strerror(errno));
+    exit(1);
+  }
+  Point2 point2;
+  while (fread(&point2, sizeof(Point2), 1, in) == 1) {
+    addElementDynArray(points, &point2);
+  }
+  if (fclose(in) != 0) {
+    fprintf(stderr, "cannot close %s: %s\n", inName, strerror(errno));
+    exit(1);
+  }
+}
+
+static int
+comparePoint2(const void *p1, const void *p2)
+{
+  return magnitudePoint2(p1) - magnitudePoint2(p2);
+}
+
+static double
+averagePoints(const DynArray *points)
+{
+  const int n = nElementsDynArray(points);
+  assert(n > 0);
+  double sum = 0;
+  for (int i = 0; i < n; i++) {
+    const Point2 *p = getElementDynArray(points, i);
+    double mag = magnitudePoint2(p);
+    sum += mag;
+  }
+  return sum/n;
+}
+
+static void
+statPoints(DynArray *points, FILE *out)
+{
+  sortDynArray(points, comparePoint2);
+  const int n = nElementsDynArray(points);
+  if (n > 0) {
+    double min = magnitudePoint2(getElementDynArray(points, 0));
+    double max = magnitudePoint2(getElementDynArray(points, n - 1));
+    double average = averagePoints(points);
+    double median = magnitudePoint2(getElementDynArray(points, n/2));
+    fprintf(out, "min = %g\naverage = %g\nmedian = %g\nmax = %g\n",
+            min, average, median, max);
+  }
+}
+
+static void
+appendPoints(DynArray *points, const char * nameofFile)
+{
+  sortDynArray(points, comparePoint2);
+  const int i = nElementsDynArray(points);
+  FILE *pt = fopen(nameofFile, "ab");
+  if (i > 0) {
+    double min = magnitudePoint2(getElementDynArray(points, 0));
+    double max = magnitudePoint2(getElementDynArray(points, i - 1));
+    double avg = averagePoints(points);
+    double med = magnitudePoint2(getElementDynArray(points, i/2));
+    fprintf(pt, "min = %g\naverage = %g\nmedian = %g\nmax = %g\i", min, avg, med, max);
+    fclose(pt);
+  }
+}
+
+int
+main(int argc, const char *argv[])
+{
+  if (argc < 2) {
+    fprintf(stderr, "usage: %s BINARY_POINTS_FILE\n", argv[0]);
+    exit(1);
+  }
+  DynArray *points = newDynArray(sizeof(Point2));
+  readPoints(argv[1], points);
+  if(argv[2] == 'a'){
+    appendPoints(points, argv[1]);
+  }
+  else{
+    statPoints(points, stdout);
+  }
+  freeDynArray(points);
+  return 0;
+  return 0;
+}cyang58@remote-n06:~/i220a/submit/lab12/exercises/rec-io$ clear
+[H[2J[3Jcyang58@remote-n06:~/i220a/submit/lab12/exercises/rec-io$ clearat stat-points.cmake[K
+gcc -g -Wall -std=c11   -c -o stat-points.o stat-points.c
+[01m[Kstat-points.c:[m[K In function ‚Äò[01m[KappendPoints[m[K‚Äô:
+[01m[Kstat-points.c:75:17:[m[K [01;35m[Kwarning: [m[Kunknown escape sequence: '\i'
+     fprintf(pt, [01;35m[K"min = %g\navg = %g\nmed = %g\nmax = %g\i"[m[K,
+                 [01;35m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[Kstat-points.c:[m[K In function ‚Äò[01m[Kmain[m[K‚Äô:
+[01m[Kstat-points.c:90:14:[m[K [01;35m[Kwarning: [m[Kcomparison between pointer and integer
+   if(argv[2] [01;35m[K==[m[K 'a'){
+              [01;35m[K^~[m[K
+gcc   stat-points.o dyn-array.o  -lm -o stat-points
+cyang58@remote-n06:~/i220a/submit/lab12/exercises/rec-io$ make
+make: Nothing to be done for 'all'.
+cyang58@remote-n06:~/i220a/submit/lab12/exercises/rec-io$ make
+make: Nothing to be done for 'all'.
+cyang58@remote-n06:~/i220a/submit/lab12/exercises/rec-io$ make
+gcc -g -Wall -std=c11   -c -o stat-points.o stat-points.c
+[01m[Kstat-points.c:[m[K In function ‚Äò[01m[KappendPoints[m[K‚Äô:
+[01m[Kstat-points.c:75:17:[m[K [01;35m[Kwarning: [m[Kunknown escape sequence: '\i'
+     fprintf(pt, [01;35m[K"min = %g\navg = %g\nmed = %g\nmax = %g\i"[m[K, min, avg, med, max);
+                 [01;35m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[Kstat-points.c:[m[K In function ‚Äò[01m[Kmain[m[K‚Äô:
+[01m[Kstat-points.c:89:14:[m[K [01;35m[Kwarning: [m[Kcomparison between pointer and integer
+   if(argv[2] [01;35m[K==[m[K 'a'){
+              [01;35m[K^~[m[K
+gcc   stat-points.o dyn-array.o  -lm -o stat-points
+cyang58@remote-n06:~/i220a/submit/lab12/exercises/rec-io$ make
+gcc -g -Wall -std=c11   -c -o stat-points.o stat-points.c
+[01m[Kstat-points.c:[m[K In function ‚Äò[01m[Kmain[m[K‚Äô:
+[01m[Kstat-points.c:89:14:[m[K [01;35m[Kwarning: [m[Kcomparison between pointer and integer
+   if(argv[2] [01;35m[K==[m[K 'a'){
+              [01;35m[K^~[m[K
+gcc   stat-points.o dyn-array.o  -lm -o stat-points
+cyang58@remote-n06:~/i220a/submit/lab12/exercises/rec-io$ make
+gcc -g -Wall -std=c11   -c -o stat-points.o stat-points.c
+[01m[Kstat-points.c:[m[K In function ‚Äò[01m[Kmain[m[K‚Äô:
+[01m[Kstat-points.c:89:14:[m[K [01;35m[Kwarning: [m[Kcomparison between pointer and integer
+   if(argv[2] [01;35m[K==[m[K 'a'){
+              [01;35m[K^~[m[K
+gcc   stat-points.o dyn-array.o  -lm -o stat-points
+cyang58@remote-n06:~/i220a/submit/lab12/exercises/rec-io$ make
+gcc -g -Wall -std=c11   -c -o stat-points.o stat-points.c
+[01m[Kstat-points.c:65:1:[m[K [01;35m[Kwarning: [m[K‚Äò[01m[KappendPoints[m[K‚Äô defined but not used [[01;35m[K-Wunused-function[m[K]
+ [01;35m[KappendPoints[m[K(DynArray *points, const char * nameofFile)
+ [01;35m[K^~~~~~~~~~~~[m[K
+gcc   stat-points.o dyn-array.o  -lm -o stat-points
+cyang58@remote-n06:~/i220a/submit/lab12/exercises/rec-io$ make
+gcc -g -Wall -std=c11   -c -o stat-points.o stat-points.c
+[01m[Kstat-points.c:[m[K In function ‚Äò[01m[Kmain[m[K‚Äô:
+[01m[Kstat-points.c:89:14:[m[K [01;35m[Kwarning: [m[Kcomparison between pointer and integer
+   if(argv[2] [01;35m[K==[m[K 'a'){
+              [01;35m[K^~[m[K
+gcc   stat-points.o dyn-array.o  -lm -o stat-points
+cyang58@remote-n06:~/i220a/submit/lab12/exercises/rec-io$ .[K/gen-[K[K[K[K[K./gen-rand-points 100 point.dat
+average magnitude = 752.156
+cyang58@remote-n06:~/i220a/submit/lab12/exercises/rec-io$ ./gen-rand-points 100 point.datmake[K
+make: Nothing to be done for 'all'.
+cyang58@remote-n06:~/i220a/submit/lab12/exercises/rec-io$ make
+gcc -g -Wall -std=c11   -c -o stat-points.o stat-points.c
+gcc   stat-points.o dyn-array.o  -lm -o stat-points
+/usr/bin/ld: /usr/lib/gcc/x86_64-linux-gnu/8/../../../x86_64-linux-gnu/Scrt1.o: in function `_start':
+(.text+0x20): undefined reference to `main'
+collect2: error: ld returned 1 exit status
+make: *** [<builtin>: stat-points] Error 1
+cyang58@remote-n06:~/i220a/submit/lab12/exercises/rec-io$ make
+gcc   stat-points.o dyn-array.o  -lm -o stat-points
+/usr/bin/ld: /usr/lib/gcc/x86_64-linux-gnu/8/../../../x86_64-linux-gnu/Scrt1.o: in function `_start':
+(.text+0x20): undefined reference to `main'
+collect2: error: ld returned 1 exit status
+make: *** [<builtin>: stat-points] Error 1
+cyang58@remote-n06:~/i220a/submit/lab12/exercises/rec-io$ make
+gcc   stat-points.o dyn-array.o  -lm -o stat-points
+/usr/bin/ld: /usr/lib/gcc/x86_64-linux-gnu/8/../../../x86_64-linux-gnu/Scrt1.o: in function `_start':
+(.text+0x20): undefined reference to `main'
+collect2: error: ld returned 1 exit status
+make: *** [<builtin>: stat-points] Error 1
+cyang58@remote-n06:~/i220a/submit/lab12/exercises/rec-io$ make
+gcc -g -Wall -std=c11   -c -o stat-points.o stat-points.c
+[01m[Kstat-points.c:[m[K In function ‚Äò[01m[Kmain[m[K‚Äô:
+[01m[Kstat-points.c:89:14:[m[K [01;35m[Kwarning: [m[Kcomparison between pointer and integer
+   if(argv[2] [01;35m[K==[m[K 'a'){
+              [01;35m[K^~[m[K
+gcc   stat-points.o dyn-array.o  -lm -o stat-points
+cyang58@remote-n06:~/i220a/submit/lab12/exercises/rec-io$ make
+gcc -g -Wall -std=c11   -c -o stat-points.o stat-points.c
+[01m[Kstat-points.c:[m[K In function ‚Äò[01m[Kmain[m[K‚Äô:
+[01m[Kstat-points.c:89:14:[m[K [01;35m[Kwarning: [m[Kcomparison between pointer and integer
+   if(argv[2] [01;35m[K==[m[K 'a'){
+              [01;35m[K^~[m[K
+gcc   stat-points.o dyn-array.o  -lm -o stat-points
+cyang58@remote-n06:~/i220a/submit/lab12/exercises/rec-io$ make
+gcc -g -Wall -std=c11   -c -o stat-points.o stat-points.c
+[01m[Kstat-points.c:[m[K In function ‚Äò[01m[Kmain[m[K‚Äô:
+[01m[Kstat-points.c:89:14:[m[K [01;35m[Kwarning: [m[Kcomparison between pointer and integer
+   if(argv[2] [01;35m[K==[m[K 'a'){
+              [01;35m[K^~[m[K
+gcc   stat-points.o dyn-array.o  -lm -o stat-points
+cyang58@remote-n06:~/i220a/submit/lab12/exercises/rec-io$ ./stat-points point a
+cannot read point: No such file or directory
+cyang58@remote-n06:~/i220a/submit/lab12/exercises/rec-io$ ./str[Kat-points point.dat a
+min = 43.4166
+average = 752.156
+median = 773.59
+max = 1306.49
+cyang58@remote-n06:~/i220a/submit/lab12/exercises/rec-io$ make
+make: Nothing to be done for 'all'.
+cyang58@remote-n06:~/i220a/submit/lab12/exercises/rec-io$ exit
+
+Script done on 2020-11-22 23:35:25-05:00 [COMMAND_EXIT_CODE="0"]
