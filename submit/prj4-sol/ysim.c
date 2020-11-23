@@ -108,4 +108,5 @@ void
 step_ysim(Y86 *y86)
 {
   //@TODO
+  if(read_status_y86(y86) != STATUS_AOK) return;
 }

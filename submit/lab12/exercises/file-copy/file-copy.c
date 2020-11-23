@@ -7,7 +7,7 @@ static void
 doCopy(const char *inName, FILE *in, const char *outName, FILE *out)
 {
   int c;
-  while ((c = fgetc(in)) != EOF) {
+  while ((c = fgetc(in)) != EOF && ferror(out) == 0) {
     if (fputc(c, out) == EOF) {
       fprintf(stderr, "error writing to %s: %s\n", outName, strerror(errno));
       exit(1);
@@ -32,7 +32,7 @@ main(int argc, const char *argv[])
     fprintf(stderr, "cannot read %s: %s\n", srcName, strerror(errno));
     exit(1);
   }
-  FILE *out = fopen(destName, "w");
+  FILE *out = fopen(destName, "a");
   if (!out) {
     fprintf(stderr, "cannot write %s: %s\n", destName, strerror(errno));
     exit(1);
