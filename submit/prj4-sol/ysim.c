@@ -203,8 +203,8 @@ step_ysim(Y86 *y86)
   if(read_status_y86(y86) != STATUS_AOK) return;
   Address pc = read_pc_y86(y86);
   Byte instrCd = read_memory_byte_y86(y86, pc);
-  
-switch(get_nybble(instrCd, 1)){
+  BaseOpCode code = get_nybble(op, 1);
+switch(code){
 	
 	case HALT_CODE:
 	write_status_y86(y86, STATUS_HLT);

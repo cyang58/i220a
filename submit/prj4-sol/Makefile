@@ -1,15 +1,24 @@
-TARGET=y86-sim
-CC=gcc
-COURSE=cs220
-IFLAGS= -I $$HOME/$(COURSE)/include
-LDFLAGS = -L $$HOME/$(COURSE)/lib -l cs220 -l y86
+TARGET =	y86-sim
 
-$(TARGET): main.o ysim.o
-	$(CC) $(LDFLAGS) main.o ysim.o -o $(TARGET)
+OBJS =	\
+	main.o \
+	ysim.o
 
-%.o: %.c
-	$(CC) -c $< $(IFLAGS)
+CC = gcc
+CFLAGS = -std=c11 -g -Wall
+CPPFLAGS = -I $$HOME/cs220/include
+LDFLAGS = -L $$HOME/cs220/lib -l cs220 -l y86
+INCLUDE =	/home/cyang58/cs220/include
 
-clean:
-	rm -f *.o
-	rm y86-sim
+
+$(TARGET):	$(OBJS)
+		$(CC) $(CFLAGS) $(OBJS) $(LDFLAGS)  -o $@
+
+ysim.o:		ysim.c ysim.h
+
+main.o:		main.c ysim.h $(INCLUDE)/y86.h $(INCLUDE)/yas.h $(INCLUDE)/errors.h
+
+.PHONY:
+	
+clean:		
+		rm -f *~ *.o $(TARGET) 
